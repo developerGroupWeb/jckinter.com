@@ -59,6 +59,7 @@
                         $('#test-loader').remove();
                         $('#content').append('<p>Data showed from another file</p>');
                     }
+                    // si une erreur se produite en generale, j'active le button
                 });
 
             }, 5000);

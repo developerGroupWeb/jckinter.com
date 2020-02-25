@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="043bef7a-9283-4162-9b2d-1b393dd53449" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/jackd.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/app/css/ajax-loader.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/app/js/currency.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/currency.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pile/scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pile/scripts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pile/styles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pile/styles.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/currencyconverter/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/currencyconverter/test-ajax.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/currencyconverter/test-ajax.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -170,7 +160,7 @@
       <workItem from="1582611210454" duration="136000" />
       <workItem from="1582611833372" duration="4503000" />
       <workItem from="1582623305614" duration="6873000" />
-      <workItem from="1582630891689" duration="1136000" />
+      <workItem from="1582630891689" duration="3377000" />
     </task>
     <servers />
   </component>

@@ -21,42 +21,76 @@ $(function () {
         }
     });
 
-    $(document).on('blur', '#amount-send', function () {
+    $(document).on({
+        blur: function () {
 
-        const amount_send = $(this).val();
-        let filter        = /^[0-9]+$/;
+            const amount_send = $(this).val();
+            let filter        = /^[0-9]+$/;
 
-        if(amount_send === ''){
+            if(amount_send === ''){
 
-            form.find('#amount-send').attr('style', 'border-color:red');
-            form.find('.error').addClass('d-none');
-            error_send_amount = false;
+                form.find('#amount-send').attr('style', 'border-color:red');
+                form.find('.error').addClass('d-none');
+                error_send_amount = false;
 
-        }else if(!amount_send.match(filter)){
+            }else if(!amount_send.match(filter)){
 
-            form.find('#amount-send').attr('style', 'border-color:red');
-            form.find('.error').addClass('d-none');
-            error_send_amount = false;
+                form.find('#amount-send').attr('style', 'border-color:red');
+                form.find('.error').addClass('d-none');
+                error_send_amount = false;
 
-        }else if(amount_send > 1000){
+            }else if(amount_send > 1000){
 
-            form.find('#amount-send').attr('style', 'border-color:red');
-            form.find('.error').removeClass('d-none');
-            error_send_amount = false;
+                form.find('#amount-send').attr('style', 'border-color:red');
+                form.find('.error').removeClass('d-none');
+                error_send_amount = false;
 
-        }else{
-            form.find('#amount-send').removeAttr('style');
-            form.find('.error').addClass('d-none');
-            error_send_amount = true;
+            }else{
+                form.find('#amount-send').removeAttr('style');
+                form.find('.error').addClass('d-none');
+                form.find('#amount-receive').val(amount_send*565)
+                error_send_amount = true;
+            }
+        },
+        keyup: function () {
+
+            const amount_send = $(this).val();
+            let filter        = /^[0-9]+$/;
+
+            if(amount_send === ''){
+
+                form.find('#amount-send').attr('style', 'border-color:red');
+                form.find('.error').addClass('d-none');
+                error_send_amount = false;
+
+            }else if(!amount_send.match(filter)){
+
+                form.find('#amount-send').attr('style', 'border-color:red');
+                form.find('.error').addClass('d-none');
+                error_send_amount = false;
+
+            }else if(amount_send > 1000){
+
+                form.find('#amount-send').attr('style', 'border-color:red');
+                form.find('.error').removeClass('d-none');
+                error_send_amount = false;
+
+            }else{
+                form.find('#amount-send').removeAttr('style');
+                form.find('.error').addClass('d-none');
+                form.find('#amount-receive').val(amount_send*565)
+                error_send_amount = true;
+            }
         }
-    });
+    }, '#amount-send');
 
     $(document).on('submit', "#currency-form-v2", function (e) {
         e.preventDefault();
 
-        let amount_send = form.find('#amount-send').val();
-        let devise_send = form.find('#devise-send').val();
-        let country     = form.find('#country').val();
+        let amount_send    = form.find('#amount-send').val();
+        let amount_receive = form.find('#amount-receive').val();
+        let devise_send    = form.find('#devise-send').val();
+        let country        = form.find('#country').val();
 
         if(error_send_amount === false || error_country === false){
 
@@ -81,9 +115,12 @@ $(function () {
                 $('#loader').remove();
                 alert(
                           "Amount send => "+ amount_send+ " ,\n"+
+                          "Amount receive => "+ amount_receive+ " XOF ,\n"+
                           "Device send => "+ devise_send+ " ,\n"+
                           "Country receive => "+ country
-                    );
+                );
+
+                // si une erreur se produite en generale, j'active le button
 
             }, 5000);
 
