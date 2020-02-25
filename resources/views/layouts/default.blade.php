@@ -25,6 +25,7 @@
 
     {{-- Styles --}}
     <link rel="stylesheet" href="{{ asset('app/css/style.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('app/css/ajax-loader.css') }}"/>
 
 
 

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('app/css/owl.carousel.min.css') }}"/>
     <link rel="stylesheet" href="{{ asset('app/css/nice-select.css') }}"/>
     <link rel="stylesheet" href="{{ asset('app/css/roysha-icons.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('app/css/all.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('app/css/style.css') }}"/>
 
     <!-- 7 stroke icon -->
     <link rel="stylesheet" href="{{ asset('app/css/pe-icon-7-stroke.css') }}"/>

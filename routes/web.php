@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/* Currency Converter routes */
+
+Route::get('/', 'CurrencyConverter\\CurrencyConverterController@index')->name('currencyconverter.index');
+
+Route::post('/', 'CurrencyConverter\\CurrencyConverterController@store')->name('currencyconverter.store');
+
+
+Route::get('test', 'CurrencyConverter\\CurrencyConverterController@test')->name('currencyconverter.test');
+Route::post('test', 'CurrencyConverter\\CurrencyConverterController@loaddata')->name('currencyconverter.loaddata');

@@ -1,73 +1,98 @@
 $(function () {
 
 
-    let error_send_amount    = false;
-    let error_receive_amount = false;
-
-    let form           = $('#form-currency');
-    let send_amount    = form.find('#send_amount');
-    let receive_amount = form.find('#receive_amount');
-
-    let devise_send    = form.find('#selected-send').text();
-    let devise_receive = form.find('#selected-send').text();
+    let error_send_amount    = false, error_country = false;
+    let form  = $('#currency-form-v2');
 
 
-    $(document).on('click', '#first-li, #second-li', function () {
-        if(this.id === 'first-li'){
+    $(document).on('change', '#country', function () {
 
-            let image  = $(this).find('img').attr('src');
-
-            let device = $(this).text();
-            $('#selected-send').find('img').attr('src', '<img src='+ image +'>');
-            $('#selected-send').text(device);
+        let country = $(this).val();
+        if(country === ''){
+            $(this).attr('style', 'border-color:red');
+            form.find('.form-btn').add('#amount-send, #devise-send').attr('disabled', 'disabled');
+            error_country = false;
 
         }else{
 
-            let image  = $(this).find('img').attr('src');
-            let device = $(this).text();
-            $('#selected-send').find('img').attr('src', '<img src='+ image +'>');
-            $('#selected-send').text(device);
+            $(this).removeAttr('style');
+            form.find('.form-btn').add('#amount-send, #devise-send').removeAttr('disabled');
+            error_country = true;
         }
     });
 
+    $(document).on('blur', '#amount-send', function () {
 
+        const amount_send = $(this).val();
+        let filter        = /^[0-9]+$/;
 
+        if(amount_send === ''){
 
-    $(document).on('keyup', '#send_amount', function () {
-
-        const value = $(this).val();
-        let filter  = /^[0-9]+$/;
-
-        if(value === ''){
-            form.find('#form-field-send').attr('style', 'border-color:red');
+            form.find('#amount-send').attr('style', 'border-color:red');
+            form.find('.error').addClass('d-none');
             error_send_amount = false;
-        }else if(!value.match(filter)){
-            form.find('#form-field-send').attr('style', 'border-color:red');
+
+        }else if(!amount_send.match(filter)){
+
+            form.find('#amount-send').attr('style', 'border-color:red');
+            form.find('.error').addClass('d-none');
             error_send_amount = false;
+
+        }else if(amount_send > 1000){
+
+            form.find('#amount-send').attr('style', 'border-color:red');
+            form.find('.error').removeClass('d-none');
+            error_send_amount = false;
+
         }else{
-            form.find('#form-field-send').removeAttr('style');
+            form.find('#amount-send').removeAttr('style');
+            form.find('.error').addClass('d-none');
             error_send_amount = true;
         }
     });
 
-    $(document).on('submit', "#form-currency", function (e) {
+    $(document).on('submit', "#currency-form-v2", function (e) {
         e.preventDefault();
 
-        let form           = $(this);
-        let value          = form.find('#send_amount').val();
-        let devise_send    = form.find('#selected-send').text();
-        let devise_receive = form.find('#selected-send').text();
+        let amount_send = form.find('#amount-send').val();
+        let devise_send = form.find('#devise-send').val();
+        let country     = form.find('#country').val();
 
-        alert(devise_send);
+        if(error_send_amount === false || error_country === false){
 
-        if(error_send_amount === false){
-            form.find('#form-field-send').attr('style', 'border-color:red');
+            if(amount_send === ''){
+                form.find('#amount-send').attr('style', 'border-color:red');
+            }
+            if(country === ''){
+                form.find('#country').attr('style', 'border-color:red');
+            }
             return false;
         }else{
 
 
+            let route = form.attr('action');
+            let token = $('meta[name="csrf-token"]');
+
+            $('#content-ajax-loader').append('<div class="loader" id="loader"></div>');
+            form.find('.form-btn').add('#amount-send, #devise-send, #country').attr('disabled', 'disabled');
+
+            setTimeout(function () {
+
+                $('#loader').remove();
+                alert(
+                          "Amount send => "+ amount_send+ " ,\n"+
+                          "Device send => "+ devise_send+ " ,\n"+
+                          "Country receive => "+ country
+                    );
+
+            }, 5000);
+
             return false;
         }
 
-    })
+    });
+
+
+
+
 });

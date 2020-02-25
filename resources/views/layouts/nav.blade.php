@@ -48,7 +48,7 @@
             </ul>
         </nav>
         <a href="login.html" class="login btn-default"><span class="bh"></span> <span>login</span></a>
-        <a href="signup.html" class="login btn-default"><span class="bh"></span> <span>Signup</span></a>
+        <a href="signup.html" class="login btn ml-3"><span class="bh"></span> <span>Signup</span></a>
     </div>
 </header>
 <!-- Header end -->
