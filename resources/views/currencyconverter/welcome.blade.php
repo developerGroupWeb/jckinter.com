@@ -34,7 +34,7 @@
                 <div class="col-lg-4 mb-3">
                     <label for="amount-send">Send Amount</label>
                     <div class="input-group">
-                        <input type="text" class="form-control form-control-lg" id="amount-send" aria-describedby="currencysend" placeholder="$1,000.00" disabled>
+                        <input type="text" class="form-control form-control-lg" id="amount-send" aria-describedby="currencysend" placeholder="$500.00" disabled>
                         <div class="input-group-append">
                             <select class="custom-select custom-select-lg" id="devise-send" disabled="disabled">
                                 <option value="USD">USD</option>
@@ -46,7 +46,7 @@
                                 <option value="CNY">CNY</option>
                             </select>
                         </div>
-                        <small class="error text-danger text-center d-none">Send amount must be between 1 and 1000</small>
+                        <small class="error text-danger text-center d-none">Send amount must be between 1 and 500 USD</small>
                     </div>
                 </div>
 

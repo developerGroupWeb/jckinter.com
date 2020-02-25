@@ -31,18 +31,21 @@ $(function () {
 
                 form.find('#amount-send').attr('style', 'border-color:red');
                 form.find('.error').addClass('d-none');
+                form.find('#amount-receive').val('');
                 error_send_amount = false;
 
             }else if(!amount_send.match(filter)){
 
                 form.find('#amount-send').attr('style', 'border-color:red');
                 form.find('.error').addClass('d-none');
+                form.find('#amount-receive').val('');
                 error_send_amount = false;
 
-            }else if(amount_send > 1000){
+            }else if(amount_send > 500){
 
                 form.find('#amount-send').attr('style', 'border-color:red');
                 form.find('.error').removeClass('d-none');
+                form.find('#amount-receive').val('');
                 error_send_amount = false;
 
             }else{
@@ -61,18 +64,21 @@ $(function () {
 
                 form.find('#amount-send').attr('style', 'border-color:red');
                 form.find('.error').addClass('d-none');
+                form.find('#amount-receive').val('');
                 error_send_amount = false;
 
             }else if(!amount_send.match(filter)){
 
                 form.find('#amount-send').attr('style', 'border-color:red');
                 form.find('.error').addClass('d-none');
+                form.find('#amount-receive').val('');
                 error_send_amount = false;
 
-            }else if(amount_send > 1000){
+            }else if(amount_send > 500){
 
                 form.find('#amount-send').attr('style', 'border-color:red');
                 form.find('.error').removeClass('d-none');
+                form.find('#amount-receive').val('');
                 error_send_amount = false;
 
             }else{
