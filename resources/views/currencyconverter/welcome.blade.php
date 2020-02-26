@@ -56,7 +56,7 @@
                     </div>
                 </div>
 
-                <div class="form-field col-lg-4 offset-lg-4">
+                <div class="form-field col-lg-4 offset-lg-4 mt-5">
                     <button class="btn btn-block btn-filled form-btn" disabled>
                         <span class="bh"></span> <span >Continue Transition <i class="fas fa-arrow-right"></i></span>
                     </button>
