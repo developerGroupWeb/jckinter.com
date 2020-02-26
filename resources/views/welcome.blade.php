@@ -13,51 +13,100 @@
             </div>
             
             <form class="currency-form-v2" action="#">
-                <h4>Send Money</h4>
-                <div class="col-lg-4 mb-3">
-                    <label for="wheresend">Send to</label>
-                    <select class="custom-select custom-select-lg" id="wheresend">
-                        <option selected>Where?</option>
-                        <option value="coo">Cotonou, BENIN</option>
-                        <option value="cav">Calavi, BENIN</option>
-                        <option value="lom">Lome, TOGO</option>
-                    </select>
-                </div>
-                
-                <div class="col-lg-4 mb-3">
-                    <label for="amountsend">First name</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control form-control-lg" id="amountsend" aria-describedby="currencysend" placeholder="$1,000.00">
-                        <div class="input-group-append">
-                            <select class="custom-select custom-select-lg" id="currencysend">
-                                <option value="coo">USD</option>
-                                <option value="cav">EUR</option>
-                                <option value="lom">CAD</option>
-                                <option value="lom">AUD</option>
-                                <option value="lom">GBP</option>
-                                <option value="lom">INR</option>
-                                <option value="lom">CNY</option>
-                            </select>
+                <!----------------firt step---------------------->
+                <div class="">
+                    <h4>Send Money</h4>
+                    <div class="col-lg-4 mb-3">
+                        <label for="wheresend">Send to</label>
+                        <select class="custom-select custom-select-lg" id="wheresend">
+                            <option selected>Where?</option>
+                            <option value="coo">Cotonou, BENIN</option>
+                            <option value="cav">Calavi, BENIN</option>
+                            <option value="lom">Lome, TOGO</option>
+                        </select>
+                    </div>
+                    
+                    <div class="col-lg-4 mb-3">
+                        <label for="amountsend">First name</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control form-control-lg" id="amountsend" aria-describedby="currencysend" placeholder="$1,000.00">
+                            <div class="input-group-append">
+                                <select class="custom-select custom-select-lg" id="currencysend">
+                                    <option value="coo">USD</option>
+                                    <option value="cav">EUR</option>
+                                    <option value="lom">CAD</option>
+                                    <option value="lom">AUD</option>
+                                    <option value="lom">GBP</option>
+                                    <option value="lom">INR</option>
+                                    <option value="lom">CNY</option>
+                                </select>
+                            </div>
+                            <small class="error text-danger text-center d-none">Send amount must be between 1 and 1000</small>
                         </div>
-                        <small class="error text-danger text-center d-none">Send amount must be between 1 and 1000</small>
+                    </div>
+
+                    <div class="col-lg-4 mb-3">
+                        <label for="amountreceive">They get</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control form-control-lg" id="amountreceive" aria-describedby="currencyget">
+                            <div class="input-group-append">
+                            <span class="input-group-text" id="currencyget">XOF</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-field col-lg-4 offset-lg-4">
+                        <button class="btn btn-block btn-filled form-btn">
+                            <span class="bh"></span> <span >Continue <i class="fas fa-arrow-right"></i></span>
+                        </button>
                     </div>
                 </div>
 
-                <div class="col-lg-4 mb-3">
-                    <label for="amountreceive">They get</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control form-control-lg" id="amountreceive" aria-describedby="currencyget">
-                        <div class="input-group-append">
-                        <span class="input-group-text" id="currencyget">XOF</span>
+                 <!-----------------second step--------------------->
+
+                <div class="d-none">
+                    <h4>Total recapitulatif</h4>
+                    <div class="col-lg-4 mb-3">
+                        <label for="wheresend">Country receive</label>
+                        <h4>data</h4>
+                    </div>
+                    
+                    <div class="col-lg-4 mb-3">
+                        <label for="amountsend">First name</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control form-control-lg" id="amountsend" aria-describedby="currencysend" placeholder="$1,000.00">
+                            <div class="input-group-append">
+                                <select class="custom-select custom-select-lg" id="currencysend">
+                                    <option value="coo">USD</option>
+                                    <option value="cav">EUR</option>
+                                    <option value="lom">CAD</option>
+                                    <option value="lom">AUD</option>
+                                    <option value="lom">GBP</option>
+                                    <option value="lom">INR</option>
+                                    <option value="lom">CNY</option>
+                                </select>
+                            </div>
+                            <small class="error text-danger text-center d-none">Send amount must be between 1 and 1000</small>
                         </div>
                     </div>
-                </div>
 
-                <div class="form-field col-lg-4 offset-lg-4">
-                    <button class="btn btn-block btn-filled form-btn">
-                        <span class="bh"></span> <span >Continue Transition <i class="fas fa-arrow-right"></i></span>
-                    </button>
+                    <div class="col-lg-4 mb-3">
+                        <label for="amountreceive">They get</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control form-control-lg" id="amountreceive" aria-describedby="currencyget">
+                            <div class="input-group-append">
+                            <span class="input-group-text" id="currencyget">XOF</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-field col-lg-4 offset-lg-4">
+                        <button class="btn btn-block btn-filled form-btn">
+                            <span class="bh"></span> <span >Continue  <i class="fas fa-arrow-right"></i></span>
+                        </button>
+                    </div>
                 </div>
+                <!-------------------------------------->
             </form>
         </div>        
     </div>
