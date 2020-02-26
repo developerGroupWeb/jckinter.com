@@ -3,14 +3,19 @@
 namespace App\Http\Controllers\CurrencyConverter;
 
 use App\Http\Controllers\Controller;
+use App\Services\CurrencyConverterService;
 use Illuminate\Http\Request;
 
 class CurrencyConverterController extends Controller
 {
 
-    function index(){
+    function index(Request $request){
 
-        return view('currencyconverter.welcome');
+        $default_currency = CurrencyConverterService::get_default_currency($request);
+
+        return view('currencyconverter.welcome',[
+            'default_currency' => $default_currency
+        ]);
     }
 
 

@@ -37,13 +37,9 @@
                         <input type="text" class="form-control form-control-lg" id="amount-send" aria-describedby="currencysend" placeholder="$500.00" disabled>
                         <div class="input-group-append">
                             <select class="custom-select custom-select-lg" id="devise-send" disabled="disabled">
-                                <option value="USD">USD</option>
-                                <option value="EUR">EUR</option>
-                                <option value="CAD">CAD</option>
-                                <option value="AUD">AUD</option>
-                                <option value="GBP">GBP</option>
-                                <option value="INR">INR</option>
-                                <option value="CNY">CNY</option>
+                                @foreach($default_currency as $key => $currency)
+                                    <option value="{{ $key }}">{{ $currency }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <small class="error text-danger text-center d-none">Send amount must be between 1 and 500 USD</small>
