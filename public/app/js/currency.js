@@ -2,7 +2,8 @@ $(function () {
 
 
     let error_send_amount    = false, error_country = false;
-    let form  = $('#currency-form-v2');
+    let form         = $('#currency-form-v2');
+    let form_summary = $('#summary-transfer');
 
 
     $(document).on('change', '#country', function () {
@@ -10,13 +11,13 @@ $(function () {
         let country = $(this).val();
         if(country === ''){
             $(this).attr('style', 'border-color:red');
-            form.find('.form-btn').add('#amount-send, #devise-send').attr('disabled', 'disabled');
+            form.find('#continue').add('#amount-send, #devise-send').attr('disabled', 'disabled');
             error_country = false;
 
         }else{
 
             $(this).removeAttr('style');
-            form.find('.form-btn').add('#amount-send, #devise-send').removeAttr('disabled');
+            form.find('#continue').add('#amount-send, #devise-send').removeAttr('disabled');
             error_country = true;
         }
     });
@@ -80,6 +81,7 @@ $(function () {
                     //alert(amount_send+'  '+devise_send+' '+ exchange)
 
                     form.find('#amount-receive').val(amount_send*exchange);
+                    form_summary.find('#exchange').val(exchange);
                 }else if(data.success === false){
                     form.find('#amount-receive').val('');
                 }
@@ -117,6 +119,7 @@ $(function () {
                     form.find('.error').addClass('d-none');
                     let exchange = data.quotes.USDXOF;
                     form.find('#amount-receive').val(amount_send*exchange);
+                    form_summary.find('#exchange').val(exchange);
                 }else if(data.success === false){
 
                     form.find('#amount-receive').val('');
@@ -132,13 +135,15 @@ $(function () {
 
     });
 
-    $(document).on('submit', "#currency-form-v2", function (e) {
+    $(document).on('click', "#continue", function (e) {
         e.preventDefault();
 
-        let amount_send    = form.find('#amount-send').val();
-        let amount_receive = form.find('#amount-receive').val();
-        let devise_send    = form.find('#devise-send').val();
-        let country        = form.find('#country').val();
+        let amount_send    = parseInt(form.find('#amount-send').val());
+        let amount_receive = Math.round(parseInt(form.find('#amount-receive').val()));
+        let devise_send    = form.find('#devise-send').val().toLocaleUpperCase();
+        let country        = form.find('#country').val().toLocaleUpperCase();
+        const fees         = 5;
+        let amount_total   =  parseInt(form.find('#amount-send').val()) + fees;
 
         if(error_send_amount === false || error_country === false){
 
@@ -156,27 +161,35 @@ $(function () {
             let token = $('meta[name="csrf-token"]');
 
             $('#content-ajax-loader').append('<div class="loader" id="loader"></div>');
-            form.find('.form-btn').add('#amount-send, #devise-send, #country').attr('disabled', 'disabled');
+            form.find('#continue').add('#amount-send, #devise-send, #country').attr('disabled', 'disabled');
 
             setTimeout(function () {
 
                 $('#loader').remove();
+                $('#currency-transfer').addClass('d-none');
+                $('#summary-transfer').removeClass('d-none');
 
-                alert(
-                          "Amount send => "+ amount_send+ " ,\n"+
-                          "Amount receive => "+ amount_receive+ " XOF ,\n"+
-                          "Device send => "+ devise_send+ " ,\n"+
-                          "Country receive => "+ country
-                );
+
+                form_summary.find('.country-receive').text(country).next('input').val(country);
+                form_summary.find('.amount-send').text(amount_send+' '+ devise_send).next('input').val(amount_send).next('input').val(devise_send);
+                form_summary.find('.amount-receive').text(amount_receive+' XOF').next('input').val(amount_receive);
+                form_summary.find('.amount-total').text(amount_total+' '+ devise_send).next('input').val(amount_total);
 
                 // si une erreur se produite en generale, j'active le button
 
-            }, 5000);
+            }, 4000);
 
             return false;
         }
 
     });
+
+
+    $(document).on('click', '#back', function () {
+        $('#summary-transfer').addClass('d-none');
+        $('#currency-transfer').removeClass('d-none');
+        form.find('#continue').add('#amount-send, #devise-send, #country').removeAttr('disabled');
+    })
 
 
 

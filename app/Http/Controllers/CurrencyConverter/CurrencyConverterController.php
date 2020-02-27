@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\CurrencyConverter;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\storeCurrencyRequestForm;
+use App\Models\OrderCurrency;
 use App\Services\CurrencyConverterService;
 use Illuminate\Http\Request;
 
@@ -19,8 +21,25 @@ class CurrencyConverterController extends Controller
     }
 
 
-    function store(Request $request){
-        dd($request->all());
+    function store(storeCurrencyRequestForm $requestForm){
+
+        $summary =  CurrencyConverterService::get_summary($requestForm);
+        $order  = OrderCurrency::create([
+            'user_id'        => 1,
+            'amount_receive' => $summary['amount_receive'],
+            'devise_receive' => $summary['devise_receive'],
+            'devise_send'    => $summary['devise_send'],
+            'amount_send'    => $summary['amount_send'],
+            'total'          => $summary['total'],
+            'country'        => $summary['country'],
+            'fees'           => $summary['fees']
+        ]);
+
+        if($order){
+
+            return redirect()->route('checkout.index');
+        }
+
     }
 
 

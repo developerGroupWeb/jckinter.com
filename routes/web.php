@@ -11,11 +11,36 @@
 |
 */
 
+/* Home routes */
+
+Route::get('/', 'Home\\HomeController@index')->name('home.index');
+
+Route::get('login', 'Home\\HomeController@login')->name('home.login');
+Route::post('login', 'Home\\HomeController@store_login')->name('home.login.store');
+
+Route::get('register', 'Home\\HomeController@register')->name('home.register');
+Route::post('register', 'Home\\HomeController@register_store')->name('home.register.store');
+
+
+Route::get('thanks', 'Home\\HomeController@thanks')->name('thanks');
+
+
+
 /* Currency Converter routes */
 
-Route::get('/', 'CurrencyConverter\\CurrencyConverterController@index')->name('currencyconverter.index');
+Route::get('currencyconverter', 'CurrencyConverter\\CurrencyConverterController@index')->name('currencyconverter.index');
 
-Route::post('/', 'CurrencyConverter\\CurrencyConverterController@store')->name('currencyconverter.store');
+Route::post('currencyconverter', 'CurrencyConverter\\CurrencyConverterController@store')->name('currencyconverter.store');
+
+
+/* Checkout routes */
+
+Route::resource('checkout', 'checkout\\CheckoutController');
+
+
+
+
+
 
 
 Route::get('test', 'CurrencyConverter\\CurrencyConverterController@test')->name('currencyconverter.test');
