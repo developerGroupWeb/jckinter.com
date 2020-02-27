@@ -32,6 +32,8 @@ Route::get('currencyconverter', 'CurrencyConverter\\CurrencyConverterController@
 
 Route::post('currencyconverter', 'CurrencyConverter\\CurrencyConverterController@store')->name('currencyconverter.store');
 
+Route::delete('currencyconverter/{currency_id}', 'CurrencyConverter\\CurrencyConverterController@destroy')->name('currencyconverter.destroy');
+
 
 /* Checkout routes */
 

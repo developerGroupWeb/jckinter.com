@@ -13,6 +13,14 @@
                     </div>
 
 
+                    @if(session()->has('order_exist'))
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>Remember!</strong> {{ session('order_exist') }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                @endif
                     <!-----------------second step--------------------->
 
                     <div class="currency-form-v2">
@@ -41,9 +49,14 @@
                             <p>Amount with fees*</p>
 
 
+
                         </div>
 
-
+                        <form method="post" action="{{ route('currencyconverter.destroy', ['currency_id' => $order->id]) }}" style="display: inline-block" onsubmit="return confirm('DO YOU REALLY WANT TO DELETE ? ')">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger">DELETE</button>
+                        </form>
                     </div>
 
 

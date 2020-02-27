@@ -16,6 +16,15 @@
 
             <div id="content-ajax-loader"></div>
 
+            @if(session()->has('delete'))
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Thanks!</strong> {{session('delete')}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+
             <form action="{{ route('currencyconverter.store') }}" method="post" id="currency-form-v2">
 
                 @csrf

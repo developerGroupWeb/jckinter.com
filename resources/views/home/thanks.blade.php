@@ -14,7 +14,7 @@
 
                     @if(session()->has('thanks'))
                         <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            <strong>Thanks!</strong> Your order has been successfully processed.
+                            <strong>Thanks!</strong> {{session('thanks')}}
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>

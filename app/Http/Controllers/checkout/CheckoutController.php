@@ -22,7 +22,7 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-        $order = OrderCurrency::whereUser_id( 1)->whereStatus(false)->first();
+        $order = OrderCurrency::whereUser_id(1)->whereStatus(false)->first();
 
 
         if(!$order){
