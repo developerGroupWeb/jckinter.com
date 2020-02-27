@@ -178,7 +178,7 @@
                             }
                         ).then(data => {
 
-                            //window.location.href = redirect;
+                            window.location.href = redirect;
 
                         }).catch(error => {
                             alert('ok')
