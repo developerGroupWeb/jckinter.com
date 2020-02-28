@@ -39,27 +39,40 @@
           <h2>Create Account</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sedo<br> eiusmod tempor incididunt dolore.</p>
         </div>
-        <form action="#" class="sl-form">
+
+
+
+        <form action="{{route('register.store')}}" method="post" class="sl-form" id="form-register">
+
+            @csrf
+
           <div class="form-group">
             <label>Full Name</label>
-            <input type="text" placeholder="Jhone Doe" required>
+            <input type="text" name="full_name" placeholder="Jhone Doe" id="full-name" required value="{{ old('full_name') }}">
+              <span class="text-danger error-full-name font-italic">{{ $errors->first("full_name") }}</span>
           </div>
           <div class="form-group">
             <label>Email or Username</label>
-            <input type="email" placeholder="example@gmail.com" required>
+            <input type="email" name="email" id="email" placeholder="example@gmail.com" required value="{{ old('email') }}">
+              <span class="text-danger error-email font-italic">{{ $errors->first("email") }}</span>
           </div>
           <div class="form-group">
             <label>Password</label>
-            <input type="password" placeholder="Password" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+              <span class="text-danger error-password font-italic">{{ $errors->first("password") }}</span>
           </div>
           <div class="form-check">
-            <input type="checkbox" class="form-check-input">
-            <label class="form-check-label">Agree with <a href="#">Terms and Conditions</a></label>
+            <input type="checkbox" name="terms" class="form-check-input" {{ (old("terms")) ? "checked" : '' }}>
+            <label class="form-check-label">Agree with <a href="#" {{ $errors->first("terms") ? "class=text-danger" : "" }}>Terms and Conditions</a></label>
           </div>
           <button class="btn btn-filled btn-round"><span class="bh"></span> <span>Signup</span></button>
-          <p class="notice">Already have an account? <a href="{{ route('home.login') }}">Login Account</a></p>
+          <p class="notice">Already have an account? <a href="{{ route('login.index') }}" >Login Account</a></p>
+
         </form>
+
       </div>
     </div>
+
+    <script src="{{ asset('app/js/register.js') }}"></script>
 
 @stop

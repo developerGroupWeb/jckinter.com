@@ -65,11 +65,11 @@ class CheckoutController extends Controller
     {
         $data = $request->json()->all();
 
-
-
         if($data['paymentIntent']['status'] === "succeeded"){
 
-           OrderCurrency::whereUser_id(1)->update([
+            $user_id = Session::get('currency_user')['id'];
+
+           OrderCurrency::whereUser_id($user_id)->update([
 
                'payment_intent_id' => $data['paymentIntent']['id'],
                'payment_created_at' => (new \DateTime())

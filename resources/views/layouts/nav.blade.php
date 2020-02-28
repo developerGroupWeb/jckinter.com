@@ -46,8 +46,8 @@
                 <!-- <li></li> -->
             </ul>
         </nav>
-        <a href="{{route('home.login')}}" class="login btn-default"><span class="bh"></span> <span>login</span></a>
-        <a href="{{route('home.register')}}" class="login btn ml-3"><span class="bh"></span> <span>Signup</span></a>
+        <a href="{{route('login.index')}}" class="login btn-default"><span class="bh"></span> <span>login</span></a>
+        <a href="{{route('register.index')}}" class="login btn ml-3"><span class="bh"></span> <span>Signup</span></a>
     </div>
 </header>
 <!-- Header end -->

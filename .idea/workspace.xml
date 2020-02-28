@@ -2,12 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="043bef7a-9283-4162-9b2d-1b393dd53449" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Services/StoreLoginService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/js/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/js/register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CurrencyConverter/CurrencyConverterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CurrencyConverter/CurrencyConverterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/checkout/CheckoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/checkout/CheckoutController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/checkout/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/checkout/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/currencyconverter/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/currencyconverter/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/thanks.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/thanks.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/currencyconverter/test-ajax.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/singin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/singup.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,6 +35,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -136,6 +146,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\jckinter.com\resources\views\auth" />
       <recent name="C:\wamp\www\jckinter.com\resources\views\home" />
       <recent name="C:\wamp\www\jckinter.com\app\Models" />
     </key>
@@ -175,7 +186,8 @@
       <workItem from="1582712542134" duration="15526000" />
       <workItem from="1582747643585" duration="2470000" />
       <workItem from="1582777567403" duration="183000" />
-      <workItem from="1582777848616" duration="32781000" />
+      <workItem from="1582777848616" duration="33051000" />
+      <workItem from="1582841582843" duration="14427000" />
     </task>
     <servers />
   </component>

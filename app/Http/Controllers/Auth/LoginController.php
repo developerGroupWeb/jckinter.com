@@ -3,38 +3,38 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\storeLoginFormRequest;
 use App\Providers\RouteServiceProvider;
+use App\Services\StoreLoginService;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+
+use Illuminate\View\View;
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
+    /**
+     * @return Factory|View
+     */
+   function index(){
 
-    use AuthenticatesUsers;
+       return view('auth.login');
+   }
 
     /**
-     * Where to redirect users after login.
-     *
-     * @var string
+     * @param storeLoginFormRequest $formRequest
+     * @return RedirectResponse
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    function store(storeLoginFormRequest $formRequest){
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
+
+        $error = StoreLoginService::authentic_user($formRequest);
+        if(!empty($error)){
+            return redirect()->route('login.index')->with('error', $error);
+        }
+
+        return redirect()->route('checkout.index');
     }
 }

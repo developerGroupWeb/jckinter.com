@@ -15,35 +15,34 @@
 
 Route::get('/', 'Home\\HomeController@index')->name('home.index');
 
-Route::get('login', 'Home\\HomeController@login')->name('home.login');
-Route::post('login', 'Home\\HomeController@store_login')->name('home.login.store');
 
-Route::get('register', 'Home\\HomeController@register')->name('home.register');
-Route::post('register', 'Home\\HomeController@register_store')->name('home.register.store');
+/* Authentic routes */
 
+Route::get('login', 'Auth\\LoginController@index')->name('login.index');
+Route::post('login', 'Auth\\LoginController@store')->name('login.store');
 
-Route::get('thanks', 'Home\\HomeController@thanks')->name('thanks');
-
-
+Route::get('register', 'Auth\\RegisterController@index')->name('register.index');
+Route::post('register', 'Auth\\RegisterController@store')->name('register.store');
 
 /* Currency Converter routes */
 
 Route::get('currencyconverter', 'CurrencyConverter\\CurrencyConverterController@index')->name('currencyconverter.index');
 
-Route::post('currencyconverter', 'CurrencyConverter\\CurrencyConverterController@store')->name('currencyconverter.store');
 
-Route::delete('currencyconverter/{currency_id}', 'CurrencyConverter\\CurrencyConverterController@destroy')->name('currencyconverter.destroy');
+Route::middleware(['auth.user'])->group(function (){
+
+    /* Currency Converter routes */
+
+    Route::post('currencyconverter', 'CurrencyConverter\\CurrencyConverterController@store')->name('currencyconverter.store')->middleware('auth.user');
+
+    Route::delete('currencyconverter/{currency_id}', 'CurrencyConverter\\CurrencyConverterController@destroy')->name('currencyconverter.destroy');
+
+    /* Checkout routes */
+
+    Route::resource('checkout', 'checkout\\CheckoutController');
 
 
-/* Checkout routes */
-
-Route::resource('checkout', 'checkout\\CheckoutController');
-
+    Route::get('thanks', 'Home\\HomeController@thanks')->name('thanks');
+});
 
 
-
-
-
-
-Route::get('test', 'CurrencyConverter\\CurrencyConverterController@test')->name('currencyconverter.test');
-Route::post('test', 'CurrencyConverter\\CurrencyConverterController@loaddata')->name('currencyconverter.loaddata');

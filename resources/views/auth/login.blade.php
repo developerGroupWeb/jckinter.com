@@ -39,21 +39,35 @@
           <h2>Login Account</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sedo<br> eiusmod tempor incididunt dolore.</p>
         </div>
-        <form action="#" class="sl-form">
+
+          @if(session()->has('error'))
+              <div class="alert alert-danger" role="alert">
+                  @foreach(session('error') as $error)
+                      {{$error}}
+                  @endforeach
+              </div>
+          @endif
+
+        <form method="post" action="{{ route('login.store') }}" class="sl-form" id="form-login" >
+
+            @csrf
+
           <div class="form-group">
-            <label>Email or Username</label>
-            <input type="email" placeholder="example@gmail.com" required>
+            <label>Email</label>
+            <input type="email" name="email" id="email" placeholder="example@gmail.com" required value="{{old('email')}}">
+            <span class="text-danger error-email font-italic">{{ $errors->first("email") }}</span>
           </div>
           <div class="form-group">
             <label>Password</label>
-            <input type="password" placeholder="Password" required>
+            <input type="password" name="password" placeholder="Password" id="password" required value="{{old('password')}}">
+            <span class="text-danger error-password font-italic">{{ $errors->first("password") }}</span>
           </div>
           <div class="form-check">
-            <input type="checkbox" class="form-check-input">
+            <input type="checkbox" name="remember" class="form-check-input">
             <label class="form-check-label">Remember Password</label>
           </div>
           <button class="btn btn-filled btn-round"><span class="bh"></span> <span>Login</span></button>
-          <p class="notice">Don’t have an account? <a href="{{ route('home.register') }}">Signup Now</a></p>
+          <p class="notice">Don’t have an account? <a href="{{ route('register.index') }}">Signup Now</a></p>
         </form>
       </div>
     </div>

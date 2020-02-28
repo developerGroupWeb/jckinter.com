@@ -14,7 +14,8 @@ class User extends Model
     protected $fillable = [
         'full_name',
         'email',
-        'password'
+        'password',
+        'terms'
     ];
 
     protected $dates = [
