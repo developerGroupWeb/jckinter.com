@@ -3,9 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class storeRegisterFormRequest extends FormRequest
+class StoreLoginFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,11 +24,8 @@ class storeRegisterFormRequest extends FormRequest
     public function rules()
     {
         return [
-
-            'full_name' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Zéèêëíìîïñóòôöõúùûüýÿæ -]+$/'],
-            'email'     => ['required', 'string', 'unique:users'],
-            'password'  => ['required', 'string', 'min:8'],
-            'terms'     => ['required', 'string', Rule::in(['on'])]
+            'email' => ['required', 'string', 'email'],
+            'password' => ['required', 'min:8']
         ];
     }
 }

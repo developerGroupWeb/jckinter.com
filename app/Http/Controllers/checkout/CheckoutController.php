@@ -4,6 +4,7 @@ namespace App\Http\Controllers\checkout;
 
 use App\Http\Controllers\Controller;
 use App\Models\OrderCurrency;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Arr;
@@ -22,7 +23,8 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-        $order = OrderCurrency::whereUser_id(1)->whereStatus(false)->first();
+        $user_id = Session::get('currency_user')['id'];
+        $order   = OrderCurrency::whereUser_id($user_id)->whereStatus(false)->first();
 
 
         if(!$order){
@@ -69,15 +71,17 @@ class CheckoutController extends Controller
 
             $user_id = Session::get('currency_user')['id'];
 
-           OrderCurrency::whereUser_id($user_id)->update([
+            $user   = User::findOrFail($user_id);
 
-               'payment_intent_id' => $data['paymentIntent']['id'],
-               'payment_created_at' => (new \DateTime())
-                   ->setTimestamp($data['paymentIntent']['created'])
-                   ->format('Y-m-d H:i:s'),
+            $user->order_currencies()->update([
 
-               'status' => true
-           ]);
+                   'payment_intent_id' => $data['paymentIntent']['id'],
+                   'payment_created_at' => (new \DateTime())
+                       ->setTimestamp($data['paymentIntent']['created'])
+                       ->format('Y-m-d H:i:s'),
+
+                   'status' => true
+            ]);
 
             Session::flash('thanks', 'Your order has been successfully processed');
 

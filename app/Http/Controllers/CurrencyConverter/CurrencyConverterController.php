@@ -5,6 +5,7 @@ namespace App\Http\Controllers\CurrencyConverter;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\storeCurrencyRequestForm;
 use App\Models\OrderCurrency;
+use App\Models\User;
 use App\Services\CurrencyConverterService;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
@@ -45,9 +46,9 @@ class CurrencyConverterController extends Controller
             return redirect()->route('checkout.index')->with('order_exist', 'You already have an unpaid order in progress');
         }
 
+        $user  = User::findOrFail($user_id);
 
-        $order  = OrderCurrency::create([
-            'user_id'        => $user_id,
+        $order  = $user->order_currencies()->create([
             'amount_receive' => $summary['amount_receive'],
             'devise_receive' => $summary['devise_receive'],
             'devise_send'    => $summary['devise_send'],

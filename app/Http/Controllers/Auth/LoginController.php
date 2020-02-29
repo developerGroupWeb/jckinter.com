@@ -24,10 +24,10 @@ class LoginController extends Controller
    }
 
     /**
-     * @param storeLoginFormRequest $formRequest
+     * @param StoreLoginFormRequest $formRequest
      * @return RedirectResponse
      */
-    function store(storeLoginFormRequest $formRequest){
+    function store(StoreLoginFormRequest $formRequest){
 
 
         $error = StoreLoginService::authentic_user($formRequest);
