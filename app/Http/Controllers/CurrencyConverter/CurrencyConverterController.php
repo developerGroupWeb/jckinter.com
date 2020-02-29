@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\CurrencyConverter;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\storeCurrencyRequestForm;
+
+use App\Http\Requests\StoreCurrencyFormRequest;
 use App\Models\OrderCurrency;
 use App\Models\User;
 use App\Services\CurrencyConverterService;
@@ -31,10 +32,10 @@ class CurrencyConverterController extends Controller
 
 
     /**
-     * @param storeCurrencyRequestForm $requestForm
+     * @param StoreCurrencyFormRequest $requestForm
      * @return RedirectResponse
      */
-    function store(storeCurrencyRequestForm $requestForm){
+    function store(StoreCurrencyFormRequest $requestForm){
 
         $summary =  CurrencyConverterService::get_summary($requestForm);
 
