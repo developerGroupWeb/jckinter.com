@@ -24,7 +24,6 @@
 
 
     {{-- Styles --}}
-    <link rel="stylesheet" href="{{ asset('app/css/style.css') }}"/>
     <link rel="stylesheet" href="{{ asset('app/css/ajax-loader.css') }}"/>
 
 
@@ -33,10 +32,7 @@
     @stack('head_style')
 
 
-<!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-    @stack('head_script')
 
 </head>
 
@@ -47,7 +43,10 @@
 
     @yield('content')
 
-    @include('layouts.footer')
 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    @stack('head_script')
 </body>
 </html>
