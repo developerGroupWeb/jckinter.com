@@ -36,8 +36,8 @@
           </a>
         </header>
         <div class="content-box">
-          <h2>Login Account</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sedo<br> eiusmod tempor incididunt dolore.</p>
+          <h2>Log in account</h2>
+          <p></p>
         </div>
 
           @if(session()->has('error'))

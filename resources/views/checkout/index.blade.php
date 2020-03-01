@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="signup-login">
+    <div class="signup-login w-100">
         <div class="sl-slider-caro owl-carousel">
             <div class="single-sl-slide">
             <img src="{{ asset('app/images/mac.png') }}" alt="">
@@ -80,7 +80,7 @@
                                         </h5>
                                         <div id="faq-1" class="collapse show mt-4" data-parent="#accordion">
                                             <div class="acr-body">
-                                                <div class="currency-form-v2">
+                                                <div class="currency-form-v2 pb-lg-4">
 
                                                     <h5 class="text-uppercase text-info col-lg-12 mb-4">Estimated Total Cost</h5>
 
@@ -106,56 +106,45 @@
                                                         <p class="text-danger">Amount with fees*</p>
                                                     </div>
 
-                                                    <form method="post" action="{{ route('currencyconverter.destroy', ['currency_id' => $order->id]) }}" style="display: inline-block" onsubmit="return confirm('DO YOU REALLY WANT TO DELETE ? ')">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button class="btn btn-danger">DELETE</button>
-                                                    </form>
+                                                    <div class="col-lg-12 bg-light py-2 mb-3 text-center">Exchange rate: 1.00 <span class="font-weight-bold">USD</span> = <span>591.67</span> <span class="font-weight-bold">XOF</span></div>
+
+                                                    <div class="col-lg-12">
+                                                        <div class="mx-auto">
+                                                            <button class="btn btn-group btn-primary btn-round py-3" data-toggle="collapse" data-target="#faq-2" aria-expanded="false">Complete Payment</button>
+
+                                                            <form  method="post" action="{{ route('currencyconverter.destroy', ['currency_id' => $order->id]) }}" style="display: inline-block" onsubmit="return confirm('DO YOU REALLY WANT TO DELETE ? ')">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button class="btn btn-group btn-danger btn-round py-3">DELETE</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
+
                                     <div class="accordion-item">
                                         <h5 class="collapsed" data-toggle="collapse" data-target="#faq-2" aria-expanded="false">
-                                            Input Wallet Informations
+                                        The payment process
                                         </h5>
 
                                         <div id="faq-2" class="collapse" data-parent="#accordion">
                                             <div class="acr-body">
-                                                <p>Molestie eu blandit eu sodales, nulla vitae nulla tempor et porta, ante nec commodo. Nulla non fringilla urna dolor vivamus, vulputate eu neque vivamus lacus in, imperdiet id sed malesuada per.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="collapsed" data-toggle="collapse" data-target="#faq-3" aria-expanded="false">
-                                            Confirm information and payover
-                                        </h5>
+                                                <form method="post" action="{{ route('checkout.store') }}" id="payment-form" class="my-5">
 
-                                        <div id="faq-3" class="collapse" data-parent="#accordion">
-                                            <div class="acr-body">
-                                                <p>Blandit eu sodales, nulla vitae nulla tempor et porta, ante nec commodo. Nulla non fringilla urna dolor vivamus, vulputate eu neque vivamus lacus in, imperdiet id sed malesuada per.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="collapsed" data-toggle="collapse" data-target="#faq-4" aria-expanded="false">
-                                            Access Your Mobile Wallet
-                                        </h5>
+                                                @csrf
 
-                                        <div id="faq-4" class="collapse" data-parent="#accordion">
-                                            <div class="acr-body">
-                                                <p>Molestie eu blandit eu sodales, nulla vitae nulla tempor et porta, ante nec commodo. Nulla non fringilla urna dolor vivamus, vulputate eu neque vivamus lacus in, imperdiet id sed malesuada per.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="collapsed" data-toggle="collapse" data-target="#faq-5" aria-expanded="false">
-                                            Input Wallet Informations
-                                        </h5>
+                                                <div id="card-element">
+                                                    <!-- Elements will create input elements here -->
+                                                </div>
 
-                                        <div id="faq-5" class="collapse" data-parent="#accordion">
-                                            <div class="acr-body">
-                                                <p>Blandit eu sodales, nulla vitae nulla tempor et porta, ante nec commodo. Nulla non fringilla urna dolor vivamus, vulputate eu neque vivamus lacus in, imperdiet id sed malesuada per.</p>
+                                                <!-- We'll put the error messages in this element -->
+                                                <div id="card-errors" role="alert"></div>
+
+                                                <button class="btn btn-success mt-4" id="submit">Proceed to payment ( {{$order->total.' '.$order->devise_send}} )</button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
@@ -204,94 +193,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-    <!-- Banner section start -->
-    <section class="banner v3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 m-auto">
-                    <div class="ban-content text-center">
-                        <h1>Money Transfer Service <br> World Wide</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspe ultrices gravida. <br> Risus commodo viverra maecenas .</p>
-                    </div>
-
-
-                    @if(session()->has('order_exist'))
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            <strong>Remember!</strong> {{ session('order_exist') }}
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    @endif
-
-                    <div class="currency-form-v2">
-
-                        <h4 class="text-uppercase text-info">Total recapitulatif</h4>
-
-                        <div class="col-lg-3 mb-3">
-                            <p>Country receive</p>
-                            <h4 class="country-receive">{{$order->country}}</h4>
-                        </div>
-
-                        <div class="col-lg-3 mb-3">
-                            <p>Amount send</p>
-                            <h4 class="amount-send">{{$order->amount_send.' '.$order->devise_send}}</h4>
-                        </div>
-
-                        <div class="col-lg-3 mb-3">
-                            <p>Amount receive</p>
-                            <h4 class="amount-receive">{{$order->amount_receive.' '.$order->devise_receive}}</h4>
-                        </div>
-
-                        <div class="col-lg-3 mb-3">
-                            <p class="font-weight-bold">Total to pay</p>
-                            <h4 class="amount-total">{{$order->total.' '.$order->devise_send}}</h4>
-
-                            <p>Amount with fees*</p>
-                        </div>
-
-                        <form method="post" action="{{ route('currencyconverter.destroy', ['currency_id' => $order->id]) }}" style="display: inline-block" onsubmit="return confirm('DO YOU REALLY WANT TO DELETE ? ')">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-danger">DELETE</button>
-                        </form>
-                    </div>
-
-
-                    <!-------------------------------------->
-                </div>
-
-            </div>
-
-            <h3 class="mt-4 text-dark">The payment process</h3>
-
-            <div class="row">
-                <div class="col-md-6">
-
-                    <form method="post" action="{{ route('checkout.store') }}" id="payment-form" class="my-5">
-
-                        @csrf
-
-                        <div id="card-element">
-                            <!-- Elements will create input elements here -->
-                        </div>
-
-                        <!-- We'll put the error messages in this element -->
-                        <div id="card-errors" role="alert"></div>
-
-                        <button class="btn btn-success mt-4" id="submit">Proceed to payment ( {{$order->total.' '.$order->devise_send}} )</button>
-                    </form>
-
-                </div>
-            </div>
-
-
-        </div>
-    </section>
 
 
 @stop

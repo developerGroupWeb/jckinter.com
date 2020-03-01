@@ -36,7 +36,7 @@
           </a>
         </header>
         <div class="content-box">
-          <h2>Create Account</h2>
+          <h2>Create account</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sedo<br> eiusmod tempor incididunt dolore.</p>
         </div>
 

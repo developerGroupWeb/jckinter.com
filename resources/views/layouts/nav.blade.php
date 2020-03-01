@@ -37,8 +37,8 @@
                 <!-- <li></li> -->
             </ul>
         </nav>
-        <a href="{{route('login.index')}}" class="login btn-default btn-round"><span class="bh"></span> <span>login</span></a>
-        <a href="{{route('register.index')}}" class="login btn-outline btn-round ml-3"><span class="bh"></span> <span>Signup</span></a>
+        <a href="{{route('register.index')}}" class="login btn-outline btn-round"><span class="bh"></span> <span>Signup</span></a>
+        <a href="{{route('login.index')}}" class="login btn-default btn-round ml-3"><span class="bh"></span> <span>login</span></a>
     </div>
 </header>
 <!-- Header end -->
