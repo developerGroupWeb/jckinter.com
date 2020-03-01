@@ -74,7 +74,7 @@
 
 
 
-<div class="signup-login">
+<!--<div class="signup-login">
       <div class="sl-slider-caro owl-carousel">
         <div class="single-sl-slide">
           <img src="{{ asset('app/images/mac.png') }}" alt="">
@@ -143,7 +143,7 @@
         </form>
 
       </div>
-    </div>
+    </div>-->
 
     <script src="{{ asset('app/js/register.js') }}"></script>
 
