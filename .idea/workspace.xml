@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="043bef7a-9283-4162-9b2d-1b393dd53449" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CurrencyConverter/CurrencyConverterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CurrencyConverter/CurrencyConverterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreCurrencyRequestForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreCurrencyFormRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/currencyconverter/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/currencyconverter/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -176,7 +178,8 @@
       <workItem from="1582841582843" duration="14861000" />
       <workItem from="1582879748644" duration="5349000" />
       <workItem from="1582954863866" duration="1287000" />
-      <workItem from="1582972653271" duration="806000" />
+      <workItem from="1582972653271" duration="3561000" />
+      <workItem from="1583005103599" duration="1078000" />
     </task>
     <servers />
   </component>

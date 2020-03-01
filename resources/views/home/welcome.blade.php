@@ -11,7 +11,7 @@
                 <h1>Money Transfer Service <br> World Wide</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspe ultrices gravida. <br> Risus commodo viverra maecenas .</p>
             </div>
-            
+
             <form class="currency-form-v2" action="#">
                 <!----------------firt step---------------------->
                 <div class="">
@@ -25,7 +25,7 @@
                             <option value="lom">Lome, TOGO</option>
                         </select>
                     </div>
-                    
+
                     <div class="col-lg-4 mb-3">
                         <label for="amountsend">First name</label>
                         <div class="input-group">
@@ -70,7 +70,7 @@
                         <label for="wheresend">Country receive</label>
                         <h4>data</h4>
                     </div>
-                    
+
                     <div class="col-lg-4 mb-3">
                         <label for="amountsend">First name</label>
                         <div class="input-group">
@@ -108,7 +108,7 @@
                 </div>
                 <!-------------------------------------->
             </form>
-        </div>        
+        </div>
     </div>
     </div>
 </section>
@@ -227,5 +227,7 @@
     </div>
 </section>-->
 <!-- Banner section end -->
+
+@include('layouts.footer')
 
 @stop
