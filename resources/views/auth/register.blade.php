@@ -2,17 +2,20 @@
 
 @section('content')
 
-<div class="w-100 login-bg-custom" style="height: 100vh;">
-  <div class="col-xl-4 offset-xl-4 col-md-6 offset-md-3">
+<div class="w-100 row login-bg-custom" style="height: 100vh;">
+  <div class="col-lg-6 order-2 order-lg-1">
     <div class="row">
       <div class="mx-auto mt-5 mb-4">
         <img src="" alt="">
         <h2 class="text-center font-weight-bold"><a class="text-primary" href="#">JCK Transfert</a></h2>
       </div>
     </div>
+  </div>
 
-    <div class="row">
-      <div class="col-lg-12 bg-white p-5 shadow rounded mx-3 mx-md-0">
+
+  <div class="col-lg-6 bg-white p-5 order-1 order-lg-2">
+    <div class="row py-2">
+      <div class="col-xl-8 col-md-10">
         <div class="content-box">
           <h5>Create account</h5>
           <p class="notice">Already have an account? <a href="{{ route('login.index') }}" >Login Account</a></p>
@@ -57,7 +60,7 @@
     </div>
 
     <div class="row">
-      <ul class="nav mx-auto mt-3">
+      <ul class="nav mt-3">
         <li class="nav-item">
           <a href="" class="nav-link text-dark text-center">© JCK tranfert</a>
         </li>
