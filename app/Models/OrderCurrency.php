@@ -17,6 +17,7 @@ class OrderCurrency extends Model
         'user_id',
         'amount_receive',
         'devise_receive',
+        'exchange',
         'devise_send',
         'amount_send',
         'total',

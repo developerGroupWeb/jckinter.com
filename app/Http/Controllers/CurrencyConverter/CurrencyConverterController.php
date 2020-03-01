@@ -49,15 +49,7 @@ class CurrencyConverterController extends Controller
 
         $user  = User::findOrFail($user_id);
 
-        $order  = $user->order_currencies()->create([
-            'amount_receive' => $summary['amount_receive'],
-            'devise_receive' => $summary['devise_receive'],
-            'devise_send'    => $summary['devise_send'],
-            'amount_send'    => $summary['amount_send'],
-            'total'          => $summary['total'],
-            'country'        => $summary['country'],
-            'fees'           => $summary['fees']
-        ]);
+        $order  = $user->order_currencies()->create($summary);
 
         if($order){
 
