@@ -7,9 +7,9 @@
     <div class="container">
     <div class="row">
         <div class="col-md-12 m-auto">
-            <div class="ban-content text-center">
-                <h1>Money Transfer Service <br> World Wide</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspe ultrices gravida. <br> Risus commodo viverra maecenas .</p>
+            <div class="ban-content">
+                <h1>Send money home without code. <br>Simple and Fast.<br> Easy to use!</h1>
+                <p></p>
             </div>
 
             <div id="content-ajax-loader"></div>
