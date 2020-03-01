@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="{{ asset('app/css/nice-select.css') }}"/>
 
     @include('css.style')
-
-    <link rel="stylesheet" href="{{ asset('app/css/custom.css') }}"/>
+    @include('css.custom')
 
 
 @endpush
