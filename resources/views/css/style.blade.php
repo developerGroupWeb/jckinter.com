@@ -4676,4 +4676,5 @@ img.an1.animg5 {
   transform-origin: 47.3% 50%;
 }
 
+
 </style>
