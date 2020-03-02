@@ -37,8 +37,6 @@
 
 <body class="home-one">
 
-    @include('layouts.navUser')
-
     @yield('content')
 
 
