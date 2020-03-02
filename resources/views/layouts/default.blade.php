@@ -1,4 +1,5 @@
 @include('pile.scripts')
+@include('pile.scripts_links')
 @include('pile.styles')
 
 
@@ -32,6 +33,9 @@
     @stack('head_style')
 
 
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
 
 
 </head>
@@ -40,7 +44,11 @@
 
 
     @if(!isset(session()->get('currency_user')['email']) || !isset(session()->get('currency_user')['password'])){
+
           @include('layouts.nav');
+
+    @elseif(isset(session()->get('currency_user')['login']) || isset(session()->get('currency_user')['register']))
+        {{ '' }}
     @else
          @include('layouts.navUser');
     @endif
@@ -50,10 +58,7 @@
     @yield('content')
 
 
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
     @stack('head_script')
+
 </body>
 </html>

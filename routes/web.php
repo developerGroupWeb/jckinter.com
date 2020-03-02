@@ -20,6 +20,10 @@ Route::prefix('en')->group(function (){
     App::setLocale(request()->segment(1));
 
 
+    /* Home routes */
+    Route::get('/', 'Home\\HomeController@index')->name('home.index');
+
+
     Route::middleware(['user.connected'])->group(function (){
 
         /* Currency Converter routes */
@@ -45,10 +49,6 @@ Route::prefix('en')->group(function (){
 
 
     Route::middleware(['user.not.connected'])->group(function (){
-
-        /* Home routes */
-        Route::get('/', 'Home\\HomeController@index')->name('home.index');
-
 
 
         /* Authentic routes */

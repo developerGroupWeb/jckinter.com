@@ -131,5 +131,6 @@
         </div>
     </section>
 
+
     @include('layouts.footer')
 @stop

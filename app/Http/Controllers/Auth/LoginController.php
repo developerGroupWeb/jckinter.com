@@ -21,7 +21,8 @@ class LoginController extends Controller
      */
    function index(){
 
-       return view('auth.login');
+
+       return view('auth.login')->with('t', 'ok');
    }
 
     /**
