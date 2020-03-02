@@ -4,12 +4,13 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\storeLoginFormRequest;
-use App\Providers\RouteServiceProvider;
+use App\Models\User;
+
 use App\Services\StoreLoginService;
 use Illuminate\Contracts\View\Factory;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
+
 
 use Illuminate\View\View;
 
@@ -24,17 +25,29 @@ class LoginController extends Controller
    }
 
     /**
-     * @param StoreLoginFormRequest $formRequest
+     * @param storeLoginFormRequest $formRequest
      * @return RedirectResponse
      */
     function store(StoreLoginFormRequest $formRequest){
 
-
         $error = StoreLoginService::authentic_user($formRequest);
-        if(!empty($error)){
-            return redirect()->route('login.index')->with('error', $error);
+
+        if($formRequest->ajax()){
+
+            if(empty($error)){
+                return response()->json(['success', true], 200);
+            }
+            return response()->json($error);
         }
 
-        return redirect()->route('checkout.index');
+
+        if(empty($error)){
+
+            $user = User::whereEmail($formRequest->email)->first();
+
+            return redirect()->route('dashboard.index', strtolower($user->full_name));
+        }
+        return redirect()->route('login.index')->with('error', $error);
+
     }
 }

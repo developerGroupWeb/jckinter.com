@@ -2,6 +2,8 @@
   <dictionary name="jackd">
     <words>
       <w>currencyconverter</w>
+      <w>forgetpassword</w>
+      <w>forgotpassword</w>
     </words>
   </dictionary>
 </component>

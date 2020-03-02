@@ -1,7 +1,8 @@
 $(function () {
 
-    let error_full_name = false, error_email = false, error_password = false, error_remember = false;
 
+    let error_full_name = false, error_email = false, error_password = false, error_terms = false, error_confirm_password = false;
+    let form = $('#form-register');
 
     let alertMessage = (id, errorClass, text) => {
         return $(id).next(errorClass).html(text).show('slow');
@@ -22,7 +23,7 @@ $(function () {
 
     $(document).on('blur', '#full-name', function () {
 
-        let full_name = $(this).val();
+        let full_name = form.find(this).val();
         let filter = /^[a-zA-Zéèêëíìîïñóòôöõúùûüýÿæ -]+$/i;
 
         if(full_name === ''){
@@ -43,12 +44,11 @@ $(function () {
 
     $(document).on('blur', '#email', function () {
 
-
-        let string = $(this).val();
+        let string = form.find(this).val();
         let email = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
         if(string === ''){
-            alertMessage(this, '.error-email', 'Field email or phone is required');
+            alertMessage(this, '.error-email', 'Field email is required');
             error_email = false;
         }else if(!string.match(email)){
             alertMessage(this, '.error-email', 'Your email is incorrect');
@@ -63,7 +63,7 @@ $(function () {
 
     $(document).on('blur', '#password', function () {
 
-        let pass = $(this).val();
+        let pass = form.find(this).val();
         if(pass === ''){
             alertMessage(this, '.error-password', 'Field password is required');
             error_password = false;
@@ -76,30 +76,50 @@ $(function () {
         }
     });
 
+    $(document).on('blur', '#confirm-password', function () {
+
+        let pass_confirm = form.find(this).val();
+        let pass         = form.find('#password').val();
+
+        if(pass_confirm === ''){
+            alertMessage(this, '.error-confirm-password', 'Confirm your password');
+            error_confirm_password = false;
+        }else if(pass !== pass_confirm){
+            alertMessage(this, '.error-confirm-password', 'Your passwords aren\'t the same');
+            error_confirm_password = false;
+        }else{
+            deleteMessage('.error-confirm-password');
+            error_confirm_password = true;
+        }
+    });
+
 
     $(document).on('click', 'input[type=checkbox]', function () {
 
         let checkbox = $('input:checked').val();
+        //alert(checkbox)
 
         if(checkbox){
-            $('.form-check-label').add('.form-check-label a').removeClass('text-danger');
-            error_remember = true;
+            form.find('.check-agree').add('.check-agree a').removeClass('text-danger');
+            error_terms = true;
         }else{
-            $('.form-check-label').add('.form-check-label a').addClass('text-danger');
-            error_remember = false;
+            form.find('.check-agree').add('.check-agree a').addClass('text-danger');
+            error_terms = false;
 
         }
     });
 
     $(document).on('submit', '#form-register', function (e) {
 
-        let form = $(this),
-            full_name = form.find('#full-name').val(),
-            email     = form.find('#email').val(),
-            pass      = form.find('#password').val(),
-            checkbox  = $('input:checked').val();;
 
-        if(error_full_name === false || error_password === false || error_email === false || error_remember === false){
+            let full_name         = form.find('#full-name').val(),
+                email             = form.find('#email').val(),
+                pass              = form.find('#password').val(),
+                pass_confirm      = form.find('#confirm-password').val(),
+                checkbox          = form.find('input:checked').val();
+            //alert(error_email+' '+error_full_name+' '+error_password+' '+error_confirm_password+' '+error_terms)
+
+        if(error_full_name === false || error_password === false || error_email === false || error_terms === false || error_confirm_password === false){
 
             if(full_name === ''){
                 requiredMessage('.error-full-name', 'Field name is required');
@@ -110,9 +130,13 @@ $(function () {
             if(pass === ''){
                 requiredMessage('.error-password', 'Field password is required');
             }
-            if(!checkbox){
-                $('.form-check-label').add('.form-check-label a').addClass('text-danger');
+            if(pass_confirm === ''){
+                requiredMessage('.error-confirm-password', 'Confirm your password');
             }
+            if(!checkbox){
+                $('.check-agree').add('.check-agree a').addClass('text-danger');
+            }
+
 
             return false;
         }else{

@@ -28,7 +28,7 @@ class StoreRegisterFormRequest extends FormRequest
 
             'full_name' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Zéèêëíìîïñóòôöõúùûüýÿæ -]+$/'],
             'email'     => ['required', 'string', 'unique:users'],
-            'password'  => ['required', 'string', 'min:8'],
+            'password'  => ['required', 'string', 'min:8', 'confirmed'],
             'terms'     => ['required', 'string', Rule::in(['on'])]
         ];
     }

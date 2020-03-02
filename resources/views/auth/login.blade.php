@@ -1,6 +1,8 @@
-@extends('layouts.defaultNav', ['title' => 'Login'])
+
+@extends('layouts.default', ['title' => 'Login'])
 
 @section('content')
+
 
 <div class="w-100 login-bg-custom" style="height: 100vh;">
   <div class="col-xl-4 offset-xl-4 col-md-6 offset-md-3">
@@ -45,11 +47,12 @@
             <label for="check-remember" class="custom-control-label">Remember Password</label>
           </div>
           <div class="row my-3">
-            <button class="btn btn-filled w-100 mx-auto"><span class="bh"></span> <span>Login</span></button>
+            <button class="btn btn-filled w-100 mx-auto" id="btn-login"><span class="bh"></span> <span>Login</span></button>
+            <div id="content-ajax-loader" style="margin: 0 auto; position: relative"></div>
           </div>
 
           <div class="row">
-            <p class="mx-auto my-3"><a href="" class="">Forget password?</a></p>
+            <p class="mx-auto my-3"><a href="{{ route('forgot.password.index') }}" class="">Forget password?</a></p>
           </div>
 
           <div class="row">
@@ -145,4 +148,7 @@
         </form>
       </div>
     </div>-->
+
+
+
 @stop

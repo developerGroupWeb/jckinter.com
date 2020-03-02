@@ -69,4 +69,13 @@ class CurrencyConverterController extends Controller
 
     }
 
+
+    /**
+     * @return Factory|RedirectResponse|View
+     */
+    function thanks(){
+
+        return (Session::has('thanks')) ? view('currencyconverter.thanks') : redirect()->route('currencyconverter.index');
+    }
+
 }

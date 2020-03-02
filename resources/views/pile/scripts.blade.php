@@ -9,14 +9,16 @@
     <script src="{{ asset('app/js/owl.carousel2.thumbs.min.js') }}"></script>
     <script src="{{ asset('app/js/jquery.countdown.min.js') }}"></script>
     <script src="{{ asset('app/js/jquery.fancybox.min.js') }}"></script>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" ></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/106949/jquery.onscreen.js"></script>
 
     <script src="{{ asset('app/js/scripts.js') }}"></script>
+
     <script src="{{ asset('app/js/currency.js') }}"></script>
 
-    <script src="https://js.stripe.com/v3/"></script>
-    <script src="{{ asset('app/js/stipe.js') }}"></script>
+    <script src="{{ asset('app/js/login.js') }}"></script>
+    <script src="{{ asset('app/js/register.js') }}"></script>
+
 
 @endpush

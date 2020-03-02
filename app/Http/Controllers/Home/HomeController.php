@@ -26,11 +26,5 @@ class HomeController extends Controller
     }
 
 
-    /**
-     * @return Factory|RedirectResponse|View
-     */
-    function thanks(){
 
-        return (Session::has('thanks')) ? view('home.thanks') : redirect()->route('currencyconverter.index');
-    }
 }

@@ -40,7 +40,7 @@ class CheckoutController extends Controller
 
         $client_secret = Arr::get($intent, 'client_secret');
 
-        return view('checkout.index', [
+        return view('en.checkout.index', [
             'order' => $order,
             'client_secret' => $client_secret,
         ]);
