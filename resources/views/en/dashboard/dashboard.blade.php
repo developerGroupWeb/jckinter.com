@@ -5,7 +5,7 @@
 <div class="w-100 login-bg-custom" style="height: 100vh;">
     <div class="container shadow-lg" style="border: 30px solid #258; border-radius: 25px; margin-top: 100px">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">JCK</a>
+            <a class="navbar-brand" href="">{{ session()->get('currency_user')['full_name'] }}</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -22,7 +22,7 @@
                         <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Help/Contact</a>
                     </li>
                 </ul>
-                
+
                 <a href="{{ route('logout') }}" class="login btn btn-default btn-round p-3"><span class="bh"></span> <span>Log out</span></a>
             </div>
         </nav>

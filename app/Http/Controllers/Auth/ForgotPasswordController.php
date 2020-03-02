@@ -14,6 +14,6 @@ class ForgotPasswordController extends Controller
      */
     function index(){
 
-        return view('auth.forgotpassword');
+        return view(request()->segment(1).'.auth.forgotpassword');
     }
 }

@@ -22,7 +22,7 @@ class LoginController extends Controller
    function index(){
 
 
-       return view('auth.login')->with('t', 'ok');
+       return view(request()->segment(1).'.auth.login')->with('t', 'ok');
    }
 
     /**

@@ -7,7 +7,7 @@
     <div class="row">
       <div class="mx-auto mt-5 mb-4">
         <img src="" alt="">
-        <h2 class="text-center font-weight-bold"><a class="text-primary" href="#">JCK Transfert</a></h2>
+        <h2 class="text-center font-weight-bold"><a class="text-primary" href="{{ route('home.index') }}">JCK Transfert</a></h2>
       </div>
     </div>
   </div>
@@ -62,7 +62,7 @@
     <div class="row">
       <ul class="nav mt-3">
         <li class="nav-item">
-          <a href="" class="nav-link text-dark text-center">© JCK tranfert</a>
+          <a href="{{ route('home.index') }}" class="nav-link text-dark text-center">© JCK tranfert</a>
         </li>
         <li class="nav-item">
           <a href="" class="nav-link text-dark text-center">Contact</a>

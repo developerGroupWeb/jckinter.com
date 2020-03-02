@@ -43,15 +43,16 @@
 <body class="home-one">
 
 
-    @if(!isset(session()->get('currency_user')['email']) || !isset(session()->get('currency_user')['password'])){
+    @if((!isset(session()->get('currency_user')['email']) || !isset(session()->get('currency_user')['password'])) && (request()->path() === 'en/login' || request()->path() === 'en/register'))
 
-          @include('layouts.nav');
+    @elseif((!isset(session()->get('currency_user')['email']) || !isset(session()->get('currency_user')['password'])))
+        @include('layouts.nav');
+    @elseif(request()->path() === 'en/dashboard')
 
-    @elseif(isset(session()->get('currency_user')['login']) || isset(session()->get('currency_user')['register']))
-        {{ '' }}
     @else
          @include('layouts.navUser');
     @endif
+
 
 
 

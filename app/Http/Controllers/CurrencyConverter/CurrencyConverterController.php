@@ -25,7 +25,7 @@ class CurrencyConverterController extends Controller
 
         $default_currency = CurrencyConverterService::get_default_currency($request);
 
-        return view('currencyconverter.welcome',[
+        return view(request()->segment(1).'.currencyconverter.welcome',[
             'default_currency' => $default_currency
         ]);
     }
@@ -75,7 +75,7 @@ class CurrencyConverterController extends Controller
      */
     function thanks(){
 
-        return (Session::has('thanks')) ? view('currencyconverter.thanks') : redirect()->route('currencyconverter.index');
+        return (Session::has('thanks')) ? view(request()->segment(1).'.currencyconverter.thanks') : redirect()->route('currencyconverter.index');
     }
 
 }

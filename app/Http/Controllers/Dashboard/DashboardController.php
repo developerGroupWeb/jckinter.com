@@ -10,7 +10,7 @@ class DashboardController extends Controller
 {
     function index(){
 
-        return view('dashboard.dashboard');
+        return view(request()->segment(1).'.dashboard.dashboard');
     }
 
     /**

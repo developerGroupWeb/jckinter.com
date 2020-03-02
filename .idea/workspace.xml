@@ -2,14 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="043bef7a-9283-4162-9b2d-1b393dd53449" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/pile/scripts_links.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/currencyconverter/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/currencyconverter/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CurrencyConverter/CurrencyConverterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CurrencyConverter/CurrencyConverterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/checkout/CheckoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/checkout/CheckoutController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/auth/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/forgotpassword.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/auth/forgotpassword.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/checkout/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/checkout/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/currencyconverter/thanks.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/currencyconverter/thanks.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/currencyconverter/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/currencyconverter/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/dashboard/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/home/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pile/scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pile/scripts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/defaultNav.blade.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -137,15 +148,15 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp\www\jckinter.com\app\Http\Middleware\en" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\jckinter.com\resources\views\en" />
       <recent name="C:\wamp\www\jckinter.com\resources\views" />
       <recent name="C:\wamp\www\jckinter.com\resources\views\en\dashboard" />
       <recent name="C:\wamp\www\jckinter.com\resources\views\en\currencyconverter" />
-      <recent name="C:\wamp\www\jckinter.com\resources\views\en" />
       <recent name="C:\wamp\www\jckinter.com\database\migrations" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\jckinter.com\app\Http\Middleware\en" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -192,7 +203,7 @@
       <workItem from="1583038490150" duration="5291000" />
       <workItem from="1583091658432" duration="29696000" />
       <workItem from="1583122614328" duration="266000" />
-      <workItem from="1583146484658" duration="1505000" />
+      <workItem from="1583146484658" duration="6758000" />
     </task>
     <servers />
   </component>

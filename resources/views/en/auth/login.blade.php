@@ -9,7 +9,7 @@
     <div class="row">
       <div class="mx-auto mt-5 mb-4">
         <img src="" alt="">
-        <h2 class="text-center font-weight-bold"><a class="text-primary" href="#">JCK Transfert</a></h2>
+        <h2 class="text-center font-weight-bold"><a class="text-primary" href="{{ route('home.index') }}">JCK Transfert</a></h2>
       </div>
     </div>
 
@@ -45,6 +45,8 @@
           <div class="custom-control custom-checkbox row">
             <input type="checkbox" name="remember" class="custom-control-input" id="check-remember">
             <label for="check-remember" class="custom-control-label">Remember Password</label>
+
+
           </div>
           <div class="row my-3">
             <button class="btn btn-filled w-100 mx-auto" id="btn-login"><span class="bh"></span> <span>Login</span></button>
@@ -65,7 +67,7 @@
     <div class="row">
       <ul class="nav mx-auto mt-3">
         <li class="nav-item">
-          <a href="" class="nav-link text-dark text-center">© JCK tranfert</a>
+          <a href="{{ route('home.index') }}" class="nav-link text-dark text-center">© JCK tranfert</a>
         </li>
         <li class="nav-item">
           <a href="" class="nav-link text-dark text-center">Contact</a>

@@ -17,7 +17,7 @@ class RegisterController extends Controller{
      */
     function index(){
 
-        return view('auth.register');
+        return view(request()->segment(1).'.auth.register');
     }
 
     /**
