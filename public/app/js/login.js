@@ -94,33 +94,33 @@ $(function(){
                 $('#loader').remove();
                 $('#btn-login').removeClass('d-none');
 
-                fetch(
-                    route,
-                    {
-                        headers: {
-                            "Content-Type":"application/json",
-                            "Accept":"application/json, text-plain, */*",
-                            "X-Requested-With":"XMLHttpRequest",
-                            "X-CSRF-TOKEN": token
-                        },
-                        method: "POST",
-                        body: JSON.stringify({
-                            email: email,
-                            password: password,
-                            remember: remember
-                        }),
-                    }
-                ).then(data => {
+                //fetch(
+                //route,
+                    //{
+                    //headers: {
+                //"Content-Type":"application/json",
+                //"Accept":"application/json, text-plain, */*",
+                //"X-Requested-With":"XMLHttpRequest",
+                //"X-CSRF-TOKEN": token
+                    //},
+                    // method: "POST",
+                //body: JSON.stringify({
+                //email: email,
+                //password: password,
+                // remember: remember
+                    //}),
+                //}
+                //).then(data => {
 
-                    alert(data.error.success);
-                }).catch(error => {
-                    alert(error)
-                });
-
+                //alert(data.error.success);
+                //}).catch(error => {
+                // alert(error)
+                // });*/
 
             }, 2000);
 
-            return  false;
+           // return  false;
+            return  true
         }
 
     });
