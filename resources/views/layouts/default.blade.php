@@ -39,9 +39,16 @@
 <body class="home-one">
 
 
-    @include('layouts.nav')
+    @if(!isset(session()->get('currency_user')['email']) || !isset(session()->get('currency_user')['password'])){
+          @include('layouts.nav');
+    @else
+         @include('layouts.navUser');
+    @endif
+
+
 
     @yield('content')
+
 
 
     <!-- Optional JavaScript -->

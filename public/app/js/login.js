@@ -1,5 +1,9 @@
 $(function(){
+
+
     let error_pass = false, error_email = false;
+
+    let form_login = $('#form-login');
 
     const alertMessage = (id, errorClass, text) => {
         return $(id).next(errorClass).html(text).show('slow');
@@ -18,8 +22,10 @@ $(function(){
 
     $(document).on('blur', '#email', function () {
 
-        let string = $(this).val();
+        let string = form_login.find(this).val();
         let email = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+
 
         if(string === ''){
             alertMessage(this, '.error-email', 'Field email is required');
@@ -39,7 +45,7 @@ $(function(){
 
     $(document).on('blur', '#password', function () {
 
-        let pass = $(this).val();
+        let pass = form_login.find(this).val();
 
         if(pass === ''){
             alertMessage(this, '.error-password', 'Field password is required');
@@ -55,13 +61,10 @@ $(function(){
 
     $(document).on('submit', '#form-login', function () {
 
-        let form = $(this),
-            email = form.find('#email').val(),
-            password = form.find('#password').val(),
-            remember = 1,
-            route    = form.attr('action'),
-            redirect ='';
-
+            let email    = form_login.find('#email').val(),
+                password = form_login.find('#password').val(),
+                route    = form_login.attr('action'),
+                redirect = '';
 
         //const ajax = true;
 
@@ -78,47 +81,44 @@ $(function(){
             return false;
         }else{
 
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
+            //alert(email+' '+ pass);
+            let checkbox = form_login.find('input:checked').val();
+            let remember = ((checkbox)? 1 : 0);
+            let token = $('meta[name="csrf-token"]').attr('content');
 
+            $('#content-ajax-loader').append('<div class="loader" id="loader"></div>');
+            $('#btn-login').addClass('d-none');
 
-            $.ajax({
-                url: route,
-                type: 'POST',
-                dataType: 'json',
-                cache: false,
-                data:{email:email, password:password, remember:remember},
-                async :true,
-                beforeSend: function () {
-                    $('.process').html('En cours de traitement ....').show();
-                },
-                success: function (data) {
+            setTimeout(function(){
 
-                    if(data.email){
+                $('#loader').remove();
+                $('#btn-login').removeClass('d-none');
 
-                        $('.error-email').html(data.email).show();
-                        $('.process, .error-password').hide();
-
-                    }else if(data.password){
-
-                        $('.error-password').html(data.password).show();
-                        $('.process, .error-email').hide();
-
-                    }else if(data.name){
-
-                        window.location = 'fr/'+ data.name +'/'+ data.year;
+                fetch(
+                    route,
+                    {
+                        headers: {
+                            "Content-Type":"application/json",
+                            "Accept":"application/json, text-plain, */*",
+                            "X-Requested-With":"XMLHttpRequest",
+                            "X-CSRF-TOKEN": token
+                        },
+                        method: "POST",
+                        body: JSON.stringify({
+                            email: email,
+                            password: password,
+                            remember: remember
+                        }),
                     }
+                ).then(data => {
 
-                },
-                error: function (resp, status, error) {
-                    $('.result').html(error);
-                    //console.log(resp);
-                },
+                    alert(data.error.success);
+                }).catch(error => {
+                    alert(error)
+                });
 
-            });
+
+            }, 2000);
 
             return  false;
         }

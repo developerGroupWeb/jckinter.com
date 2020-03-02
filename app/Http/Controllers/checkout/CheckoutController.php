@@ -26,7 +26,7 @@ class CheckoutController extends Controller
         $user_id = Session::get('currency_user')['id'];
         $order   = OrderCurrency::whereUser_id($user_id)->whereStatus(false)->first();
 
-
+        //dd($order);
         if(!$order){
             return redirect()->route('currencyconverter.index');
         }
@@ -40,7 +40,7 @@ class CheckoutController extends Controller
 
         $client_secret = Arr::get($intent, 'client_secret');
 
-        return view('checkout.index', [
+        return view('en.checkout.index', [
             'order' => $order,
             'client_secret' => $client_secret,
         ]);

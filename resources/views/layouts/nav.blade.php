@@ -9,17 +9,17 @@
             <ul>
                 <li class="current-menu-item"><a href="{{route('home.index')}}">Home</a></li>
                 <!--<li><a href="{{ route('currencyconverter.index') }}">Send Money</a></li>-->
-    
+
                 <li class="">
                     <a href="#">About</a>
                 </li>
-                
+
                 <li><a href="contact.html">Contact</a></li>
                 <li class="has-menu-child">
-                    <a href="blog.html">English</a>
+                    <a href="">English</a>
                     <ul class="sub-menu">
                         <li><a href="">Français</a></li>
-                        
+
                     </ul>
                 </li>
                 <!-- <li></li> -->

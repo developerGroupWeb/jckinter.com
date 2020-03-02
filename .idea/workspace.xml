@@ -2,8 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="043bef7a-9283-4162-9b2d-1b393dd53449" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/en/UserConnected.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/en/UserNotConnected.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/jackd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/jackd.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CurrencyConverter/CurrencyConverterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CurrencyConverter/CurrencyConverterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreCurrencyRequestForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreCurrencyFormRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/checkout/CheckoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/checkout/CheckoutController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreRegisterFormRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreRegisterFormRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/app/css/ajax-loader.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/css/ajax-loader.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/app/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/app/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/dashboard.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/forgetpassword.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/forgotpassword.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/checkout/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/checkout/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/currencyconverter/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/currencyconverter/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/thanks.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/currencyconverter/thanks.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/defaultNav.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navUser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navUser.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pile/scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pile/scripts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -126,15 +153,20 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wabaglobal" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Middleware/en" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\jckinter.com\app\Http\Middleware\en" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp\www\jckinter.com\resources\views\auth" />
-      <recent name="C:\wamp\www\jckinter.com\resources\views\home" />
-      <recent name="C:\wamp\www\jckinter.com\app\Models" />
+      <recent name="C:\wamp\www\jckinter.com\resources\views" />
+      <recent name="C:\wamp\www\jckinter.com\resources\views\en\dashboard" />
+      <recent name="C:\wamp\www\jckinter.com\resources\views\en\currencyconverter" />
+      <recent name="C:\wamp\www\jckinter.com\resources\views\en" />
+      <recent name="C:\wamp\www\jckinter.com\database\migrations" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -176,7 +208,10 @@
       <workItem from="1582841582843" duration="14861000" />
       <workItem from="1582879748644" duration="5349000" />
       <workItem from="1582954863866" duration="1287000" />
-      <workItem from="1582972653271" duration="806000" />
+      <workItem from="1582972653271" duration="3561000" />
+      <workItem from="1583005103599" duration="1078000" />
+      <workItem from="1583038490150" duration="5291000" />
+      <workItem from="1583091658432" duration="25837000" />
     </task>
     <servers />
   </component>

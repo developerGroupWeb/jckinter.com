@@ -1,4 +1,4 @@
-@extends('layouts.defaultNav', ['title' => 'Register'])
+@extends('layouts.default', ['title' => 'Register'])
 
 @section('content')
 
@@ -43,12 +43,12 @@
           </div>
           <div class="form-group row">
             <label>Confirm password</label>
-            <input class="form-control form-control-lg" type="password" name="cfpassword" id="cfpassword" placeholder="Confirm password" required>
-              <span class="text-danger error-password font-italic"></span>
+            <input class="form-control form-control-lg" type="password" name="password_confirmation" id="confirm-password" placeholder="Confirm password" required>
+              <span class="text-danger error-confirm-password font-italic"></span>
           </div>
           <div class="custom-control custom-checkbox row">
             <input type="checkbox" id="check-agree" name="terms" class="custom-control-input" {{ (old("terms")) ? "checked" : '' }}>
-            <label for="check-agree" class="custom-control-label">Agree with <a href="#" {{ $errors->first("terms") ? "class=text-danger" : "" }}>Terms and Conditions</a></label>
+            <label for="check-agree" class="custom-control-label check-agree">Agree with <a href="#" {{ $errors->first("terms") ? "class=text-danger" : "" }}>Terms and Conditions</a></label>
           </div>
 
           <div class="row my-3">
@@ -148,6 +148,6 @@
       </div>
     </div>-->
 
-    <script src="{{ asset('app/js/register.js') }}"></script>
+
 
 @stop

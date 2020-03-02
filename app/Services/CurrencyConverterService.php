@@ -48,13 +48,15 @@ class CurrencyConverterService
         $total           = $amount_send + $fees;
 
         return [
-                  'amount_receive' => $amount_receive,
-                  'devise_receive' => 'XOF',
-                  'devise_send'    => $devise_send,
                   'amount_send'    => $amount_send,
-                  'total'          => $total,
+                  'amount_receive' => $amount_receive,
+                  'exchange'       => $exchange,
+                  'devise_send'    => $devise_send,
+                  'devise_receive' => 'XOF',
                   'country'        => $country,
-                  'fees'           => $fees
+                  'fees'           => $fees,
+                  'total'          => $total,
+
         ];
     }
 }

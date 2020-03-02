@@ -11,38 +11,62 @@
 |
 */
 
-/* Home routes */
-
-Route::get('/', 'Home\\HomeController@index')->name('home.index');
 
 
-/* Authentic routes */
+Route::pattern('lang', 'en|fr');
 
-Route::get('login', 'Auth\\LoginController@index')->name('login.index');
-Route::post('login', 'Auth\\LoginController@store')->name('login.store');
+Route::prefix('en')->group(function (){
 
-Route::get('register', 'Auth\\RegisterController@index')->name('register.index');
-Route::post('register', 'Auth\\RegisterController@store')->name('register.store');
-
-/* Currency Converter routes */
-
-Route::get('currencyconverter', 'CurrencyConverter\\CurrencyConverterController@index')->name('currencyconverter.index');
+    App::setLocale(request()->segment(1));
 
 
-Route::middleware(['auth.user'])->group(function (){
+    Route::middleware(['user.connected'])->group(function (){
 
-    /* Currency Converter routes */
+        /* Currency Converter routes */
+        Route::get('currencyconverter', 'CurrencyConverter\\CurrencyConverterController@index')->name('currencyconverter.index');
 
-    Route::post('currencyconverter', 'CurrencyConverter\\CurrencyConverterController@store')->name('currencyconverter.store')->middleware('auth.user');
+        Route::post('currencyconverter', 'CurrencyConverter\\CurrencyConverterController@store')->name('currencyconverter.store');
 
-    Route::delete('currencyconverter/{currency_id}', 'CurrencyConverter\\CurrencyConverterController@destroy')->name('currencyconverter.destroy');
+        Route::delete('currencyconverter/{currency_id}', 'CurrencyConverter\\CurrencyConverterController@destroy')->name('currencyconverter.destroy');
 
-    /* Checkout routes */
-
-    Route::resource('checkout', 'checkout\\CheckoutController');
+        Route::get('thanks', 'CurrencyConverter\\CurrencyConverterController@thanks')->name('thanks');
 
 
-    Route::get('thanks', 'Home\\HomeController@thanks')->name('thanks');
+        /* Checkout routes */
+        Route::resource('checkout', 'checkout\\CheckoutController');
+
+
+        /* Dashboard*/
+        Route::get('dashboard', 'Dashboard\\DashboardController@index')->name('dashboard.index');
+        Route::get('logout', 'Dashboard\\DashboardController@logout')->name('logout');
+
+    });
+
+
+
+    Route::middleware(['user.not.connected'])->group(function (){
+
+        /* Home routes */
+        Route::get('/', 'Home\\HomeController@index')->name('home.index');
+
+
+
+        /* Authentic routes */
+        Route::get('login', 'Auth\\LoginController@index')->name('login.index');
+        Route::post('login', 'Auth\\LoginController@store')->name('login.store');
+
+        Route::get('register', 'Auth\\RegisterController@index')->name('register.index');
+        Route::post('register', 'Auth\\RegisterController@store')->name('register.store');
+
+        Route::get('forgot-password', 'Auth\\ForgotPasswordController@index')->name('forgot.password.index');
+        Route::post('forgot-password', 'Auth\\ForgotPasswordController@store')->name('forgot.password.store');
+
+
+    });
+
+
 });
+
+
 
 

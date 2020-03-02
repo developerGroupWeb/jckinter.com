@@ -1,4 +1,4 @@
-@extends('layouts.defaultNav', ['title' => 'Forget password'])
+@extends('layouts.default', ['title' => 'Forgot password'])
 
 @section('content')
 
@@ -18,7 +18,7 @@
           <p>To reset your password, enter the email address associated with your account.</p>
         </div>
 
-          
+
 
         <form method="post" action="" class="col-12 w-100" id="form-login" >
 
@@ -29,7 +29,7 @@
             <input class="form-control form-control-lg" type="email" name="email" id="email" required value="{{old('email')}}">
             <span class="text-danger error-email font-italic">{{ $errors->first("email") }}</span>
           </div>
-          
+
           <div class="row my-3">
             <button class="btn btn-filled w-100 mx-auto"><span class="bh"></span> <span>Continuer</span></button>
           </div>
