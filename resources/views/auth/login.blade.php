@@ -28,7 +28,7 @@
               </div>
           @endif
 
-        <form method="post" action="{{ route('login.store') }}" class="col-12 w-100" id="form-login" >
+        <form method="post" action="{{ route('login.store') }}" class="col-12 w-100" id="form-logi" >
 
             @csrf
 
