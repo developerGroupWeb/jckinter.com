@@ -2172,8 +2172,6 @@ section {
 .currency-form-v2 {
   background-color: #fff;
   border-radius: 10px;
-  -webkit-box-shadow: 0 0 40px 10px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 40px 10px rgba(0, 0, 0, 0.1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2786,8 +2784,6 @@ section {
 
 .accordion .accordion-item {
   background-color: #fff;
-  -webkit-box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.05);
-  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.05);
   border: 1px solid #f1f1f1;
   border-radius: 5px;
   margin-bottom: 20px;
