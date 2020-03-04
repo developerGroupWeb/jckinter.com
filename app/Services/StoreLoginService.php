@@ -5,6 +5,7 @@ namespace App\Services;
 
 
 use App\Models\User;
+use Illuminate\Support\Facades\Session;
 
 
 class StoreLoginService
@@ -20,6 +21,7 @@ class StoreLoginService
             $user = User::whereEmail($request->email)->first();
 
             if ($user->password === sha1($request->password)) {
+
 
                 session()->put('currency_user', [
                     'id'         => $user->id,

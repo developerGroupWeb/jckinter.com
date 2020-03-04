@@ -44,6 +44,9 @@ Route::prefix('en')->group(function (){
         Route::get('dashboard', 'Dashboard\\DashboardController@index')->name('dashboard.index');
         Route::get('logout', 'Dashboard\\DashboardController@logout')->name('logout');
 
+        Route::post('photo_receiver', 'Dashboard\\UserReceiverController@photo_receiver')->name('photo.receiver');
+        Route::post('user_receiver', 'Dashboard\\UserReceiverController@user_receiver')->name('user.receiver');
+
     });
 
 

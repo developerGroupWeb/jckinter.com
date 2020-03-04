@@ -52,7 +52,7 @@
           </div>
 
           <div class="row my-3">
-            <button class="btn btn-filled w-100 mx-auto"><span class="bh"></span> <span>Signup</span></button>
+            <button type="submit" class="btn btn-filled w-100 mx-auto"><span class="bh"></span> <span>Signup</span></button>
           </div>
 
         </form>
