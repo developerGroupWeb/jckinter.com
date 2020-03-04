@@ -69,18 +69,27 @@ class CheckoutController extends Controller
 
         if($data['paymentIntent']['status'] === "succeeded"){
 
-            $user_id = Session::get('currency_user')['id'];
+            $user_id    = Session::get('currency_user')['id'];
+            $fake_order =  Session::get('fake_order');
 
             $user   = User::findOrFail($user_id);
 
             $user->order_currencies()->update([
 
-                   'payment_intent_id' => $data['paymentIntent']['id'],
-                   'payment_created_at' => (new \DateTime())
-                       ->setTimestamp($data['paymentIntent']['created'])
-                       ->format('Y-m-d H:i:s'),
+                'amount_send'    => $fake_order['amount_send'],
+                'amount_receive' => $fake_order['amount_receive'],
+                'exchange'       => $fake_order['exchange'],
+                'devise_send'    => $fake_order['devise_send'],
+                'devise_receive' => 'XOF',
+                'country'        => $fake_order['country'],
+                'fees'           => $fake_order['fees'],
+                'total'          => $fake_order['total'],
+                'payment_intent_id' => $data['paymentIntent']['id'],
+                'payment_created_at' => (new \DateTime())
+                   ->setTimestamp($data['paymentIntent']['created'])
+                   ->format('Y-m-d H:i:s'),
 
-                   'status' => true
+               'status' => true
             ]);
 
             Session::flash('thanks', 'Your order has been successfully processed');

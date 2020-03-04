@@ -44,7 +44,7 @@ class CurrencyConverterController extends Controller
         $order_exist = OrderCurrency::whereUser_id($user_id)->whereStatus(false)->first();
 
         if($order_exist){
-            return redirect()->route('checkout.index')->with('order_exist', 'You already have an unpaid order in progress');
+            return redirect()->route('dashboard.index', Session::get('currency_user')['full_name'])->with('order_exist', 'You already have an unpaid order in progress');
         }
 
         $user  = User::findOrFail($user_id);
@@ -53,7 +53,7 @@ class CurrencyConverterController extends Controller
 
         if($order){
 
-            return redirect()->route('checkout.index');
+            return redirect()->route('dashboard.index', Session::get('currency_user')['full_name']);
         }
 
     }
@@ -65,7 +65,10 @@ class CurrencyConverterController extends Controller
     function destroy($id){
 
         OrderCurrency::destroy($id);
-        return redirect()->route('currencyconverter.index')->with('delete', 'Your order has been deleted');
+
+        session()->forget('fake_order');
+
+        return redirect()->route('home.index')->with('delete', 'Your order has been deleted');
 
     }
 

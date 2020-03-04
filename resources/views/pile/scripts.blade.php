@@ -13,9 +13,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" ></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/106949/jquery.onscreen.js"></script>
 
-    <script src="{{ asset('app/js/currency.js') }}"></script>
     <script src="{{ asset('app/js/login.js') }}"></script>
     <script src="{{ asset('app/js/register.js') }}"></script>
+    <script src="{{ asset('app/js/currency.js') }}"></script>
+
+    <script src="{{ asset('app/js/dashboard.js') }}"></script>
 
 
     <script src="{{ asset('app/js/scripts.js') }}"></script>

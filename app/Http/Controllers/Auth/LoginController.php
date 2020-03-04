@@ -12,6 +12,8 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 
 
+use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Session;
 use Illuminate\View\View;
 
 class LoginController extends Controller
@@ -21,8 +23,7 @@ class LoginController extends Controller
      */
    function index(){
 
-
-       return view(request()->segment(1).'.auth.login')->with('t', 'ok');
+       return view(request()->segment(1).'.auth.login');
    }
 
     /**
@@ -45,6 +46,7 @@ class LoginController extends Controller
         if(empty($error)){
 
             $user = User::whereEmail($formRequest->email)->first();
+
 
             return redirect()->route('dashboard.index', strtolower($user->full_name));
         }

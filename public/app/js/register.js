@@ -2,7 +2,7 @@ $(function () {
 
 
     let error_full_name = false, error_email = false, error_password = false, error_terms = false, error_confirm_password = false;
-    let form = $('#form-register');
+    let form_register = $('#form-register');
 
     let alertMessage = (id, errorClass, text) => {
         return $(id).next(errorClass).html(text).show('slow');
@@ -23,7 +23,7 @@ $(function () {
 
     $(document).on('blur', '#full-name', function () {
 
-        let full_name = form.find(this).val();
+        let full_name = form_register.find(this).val();
         let filter = /^[a-zA-Zéèêëíìîïñóòôöõúùûüýÿæ -]+$/i;
 
         if(full_name === ''){
@@ -44,7 +44,7 @@ $(function () {
 
     $(document).on('blur', '#email', function () {
 
-        let string = form.find(this).val();
+        let string = form_register.find(this).val();
         let email = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
         if(string === ''){
@@ -63,7 +63,7 @@ $(function () {
 
     $(document).on('blur', '#password', function () {
 
-        let pass = form.find(this).val();
+        let pass = form_register.find(this).val();
         if(pass === ''){
             alertMessage(this, '.error-password', 'Field password is required');
             error_password = false;
@@ -78,8 +78,8 @@ $(function () {
 
     $(document).on('blur', '#confirm-password', function () {
 
-        let pass_confirm = form.find(this).val();
-        let pass         = form.find('#password').val();
+        let pass_confirm = form_register.find(this).val();
+        let pass         = form_register.find('#password').val();
 
         if(pass_confirm === ''){
             alertMessage(this, '.error-confirm-password', 'Confirm your password');
@@ -100,23 +100,22 @@ $(function () {
         //alert(checkbox)
 
         if(checkbox){
-            form.find('.check-agree').add('.check-agree a').removeClass('text-danger');
+            form_register.find('.check-agree').add('.check-agree a').removeClass('text-danger');
             error_terms = true;
         }else{
-            form.find('.check-agree').add('.check-agree a').addClass('text-danger');
+            form_register.find('.check-agree').add('.check-agree a').addClass('text-danger');
             error_terms = false;
 
         }
     });
 
-    $(document).on('submit', '#form-register', function (e) {
+    $(document).on('submit', '#form-register', function () {
 
-
-            let full_name         = form.find('#full-name').val(),
-                email             = form.find('#email').val(),
-                pass              = form.find('#password').val(),
-                pass_confirm      = form.find('#confirm-password').val(),
-                checkbox          = form.find('input:checked').val();
+            let full_name         = form_register.find('#full-name').val(),
+                email             = form_register.find('#email').val(),
+                pass              = form_register.find('#password').val(),
+                pass_confirm      = form_register.find('#confirm-password').val(),
+                checkbox          = form_register.find('input:checked').val();
             //alert(error_email+' '+error_full_name+' '+error_password+' '+error_confirm_password+' '+error_terms)
 
         if(error_full_name === false || error_password === false || error_email === false || error_terms === false || error_confirm_password === false){
@@ -137,10 +136,8 @@ $(function () {
                 $('.check-agree').add('.check-agree a').addClass('text-danger');
             }
 
-
             return false;
         }else{
-
             return true;
         }
 

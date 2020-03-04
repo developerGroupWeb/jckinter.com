@@ -118,7 +118,7 @@
                                 </span>
 
                                     <button type="submit" class="btn btn-group col-6  btn-filled form-btn">
-                                        <span class="bh"></span> <span >Continue transfert <i class="fas fa-arrow-right"></i></span>
+                                        <span class="bh"></span> <span >Continue transfer <i class="fas fa-arrow-right"></i></span>
                                     </button>
                                 </div>
                             </div>

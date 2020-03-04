@@ -30,4 +30,18 @@ class User extends Model
 
         return $this->hasMany(OrderCurrency::class);
     }
+
+    /**
+     * @return HasMany
+     */
+    function user_receivers(){
+        return $this->hasMany(UserReceiver::class);
+    }
+
+    /**
+     * @return HasMany
+     */
+    function photo_receivers(){
+        return $this->hasMany(PhotoReceiver::class);
+    }
 }
