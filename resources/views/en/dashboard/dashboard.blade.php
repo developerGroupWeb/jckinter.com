@@ -203,7 +203,18 @@
             <div class="tab-pane fade col-12" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                 <h5>Send details</h5>
                 <div class="p-4 bg-white rounded border" style="height: 550px; overflow: auto;">
-                    ............
+                <div class="accordion" id="accordion">
+                        <div class="accordion-item" id="accordion-item-tempo"><!-------->
+                            <h5 class="collapsed text-danger" data-toggle="collapse" data-target="#faq-1" aria-expanded="true">
+                                Tranfert in process
+                            </h5>
+                            <div id="faq-1" class="collapse mt-4" data-parent="#accordion">
+                                <div class="acr-body">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque non nesciunt delectus labore repellat? Asperiores error voluptatibus libero quidem dolorum ipsum qui molestias quam. Porro numquam perferendis provident veniam iure?
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
