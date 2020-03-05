@@ -26,6 +26,7 @@
 
     {{-- Styles --}}
     <link rel="stylesheet" href="{{ asset('app/css/ajax-loader.css') }}"/>
+    
 
 
 
@@ -49,6 +50,7 @@
 
 
     @stack('head_script')
+    
 
 </body>
 </html>

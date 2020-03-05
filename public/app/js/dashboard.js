@@ -1,5 +1,6 @@
 $(function () {
 
+    
     $('#receiver-details').add('#payment-process').removeAttr('data-toggle');
     //$('#upload-btn').hide();
 
@@ -230,6 +231,7 @@ $(function () {
                 let name       = property.name;
                 let extension  = name.split('.').pop().toLocaleLowerCase();
                 let extensions = ['jpeg', 'png', 'jpg'];
+                alert(extensions);
 
                 if(jQuery.inArray(extension, extensions) === 2){
 
