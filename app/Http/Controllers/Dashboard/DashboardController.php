@@ -28,11 +28,14 @@ class DashboardController extends Controller
             $user->order_currencies()->create($fake_order);
         }
 
+        $user_receiver   = $user->user_receivers()->latest()->first();
         $photo_receiver  = $user->photo_receivers()->latest()->first();
         $order           = $user->order_currencies()->whereStatus(false)->first();
 
+
         return view(request()->segment(1).'.dashboard.dashboard',[
             'order' => $order,
+            'user_receiver' => $user_receiver,
             'photo_receiver' => $photo_receiver
         ]);
     }

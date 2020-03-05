@@ -19,14 +19,14 @@ class CreateUserReceiversTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
 
-            $table->string('name');
-            $table->string('surname');
-            $table->string('address');
-            $table->string('phone');
-            $table->integer('year');
-            $table->string('question');
-            $table->string('answer');
-            $table->string('photo');
+            $table->string('name')->nullable();
+            $table->string('surname')->nullable();
+            $table->string('address')->nullable();
+            $table->string('phone')->nullable();
+            $table->integer('year')->nullable();
+            $table->string('question')->nullable();
+            $table->string('answer')->nullable();
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }

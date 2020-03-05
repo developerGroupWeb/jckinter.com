@@ -2,27 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="043bef7a-9283-4162-9b2d-1b393dd53449" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/app/images/loading.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/app/js/dashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/select_navs.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CurrencyConverter/CurrencyConverterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CurrencyConverter/CurrencyConverterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/checkout/CheckoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/checkout/CheckoutController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/en/UserConnected.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/en/UserConnected.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/UserReceiverController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/UserReceiverController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/StoreLoginService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/StoreLoginService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboard.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_04_092831_create_user_receivers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_04_092831_create_user_receivers_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/app/js/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/en/dashboard/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/dashboard/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/home/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/home/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pile/scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pile/scripts.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -146,21 +133,21 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/app/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../json_in_php" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\jckinter.com\public\app\images" />
+      <recent name="C:\wamp\www\jckinter.com\app\Http\Middleware\en" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp\www\jckinter.com\database\migrations" />
       <recent name="C:\wamp\www\jckinter.com\database" />
       <recent name="C:\wamp\www\jckinter.com\resources\views\en" />
       <recent name="C:\wamp\www\jckinter.com\resources\views" />
       <recent name="C:\wamp\www\jckinter.com\resources\views\en\dashboard" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp\www\jckinter.com\public\app\images" />
-      <recent name="C:\wamp\www\jckinter.com\app\Http\Middleware\en" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -212,6 +199,7 @@
       <workItem from="1583222010598" duration="7965000" />
       <workItem from="1583269109851" duration="20143000" />
       <workItem from="1583309048523" duration="17634000" />
+      <workItem from="1583395944323" duration="10230000" />
     </task>
     <servers />
   </component>

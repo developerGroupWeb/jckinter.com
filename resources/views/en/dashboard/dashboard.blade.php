@@ -121,7 +121,7 @@
                             <div id="faq-2" class="collapse" data-parent="#accordion">
                                 <div class="acr-body">
 
-                                    <form method="post" action="{{ route('user.receiver') }}" enctype="multipart/form-data" id="form-receive-details" class="" data-picture="{{route('photo.receiver')}}">
+                                    <form method="post" action="{{ route('user.receiver.update') }}" enctype="multipart/form-data" id="form-receive-details" class="" data-picture="{{route('photo.receiver')}}">
                                         @csrf
                                         <div class="card mb-3">
                                             <div class="row no-gutters">
@@ -142,25 +142,25 @@
                                                         <div class="form-row">
                                                             <div class="form-group col-md-6">
                                                             <label for="r-name">Name</label>
-                                                            <input type="text" name="r-name" class="form-control" id="r-name">
+                                                            <input type="text" name="r-name" class="form-control" id="r-name" value="{{ (isset($user_receiver->name)? $user_receiver->name : '') }}">
                                                             </div>
                                                             <div class="form-group col-md-6">
                                                             <label for="r-surname">Surname</label>
-                                                            <input type="text" name="r-surname" class="form-control" id="r-surname">
+                                                            <input type="text" name="r-surname" class="form-control" id="r-surname" value="{{(isset($user_receiver->surname) ? $user_receiver->surname : '')}}">
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="r-address">Address</label>
-                                                            <input type="text" name="r-address" class="form-control" id="r-address">
+                                                            <input type="text" name="r-address" class="form-control" id="r-address" value="{{ (isset($user_receiver->address) ? $user_receiver->address : '') }}">
                                                         </div>
                                                         <div class="form-row">
                                                             <div class="form-group col-md-6">
                                                                 <label for="r-phone">Phone number</label>
-                                                                <input type="text" name="r-phone" class="form-control" id="r-phone">
+                                                                <input type="text" name="r-phone" class="form-control" id="r-phone" value="{{ (isset($user_receiver->phone) ? $user_receiver->phone : '') }}">
                                                             </div>
                                                             <div class="form-group col-md-6">
                                                             <label for="r-year">Year of birth</label>
-                                                            <input type="text" name="r-year" class="form-control" id="r-year">
+                                                            <input type="text" name="r-year" class="form-control" id="r-year" value="{{ (isset($user_receiver->year) ? $user_receiver->year : '') }}">
                                                             </div>
                                                         </div>
                                                         <div class="form-row">
@@ -168,16 +168,16 @@
                                                                 <label for="question">Secret question</label>
                                                                 <select id="question" name="question" class="form-control">
                                                                     <option value="">Choose a question</option>
-                                                                    <option value="1">...</option>
-                                                                    <option value="2">...</option>
-                                                                    <option value="3">...</option>
-                                                                    <option value="4">...</option>
-                                                                    <option value="5">...</option>
+                                                                    <option value="1" {{ ((isset($user_receiver->question) && 1 == $user_receiver->question) ? "selected='selected'" : '') }}>1</option>
+                                                                    <option value="2" {{ ((isset($user_receiver->question) && 2 == $user_receiver->question) ? "selected='selected'" : '') }}>2</option>
+                                                                    <option value="3" {{ ((isset($user_receiver->question) &&  $user_receiver->question == 3) ? "selected='selected'" : '') }}>3</option>
+                                                                    <option value="4" {{ ((isset($user_receiver->question) && 4 == $user_receiver->question) ? "selected='selected'" : '') }}>4</option>
+                                                                    <option value="5" {{ ((isset($user_receiver->question) && 5 == $user_receiver->question) ? "selected='selected'" : '') }}>5</option>
                                                                 </select>
                                                             </div>
                                                             <div class="form-group col-md-6">
                                                             <label for="q-answer">Your answer</label>
-                                                            <input type="text" name="q-answer" class="form-control" id="q-answer">
+                                                            <input type="text" name="q-answer" class="form-control" id="q-answer" value="{{ (isset($user_receiver->answer) ? $user_receiver->answer : '') }}">
                                                             </div>
                                                         </div>
                                                     </div>

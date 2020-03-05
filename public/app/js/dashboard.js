@@ -1,6 +1,6 @@
 $(function () {
 
-    
+
     $('#receiver-details').add('#payment-process').removeAttr('data-toggle');
     //$('#upload-btn').hide();
 
@@ -25,73 +25,83 @@ $(function () {
             r_phone     = form_receive_details.find('#r-phone').val(),
             r_year      = form_receive_details.find('#r-year').val(),
             r_question  = form_receive_details.find('#question').val(),
-            r_answer    = form_receive_details.find('#q-answer').val(),
             r_photo     = form_receive_details.find('#file').val();
 
             let last_photo  = form_receive_details.find('img').attr('src');
             let photo       = last_photo.split('/').pop();
 
-
-        const route     = form_receive_details.attr('action');
-
         if(r_name === '' ){
             borderColorMessage('#r-name');
+        }else{
+            error_name = true
         }
         if(r_surname === ''){
             borderColorMessage('#r-surname');
+        }else{
+            error_surname = true;
         }
         if(r_address === ''){
             borderColorMessage('#r-address');
+        }else{
+            error_address = true;
         }
         if(r_email === ''){
             borderColorMessage('#r-email');
         }
         if(r_phone === ''){
             borderColorMessage('#r-phone');
+        }else{
+            error_phone = true;
         }
         if(r_photo === '' && last_photo === ''){
             $('#r-photo').addClass('border-danger');
         }
         if( r_year === ''){
             borderColorMessage('#r-year');
+        }else{
+            error_year = true;
         }
         if(r_question === ''){
             borderColorMessage('#question');
+        }else{
+            error_question = true;
         }
         if(photo !== ''){
             error_photo = true;
         }
-
+        //alert(error_name+' '+error_surname+' '+error_address+' '+error_phone+' '+error_year+' '+error_question+' '+error_photo)
         if(error_name === false || error_surname === false || error_phone === false || error_question === false || error_year === false || error_photo === false || error_address === false){
 
             return false;
         }else{
 
-            //alert(r_phone+' '+r_address+' '+r_name+' '+photo);
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-            $.ajax({
-                url: route,
-                method: 'POST',
-                data: {r_name:r_name, r_surname:r_surname, r_address:r_address, r_year:r_year, r_question:r_question, r_answer:r_answer, r_phone:r_phone, photo:photo},
-                contentType: false,
-                cache: false,
-                processData: false,
-                async: true,
-                success: function (data) {
-
-                    console.log(data);
-                    $('#payment-process').attr('data-toggle', 'collapse').click();
-                }
-            });
-
+            $('#payment-process').attr('data-toggle', 'collapse').click();
             return false;
-
         }
+    };
+
+    const insertData = (method, data) => {
+
+        const token = $('meta[name="csrf-token"]').attr('content');
+        const url   = form_receive_details.attr('action');
+
+        fetch(
+            url,
+            {
+                headers: {
+                    "Content-Type":"application/json",
+                    "Accept":"application/json, text-plain, */*",
+                    "X-Requested-With":"XMLHttpRequest",
+                    "X-CSRF-TOKEN": token
+                },
+                method: method,
+                body: JSON.stringify(data),
+            }
+        ).then(data => {
+
+        }).catch(error => {
+            alert(error)
+        });
     };
 
     $(document).on('blur', '#r-name', function () {
@@ -110,6 +120,12 @@ $(function () {
             error_name = false;
         }else{
             removeBorderColorMessage(this);
+
+            const data = {
+                name:name
+            };
+
+            insertData('PUT', data);
             error_name = true;
         }
     });
@@ -130,6 +146,12 @@ $(function () {
             error_surname = false;
         }else{
             removeBorderColorMessage(this);
+
+            const data = {
+                surname:surname
+            };
+
+            insertData('PUT', data);
             error_surname = true;
         }
     });
@@ -137,22 +159,28 @@ $(function () {
 
     $(document).on('blur', '#r-phone', function () {
 
-        let string = form_receive_details.find(this).val();
+        let phone  = form_receive_details.find(this).val();
         let filter = /^[0-9 +]+$/;
         let number =  /^(\+)[0-9]{11,12}/;
 
-        if(string === ''){
+        if(phone === ''){
             borderColorMessage(this);
             error_phone = false;
         }else{
-            if(string.match(filter)){
+            if(phone.match(filter)){
 
-                if(!string.match(number)){
-                    alert(string)
+                if(!phone.match(number)){
+
                     borderColorMessage(this);
                     error_phone = false;
                 }else{
                     removeBorderColorMessage(this);
+
+                    const data = {
+                        phone:phone
+                    };
+
+                    insertData('PUT', data);
                     error_phone = true;
                 }
             }
@@ -175,23 +203,39 @@ $(function () {
             error_year = false;
         } else {
             removeBorderColorMessage(this);
+
+            const data = {
+                year:year
+            };
+
+            insertData('PUT', data);
             error_year = true;
         }
     });
 
 
     $(document).on('blur', '#r-address', function () {
-        let location = form_receive_details.find(this).val();
-        let filter = /^[a-zA-Z0-9 ,-]+$/;
+        let address = form_receive_details.find(this).val();
+        let filter  = /^[a-zA-Z0-9 ,-]+$/;
+        let integer = /^[0-9 +]+$/;
 
-        if(location === ''){
+        if(address === ''){
             borderColorMessage(this);
             error_address = false;
-        }else if(!location.match(filter)){
+        }else if(address.match(integer)){
+            borderColorMessage(this);
+            error_address = false;
+        } else if(!address.match(filter)){
             borderColorMessage(this);
             error_address = false;
         }else{
             removeBorderColorMessage(this);
+
+            const data = {
+                address:address
+            };
+
+            insertData('PUT', data);
             error_address = true;
         }
     });
@@ -204,8 +248,24 @@ $(function () {
             error_question = false;
         }else{
             removeBorderColorMessage(this);
+
+            const data = {
+                question:question
+            };
+
+            insertData('PUT', data);
             error_question = true;
         }
+    });
+
+    $(document).on('blur', '#q-answer', function () {
+
+        let answer = form_receive_details.find(this).val();
+        const data = {
+            answer:answer
+        };
+
+        insertData('PUT', data);
     });
 
 
@@ -231,9 +291,8 @@ $(function () {
                 let name       = property.name;
                 let extension  = name.split('.').pop().toLocaleLowerCase();
                 let extensions = ['jpeg', 'png', 'jpg'];
-                alert(extensions);
 
-                if(jQuery.inArray(extension, extensions) === 2){
+                if(jQuery.inArray(extension, extensions) >= 0){
 
                     let size = property.size;
 

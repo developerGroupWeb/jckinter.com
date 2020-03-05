@@ -29,9 +29,16 @@ class UserReceiverController extends Controller
             $file = explode('/', $file);
             $file = end($file);
 
-            $user->photo_receivers()->create([
-                'name' => $file
-            ]);
+
+            /*$update = $user->user_receivers()->update([
+                'photo' => $file
+            ]);*/
+            //if($update === 0){
+                $user->photo_receivers()->create([
+                    'name' => $file
+                ]);
+            //}
+
 
             return response()->json(['success' => true, 'file_name' => $file, 'status' => 200]);
 
@@ -40,6 +47,16 @@ class UserReceiverController extends Controller
 
     function user_receiver(Request $request){
 
-        dd($request->all());
+        if($request->ajax()){
+
+            $user = User::findOrFail(Session::get('currency_user')['id']);
+
+            $update = $user->user_receivers()->update($request->all());
+            if($update === 0){
+                $update = $user->user_receivers()->create($request->all());
+            }
+
+            return response()->json(['success' => true, 'status' => 200]);
+        }
     }
 }
