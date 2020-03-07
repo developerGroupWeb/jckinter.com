@@ -18,6 +18,7 @@
 
     {{-- Fonts --}}
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="icon" type="image/png" href="{{ asset('app/images/icons/favicon.ico') }}"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     {{-- Scripts --}}
@@ -26,7 +27,7 @@
 
     {{-- Styles --}}
     <link rel="stylesheet" href="{{ asset('app/css/ajax-loader.css') }}"/>
-    
+
 
 
 
@@ -50,7 +51,7 @@
 
 
     @stack('head_script')
-    
+
 
 </body>
 </html>

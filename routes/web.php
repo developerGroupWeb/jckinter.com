@@ -23,6 +23,11 @@ Route::prefix('en')->group(function (){
     /* Home routes */
     Route::get('/', 'Home\\HomeController@index')->name('home.index');
 
+    /*Contact routes*/
+
+    Route::get('contact', 'Contact\\ContactController@index')->name('contact.index');
+    Route::post('contact', 'Contact\\ContactController@store')->name('contact.store');
+
 
     Route::middleware(['user.connected'])->group(function (){
 
@@ -70,6 +75,7 @@ Route::prefix('en')->group(function (){
 
 
 });
+
 
 
 

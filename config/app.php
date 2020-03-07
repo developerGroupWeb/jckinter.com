@@ -179,6 +179,11 @@ return [
          * GeoIp
         */
         \Torann\GeoIP\GeoIPServiceProvider::class,
+
+        /*
+         * PDF
+         * */
+        Barryvdh\DomPDF\ServiceProvider::class,
     ],
 
     /*
@@ -234,6 +239,7 @@ return [
          * GeoIp
         */
         'GeoIP' => \Torann\GeoIP\Facades\GeoIP::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
 
     ],
 
