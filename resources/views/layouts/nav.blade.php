@@ -14,7 +14,7 @@
                     <a href="#">About</a>
                 </li>
 
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="{{route('contact.index')}}">Contact</a></li>
                 <li class="has-menu-child">
                     <a href="">English</a>
                     <ul class="sub-menu">

@@ -11,7 +11,11 @@
         <h2 class="text-center font-weight-bold"><a class="text-primary" href="#">JCK Transfert</a></h2>
       </div>
     </div>
-
+      @if(session()->has('error'))
+          <div class="row alert alert-danger" role="alert">
+              {{ session('error') }}
+          </div>
+      @endif
     <div class="row">
       <div class="col-lg-12 bg-white p-5 shadow rounded mx-3 mx-md-0">
         <div class="content-box">
@@ -20,22 +24,23 @@
 
 
 
-        <form method="post" action="" class="col-12 w-100" id="form-login" >
+        <form method="post" action="" class="col-12 w-100" id="form-forgot-password" >
 
             @csrf
 
           <div class="form-group row">
             <label>Email</label>
-            <input class="form-control form-control-lg" type="email" name="email" id="email" required value="{{old('email')}}">
-            <span class="text-danger error-email font-italic">{{ $errors->first("email") }}</span>
+            <input class="form-control form-control-lg @error('email') is-invalid @enderror" type="email" name="email" id="email"  value="{{old('email')}}">
+            <span class="invalid-feedback error-email">{{ $errors->first("email") }}</span>
           </div>
 
           <div class="row my-3">
-            <button class="btn btn-filled w-100 mx-auto"><span class="bh"></span> <span>Continuer</span></button>
+            <button class="btn btn-filled w-100 mx-auto" id="btn-login"><span class="bh"></span> <span>Continue</span></button>
+              <div id="content-ajax-loader" style="margin: 0 auto; position: relative"></div>
           </div>
 
           <div class="row">
-            <p class="mx-auto my-3">Do you have an account? <a href="{{ route('login.index') }}" class="ml-2"> Login Now</a></p>
+            <p class="mx-auto my-3">Do you have an account? <a href="{{ route('login.index') }}" class="ml-2 route-login"> Login Now</a></p>
           </div>
         </form>
       </div>
@@ -57,4 +62,5 @@
   </div>
 </div>
 
+    <script src="{{ asset('app/js/forgot-password.js') }}"></script>
 @stop

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Contact;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\ContactFormRequest;
+use App\Mail\ContactEmail;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -12,7 +14,7 @@ class ContactController extends Controller
        return view(request()->segment(1).'.contact.contact');
    }
 
-    function store(){
-
+    function store(ContactFormRequest $formRequest){
+       Mail::to('test@test.com')->send(new ContactEmail($formRequest));
     }
 }

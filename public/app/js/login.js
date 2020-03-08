@@ -66,9 +66,6 @@ $(function(){
                 route    = form_login.attr('action'),
                 redirect = '';
 
-        //const ajax = true;
-
-
         if(error_email === false || error_pass === false){
 
             if(email === ''){

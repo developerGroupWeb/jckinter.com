@@ -70,10 +70,22 @@ Route::prefix('en')->group(function (){
         Route::get('forgot-password', 'Auth\\ForgotPasswordController@index')->name('forgot.password.index');
         Route::post('forgot-password', 'Auth\\ForgotPasswordController@store')->name('forgot.password.store');
 
+        Route::get('reset-password/{id_confirmation}', 'Auth\\ResetPasswordController@index')->name('reset.password.index');
+        Route::post('reset-password', 'Auth\\ResetPasswordController@store')->name('reset.password.store');
+
 
     });
 
 
+});
+
+Route::get('email', function (){
+
+    \Illuminate\Support\Facades\Mail::raw('Bonjour', function ($message){
+        $message->subject('Email de test')->to('test@example.org');
+    });
+
+    return 'Ok! Le mail a ete envoye';
 });
 
 

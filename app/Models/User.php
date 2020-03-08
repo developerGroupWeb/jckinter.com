@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 
 class User extends Model
 {
@@ -15,13 +16,26 @@ class User extends Model
         'full_name',
         'email',
         'password',
-        'terms'
+        'terms',
+        'id_confirmation'
     ];
 
     protected $dates = [
         'created_at',
         'updated_at'
     ];
+
+
+    static function getUniqueCode()
+    {
+        $code = Str::random();
+
+        if(self::whereId_confirmation($code)->count()!= 0)
+        {
+            return self::getUniqueCode();
+        }
+        return $code;
+    }
 
 
     /**

@@ -3,28 +3,27 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Foundation\Auth\ResetsPasswords;
+use App\Http\Requests\storeResetPasswordFormRequest;
+use App\Mail\ResetPasswordEmail;
+use App\Models\User;
+use Illuminate\Support\Facades\Mail;
 
 class ResetPasswordController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Password Reset Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller is responsible for handling password reset requests
-    | and uses a simple trait to include this behavior. You're free to
-    | explore this trait and override any methods you wish to tweak.
-    |
-    */
 
-    use ResetsPasswords;
+    function index(){
 
-    /**
-     * Where to redirect users after resetting their password.
-     *
-     * @var string
-     */
-    protected $redirectTo = RouteServiceProvider::HOME;
+        return view(request()->segment(1).'.auth.reset-password');
+    }
+
+    function store(StoreResetPasswordFormRequest $formRequest){
+
+        dd($formRequest);
+    }
+
+    function send_email_reset_password(StoreResetPasswordFormRequest $formRequest){
+
+        $user = User::whereEmail($formRequest->email)->first();
+        Mail::to($formRequest->email)->send(new ResetPasswordEmail($user));
+    }
 }

@@ -28,27 +28,27 @@
 
           <div class="form-group row">
             <label>Email</label>
-            <input class="form-control form-control-lg" type="email" name="email" id="email" placeholder="example@gmail.com" required value="{{ old('email') }}">
-              <span class="text-danger error-email font-italic">{{ $errors->first("email") }}</span>
+            <input class="form-control form-control-lg @error('email') is-invalid @enderror" type="email" name="email" id="email" placeholder="example@gmail.com" required value="{{ old('email') }}">
+              <span class="invalid-feedback error-email">{{ $errors->first("email") }}</span>
           </div>
           <div class="form-group row">
             <label>Full Name</label>
-            <input class="form-control form-control-lg" type="text" name="full_name" placeholder="Full name" id="full-name" required value="{{ old('full_name') }}">
-              <span class="text-danger error-full-name font-italic">{{ $errors->first("full_name") }}</span>
+            <input class="form-control form-control-lg @error('full_name') is-invalid @enderror" type="text" name="full_name" placeholder="Full name" id="full-name" required value="{{ old('full_name') }}"/>
+              <span class="invalid-feedback error-full-name">{{ $errors->first("full_name") }}</span>
           </div>
           <div class="form-group row">
             <label>Password</label>
-            <input class="form-control form-control-lg" type="password" name="password" id="password" placeholder="Password" required>
-              <span class="text-danger error-password font-italic">{{ $errors->first("password") }}</span>
+            <input class="form-control form-control-lg @error('password') is-invalid @enderror" type="password" name="password" id="password"  placeholder="Password" required value="{{ old('password') }}"/>
+              <span class="invalid-feedback error-password">{{ $errors->first("password") }}</span>
           </div>
           <div class="form-group row">
             <label>Confirm password</label>
-            <input class="form-control form-control-lg" type="password" name="password_confirmation" id="confirm-password" placeholder="Confirm password" required>
-              <span class="text-danger error-confirm-password font-italic"></span>
+            <input class="form-control form-control-lg" type="password" name="password_confirmation" id="confirm-password"  placeholder="Confirm password" required value="{{ old('password_confirmation') }}"/>
+              <span class="invalid-feedback error-confirm-password"></span>
           </div>
           <div class="custom-control custom-checkbox row">
             <input type="checkbox" id="check-agree" name="terms" class="custom-control-input" {{ (old("terms")) ? "checked" : '' }}>
-            <label for="check-agree" class="custom-control-label check-agree">Agree with <a href="#" {{ $errors->first("terms") ? "class=text-danger" : "" }}>Terms and Conditions</a></label>
+            <label for="check-agree" class="custom-control-label check-agree @error('terms') is-invalid @enderror">Agree with <a href="#" {{ $errors->first("terms") ? "class=text-danger" : "" }}>Terms and Conditions</a></label>
           </div>
 
           <div class="row my-3">
@@ -75,8 +75,6 @@
   </div>
 </div>
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="{{ asset('app/js/register.js') }}"></script>
 
 

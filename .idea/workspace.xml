@@ -2,51 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="043bef7a-9283-4162-9b2d-1b393dd53449" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/en/contact/contact.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pdf/receipt.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/jackd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/jackd.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jckinter.com.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jckinter.com.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/images/avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/images/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/images/mac.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/js/forgot-password.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/js/reset-password.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/en/auth/reset-password.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Contact/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contact/ContactController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/251485.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/Download-Christmas-Gospel-Splash-Church-Flyer-Template.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/Glare_points_light_bright-Design_Theme_HD_Wallpaper_1366x768.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/abstract-blue-geometric-shapes-background_1035-17545.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/ani5/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/ani5/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/ani5/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/ani5/4 (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/ani5/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/ani5/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/ani5/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/ani5/online-payment.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/avatar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/bd-23790.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/bg-19744.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/bg-3302575.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/bghome.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/blogging-concept-illustration_114360-1038.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/colorful-triangle.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/flags/australia.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/flags/benin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/flags/canada.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/flags/france.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/flags/togo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/flags/togo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/flags/usa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/loading.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/logo-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/logojckinter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/images/mac.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/app/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/en/auth/dashboard.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/en/auth/forgotpassword.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/auth/forgotpassword.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/en/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/en/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/en/contact/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/contact/contact.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/en/dashboard/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/dashboard/dashboard.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navUser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navUser.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -175,7 +155,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1YHt8jL1ERVuxNH6QEthrBpqP9T" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
@@ -185,16 +165,16 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp\www\jckinter.com\public\app\js" />
-      <recent name="C:\wamp\www\jckinter.com\resources\views\en\home\contact" />
-      <recent name="C:\wamp\www\jckinter.com\public\app\fonts" />
-      <recent name="C:\wamp\www\jckinter.com\public\app\css" />
-      <recent name="C:\wamp\www\jckinter.com\public\app\images" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp\www\jckinter.com\public\app\images" />
       <recent name="C:\wamp\www\jckinter.com\app\Http\Middleware\en" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\jckinter.com\database\migrations" />
+      <recent name="C:\wamp\www\jckinter.com\database" />
+      <recent name="C:\wamp\www\jckinter.com\public\app\images" />
+      <recent name="C:\wamp\www\jckinter.com\public\app\js" />
+      <recent name="C:\wamp\www\jckinter.com\resources\views\en\home\contact" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -249,7 +229,10 @@
       <workItem from="1583395944323" duration="11118000" />
       <workItem from="1583486732319" duration="7772000" />
       <workItem from="1583572412656" duration="2105000" />
-      <workItem from="1583595513124" duration="2380000" />
+      <workItem from="1583595513124" duration="7869000" />
+      <workItem from="1583630814720" duration="21027000" />
+      <workItem from="1583675801534" duration="6950000" />
+      <workItem from="1583702003654" duration="4439000" />
     </task>
     <servers />
   </component>

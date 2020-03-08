@@ -28,19 +28,25 @@
               </div>
           @endif
 
+          @if(session()->has('success'))
+              <div class="row alert alert-info" role="alert">
+                 {!! session('success') !!}
+              </div>
+          @endif
+
         <form method="post" action="{{ route('login.store') }}" class="col-12 w-100" id="form-login" >
 
             @csrf
 
           <div class="form-group row">
             <label>Email</label>
-            <input class="form-control form-control-lg" type="email" name="email" id="email" required value="{{old('email')}}">
-            <span class="text-danger error-email font-italic">{{ $errors->first("email") }}</span>
+            <input class="form-control form-control-lg @error('email') is-invalid @enderror" type="email" name="email" id="email" required value="{{old('email')}}">
+            <span class="invalid-feedback error-email">{{ $errors->first("email") }}</span>
           </div>
           <div class="form-group row">
             <label>Password</label>
-            <input class="form-control form-control-lg" type="password" name="password" id="password" required value="{{old('password')}}">
-            <span class="text-danger error-password font-italic">{{ $errors->first("password") }}</span>
+            <input class="form-control form-control-lg @error('password') is-invalid @enderror" type="password" name="password" id="password" required value="{{old('password')}}">
+            <span class="invalid-feedback error-password">{{ $errors->first("password") }}</span>
           </div>
           <div class="custom-control custom-checkbox row">
             <input type="checkbox" name="remember" class="custom-control-input" id="check-remember">
@@ -80,7 +86,7 @@
   </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 <script src="{{ asset('app/js/login.js') }}"></script>
 
 
