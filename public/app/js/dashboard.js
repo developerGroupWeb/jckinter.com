@@ -1,19 +1,33 @@
 $(function () {
 
+    const date = new Date();
 
     $('#receiver-details').add('#payment-process').removeAttr('data-toggle');
-    //$('#upload-btn').hide();
 
-    let error_name = false, error_surname = false,  error_year = false, error_question = false, error_phone = false, error_photo = false, error_address = false;
+    let error_name = false, error_surname = false,  error_year = false, error_question = false, error_phone = false, error_photo = false,
+        error_address = false, error_subject = false, error_message = false;
 
     let form_receive_details  = $('#form-receive-details');
+    let form_help_contact = $('#user-contact-form');
 
-    const borderColorMessage = (id) => {
-        return $(id).css('border-color', 'red');
+    let alertMessage = (id, errorClass, text) => {
+        return $(id).next(errorClass).html(text).show('slow');
+    };
+
+    let deleteMessage = (errorClass) => {
+        return $(errorClass).hide();
+    };
+
+    let requiredMessage = (errorClass, text) => {
+        return $(errorClass).html(text).show('slow');
+    };
+
+    let borderColorMessage = (id) => {
+        return $(id).addClass('is-invalid');
     };
 
     const removeBorderColorMessage = (id) => {
-        return $(id).removeAttr('style');
+        return $(id).removeClass('is-invalid');
     };
 
     const receiverDetails = () => {
@@ -97,11 +111,14 @@ $(function () {
                 method: method,
                 body: JSON.stringify(data),
             }
-        ).then(data => {
+        ).then(data => data.json())
 
-        }).catch(error => {
+            .then(data => {
+                //code
+            }).catch(error => {
             alert(error)
         });
+
     };
 
     $(document).on('blur', '#r-name', function () {
@@ -111,15 +128,19 @@ $(function () {
 
         if(name === ''){
             borderColorMessage(this);
+            alertMessage(this, '.error-name', 'Type receiver name');
             error_name = false;
         }else if(!name.match(filter)){
             borderColorMessage(this);
+            alertMessage('#r-name', '.error-name', 'Her name is incorrect');
             error_name = false;
-        }else if(name.length < 3){
+        }else if(name.length < 2){
             borderColorMessage(this);
+            alertMessage('#r-name', '.error-name', 'Type at least 3 characters');
             error_name = false;
         }else{
             removeBorderColorMessage(this);
+            deleteMessage('.error-name');
 
             const data = {
                 name:name
@@ -137,15 +158,19 @@ $(function () {
 
         if(surname === ''){
             borderColorMessage(this);
+            alertMessage(this, '.error-surname', 'Type receiver surname');
             error_surname = false;
         }else if(!surname.match(filter)){
             borderColorMessage(this);
+            alertMessage(this, '.error-surname', 'Her surname is incorrect');
             error_surname = false;
-        }else if(surname.length < 3){
+        }else if(surname.length < 2){
             borderColorMessage(this);
+            alertMessage(this, '.error-surname', 'Type at least 3 characters');
             error_surname = false;
         }else{
             removeBorderColorMessage(this);
+            deleteMessage('.error-surname')
 
             const data = {
                 surname:surname
@@ -165,6 +190,7 @@ $(function () {
 
         if(phone === ''){
             borderColorMessage(this);
+            alertMessage(this, '.error-phone', 'Type receiver number phone');
             error_phone = false;
         }else{
             if(phone.match(filter)){
@@ -172,9 +198,11 @@ $(function () {
                 if(!phone.match(number)){
 
                     borderColorMessage(this);
+                    alertMessage(this, '.error-phone', 'Prefix must be +229 or +228');
                     error_phone = false;
                 }else{
                     removeBorderColorMessage(this);
+                    deleteMessage('.error-phone')
 
                     const data = {
                         phone:phone
@@ -191,18 +219,23 @@ $(function () {
     $(document).on('blur', '#r-year', function () {
         let year = form_receive_details.find(this).val();
         let filter = /^(19|20)[0-9]{2}/;
+        const age  = date.getUTCFullYear() - year;
 
         if(year === ''){
             borderColorMessage(this);
+            alertMessage(this, '.error-year', 'Type receiver year born');
             error_year = false;
         }else if(!year.match(filter)){
             borderColorMessage(this);
+            alertMessage(this, '.error-year', 'Year is incorrect, for example 1992');
             error_year = false;
-        }else if(year >= 2012){
+        }else if(age < 18){
             borderColorMessage(this);
+            alertMessage(this, '.error-year', 'receiver year born must be at least 18 years old');
             error_year = false;
         } else {
             removeBorderColorMessage(this);
+            deleteMessage('.error-year')
 
             const data = {
                 year:year
@@ -221,15 +254,19 @@ $(function () {
 
         if(address === ''){
             borderColorMessage(this);
+            alertMessage(this, '.error-address', 'Type receiver address');
             error_address = false;
         }else if(address.match(integer)){
             borderColorMessage(this);
+            alertMessage(this, '.error-address', 'Receiver address is incorrect');
             error_address = false;
         } else if(!address.match(filter)){
             borderColorMessage(this);
+            alertMessage(this, '.error-address', 'Receiver address is incorrect');
             error_address = false;
         }else{
             removeBorderColorMessage(this);
+            deleteMessage('.error-address');
 
             const data = {
                 address:address
@@ -245,9 +282,11 @@ $(function () {
 
         if(question === ''){
             borderColorMessage(this);
+            alertMessage(this, '.error-question', 'Select one question et type her answer');
             error_question = false;
         }else{
             removeBorderColorMessage(this);
+            deleteMessage('.error-question');
 
             const data = {
                 question:question
@@ -320,7 +359,7 @@ $(function () {
 
                                 if(data.status === 200){
 
-                                    $('img').attr('src', 'http://127.0.0.1/jckinter.com/storage/app/photo_receivers/'+ data.file_name);
+                                    $('img').attr('src', 'http://127.0.0.1/jckinter.com/storage/app/public/photo_receivers/'+ data.file_name);
                                     error_photo  = true;
                                 }else if(data.error){
 
@@ -358,6 +397,80 @@ $(function () {
             (receiverDetails());
         }
     });
+
+
+
+
+    $(document).on('blur', '#subject', function () {
+
+        let subject           = form_help_contact.find(this).val();
+
+        let filter  = /^[a-zA-Z0-9 ,-]+$/;
+        let integer = /^[0-9 +]+$/;
+
+        if(subject === ''){
+            borderColorMessage(this);
+            alertMessage(this, '.error-subject', 'Type subject help');
+            error_subject = false;
+        }else if(subject.match(integer)){
+            borderColorMessage(this);
+            alertMessage(this, '.error-subject', 'Subject is incorrect');
+            error_subject = false;
+        } else if(!subject.match(filter)){
+            borderColorMessage(this);
+            alertMessage(this, '.error-subject', 'Subject is incorrect');
+            error_subject = false;
+        }else{
+            removeBorderColorMessage(this);
+            deleteMessage('.error-subject');
+            error_subject = true;
+        }
+    });
+
+    $(document).on('blur', '#message', function () {
+
+        let message = form_help_contact.find(this).val();
+        if(message === ''){
+
+            borderColorMessage(this);
+            alertMessage(this, '.error-message', 'Type your message');
+            error_message = false;
+        }else{
+            removeBorderColorMessage(this);
+            deleteMessage('.error-message');
+            error_message = true;
+        }
+    });
+
+
+    $(document).on('submit', '#user-contact-form', function (e) {
+
+
+        let subject = form_help_contact.find('#subject').val();
+        let message = form_help_contact.find('#message').val();
+
+        if(error_subject === false || error_message === false){
+
+            if(subject === ''){
+                borderColorMessage('#subject');
+                alertMessage('#subject', '.error-subject', 'Type your subject');
+            }
+
+            if(message === ''){
+                borderColorMessage('#message');
+                alertMessage('#message', '.error-message', 'Type your message');
+            }
+
+            return false;
+        }else{
+            return  true;
+        }
+
+    });
+
+
+
+
 
 
 

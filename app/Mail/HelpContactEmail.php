@@ -7,21 +7,22 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class ResetPasswordEmail extends Mailable
+class HelpContactEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $user;
+    public $data, $user;
 
     /**
      * Create a new message instance.
      *
+     * @param $data
      * @param $user
      */
-    public function __construct($user)
+    public function __construct($data, $user)
     {
-        //dd($user);
-        $this->user = $user;
+        $this->data  = $data;
+        $this->user  = $user;
     }
 
     /**
@@ -31,6 +32,8 @@ class ResetPasswordEmail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.auth.reset-password');
+        return $this->from($this->user->email)
+                    ->subject($this->data->subject)
+                    ->markdown('emails.contact.help-contact');
     }
 }

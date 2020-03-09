@@ -3,7 +3,7 @@
 
 Click on the button to confirm your account
 
-@component('mail::button', route('login.index'))
+@component('mail::button', ['url' => route('register.confirm', ['id_confirmation' => $user->id_confirmation])])
 Confirm your account
 @endcomponent
 

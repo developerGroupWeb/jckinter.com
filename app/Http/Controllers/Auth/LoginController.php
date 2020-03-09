@@ -34,12 +34,13 @@ class LoginController extends Controller
 
         $error = StoreLoginService::authentic_user($formRequest);
 
+
         if($formRequest->ajax()){
 
             if(empty($error)){
-                return response()->json(['success', true], 200);
+                return response()->json(['success' => true, 'user' => Session::get('currency_user')['full_name']], 200);
             }
-            return response()->json($error);
+            return response()->json(['success' => false, 'message' => $error]);
         }
 
 

@@ -10,6 +10,8 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="nav nav-pills ml-auto" id="pills-tab" role="tablist">
                     <li class="nav-item">
@@ -39,6 +41,15 @@
                 </div>
             @endif
 
+            @if(session()->has('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
 
             <div class="tab-pane fade show active col-12" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                 <h5>Overview</h5>
@@ -133,7 +144,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="mx-3 border rounded" style="height: 300px;" id="r-photo"><img src="{{ 'http://127.0.0.1/jckinter.com/storage/app/photo_receivers/'.(isset($photo_receiver->name) ? $photo_receiver->name : '')}}" alt=""></div>
+                                                    <div class="mx-3 border rounded" style="height: 300px;" id="r-photo"><img src="{{ 'http://127.0.0.1/jckinter.com/storage/app/public/photo_receivers/'.(isset($photo_receiver->name) ? $photo_receiver->name : '')}}" alt=""></div>
                                                 </div>
 
 
@@ -143,24 +154,29 @@
                                                             <div class="form-group col-md-6">
                                                             <label for="r-name">Name</label>
                                                             <input type="text" name="r-name" class="form-control" id="r-name" value="{{ (isset($user_receiver->name)? $user_receiver->name : '') }}">
+                                                                <span class="invalid-feedback error-name"></span>
                                                             </div>
                                                             <div class="form-group col-md-6">
                                                             <label for="r-surname">Surname</label>
                                                             <input type="text" name="r-surname" class="form-control" id="r-surname" value="{{(isset($user_receiver->surname) ? $user_receiver->surname : '')}}">
+                                                                <span class="invalid-feedback error-surname"></span>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="r-address">Address</label>
                                                             <input type="text" name="r-address" class="form-control" id="r-address" value="{{ (isset($user_receiver->address) ? $user_receiver->address : '') }}">
+                                                            <span class="invalid-feedback error-address"></span>
                                                         </div>
                                                         <div class="form-row">
                                                             <div class="form-group col-md-6">
                                                                 <label for="r-phone">Phone number</label>
                                                                 <input type="text" name="r-phone" class="form-control" id="r-phone" value="{{ (isset($user_receiver->phone) ? $user_receiver->phone : '') }}">
+                                                                <span class="invalid-feedback error-phone"></span>
                                                             </div>
                                                             <div class="form-group col-md-6">
                                                             <label for="r-year">Year of birth</label>
                                                             <input type="text" name="r-year" class="form-control" id="r-year" value="{{ (isset($user_receiver->year) ? $user_receiver->year : '') }}">
+                                                                <span class="invalid-feedback error-year"></span>
                                                             </div>
                                                         </div>
                                                         <div class="form-row">
@@ -174,6 +190,7 @@
                                                                     <option value="4" {{ ((isset($user_receiver->question) && 4 == $user_receiver->question) ? "selected='selected'" : '') }}>4</option>
                                                                     <option value="5" {{ ((isset($user_receiver->question) && 5 == $user_receiver->question) ? "selected='selected'" : '') }}>5</option>
                                                                 </select>
+                                                                <span class="invalid-feedback error-question"></span>
                                                             </div>
                                                             <div class="form-group col-md-6">
                                                             <label for="q-answer">Your answer</label>
@@ -244,11 +261,19 @@
             <div class="tab-pane fade col-12" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                 <h5>Need help? Contact us!</h5>
                 <div class="p-4 bg-white rounded border" style="height: 550px; overflow: auto;">
-                    <form method="post" action="" id="user-contact-form" class="">
+                    <form method="post" action="{{ route('help.contact') }}" id="user-contact-form" class="">
                         @csrf
+
+                        <div class="form-group">
+                            <label for="name">Subject</label>
+                            <input type="text" name="subject" class="form-control @error('subject') is-invalid @enderror" id="subject" value="{{ old('subject') }}">
+                            <span class="invalid-feedback error-subject">{{ $errors->first('subject') }}</span>
+                        </div>
+
                         <div class="form-group">
                             <label for="message">Send us message</label>
-                            <textarea class="form-control" id="message" rows="5"></textarea>
+                            <textarea class="form-control @error('subject') is-invalid @enderror" name="message" id="message" rows="5"></textarea>
+                            <span class="invalid-feedback error-message">{{ $errors->first('message') }}</span>
                         </div>
 
                         <button class="btn btn-primary mt-4" id="submit">Send</button>

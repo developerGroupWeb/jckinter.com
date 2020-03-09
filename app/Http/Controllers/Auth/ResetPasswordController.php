@@ -4,26 +4,28 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\storeResetPasswordFormRequest;
-use App\Mail\ResetPasswordEmail;
 use App\Models\User;
-use Illuminate\Support\Facades\Mail;
+
 
 class ResetPasswordController extends Controller
 {
 
-    function index(){
+    function index($id_confirmation){
+
+        if(User::whereId_confirmation($id_confirmation)->count() === 0){
+            return redirect()->route('login.index')->with('danger', 'The link is invalid or has been already expired');
+        }
 
         return view(request()->segment(1).'.auth.reset-password');
     }
 
-    function store(StoreResetPasswordFormRequest $formRequest){
+    function store(StoreResetPasswordFormRequest $formRequest, $id_confirmation){
 
-        dd($formRequest);
+        User::whereId_confirmation($id_confirmation)->update([
+            'id_confirmation' => User::getUniqueCode(),
+            'password'        => sha1($formRequest->password)
+        ]);
+        return redirect()->route('login.index');
     }
 
-    function send_email_reset_password(StoreResetPasswordFormRequest $formRequest){
-
-        $user = User::whereEmail($formRequest->email)->first();
-        Mail::to($formRequest->email)->send(new ResetPasswordEmail($user));
-    }
 }

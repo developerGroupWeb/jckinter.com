@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ResetPasswordEmail;
 use App\Models\User;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\View\View;
 
@@ -36,6 +38,9 @@ class ForgotPasswordController extends Controller
             }
 
             session()->flash('success', "We send you an email to <strong> $request->email</strong> with a link to change your password");
+
+            $this->send_email_form_reset_password($request);
+
             return response()->json(['success' => true, 'status' => 200]);
         }
 
@@ -49,7 +54,16 @@ class ForgotPasswordController extends Controller
         }
 
         session()->flash('success', "We send you an email to <strong>{$request->email}</strong> with a link to change your password");
+
+        $this->send_email_form_reset_password($request);
+
         return redirect()->route('login.index');
 
+    }
+
+    protected function send_email_form_reset_password($request){
+
+        $user = User::whereEmail($request->email)->first();
+        Mail::to($request->email)->send(new ResetPasswordEmail($user));
     }
 }

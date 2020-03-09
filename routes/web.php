@@ -53,6 +53,9 @@ Route::prefix('en')->group(function (){
         Route::post('user_receiver', 'Dashboard\\UserReceiverController@user_receiver')->name('user.receiver.create');
         Route::put('user_receiver', 'Dashboard\\UserReceiverController@user_receiver')->name('user.receiver.update');
 
+        Route::get('help-contact', 'Dashboard\\HelpContactController@index')->name('help.contact.index');
+        Route::post('help-contact', 'Dashboard\\HelpContactController@store')->name('help.contact');
+
     });
 
 
@@ -66,12 +69,13 @@ Route::prefix('en')->group(function (){
 
         Route::get('register', 'Auth\\RegisterController@index')->name('register.index');
         Route::post('register', 'Auth\\RegisterController@store')->name('register.store');
+        Route::get('register/confirm/{id_confirmation}', 'Auth\\RegisterController@confirm')->name('register.confirm');
 
         Route::get('forgot-password', 'Auth\\ForgotPasswordController@index')->name('forgot.password.index');
         Route::post('forgot-password', 'Auth\\ForgotPasswordController@store')->name('forgot.password.store');
 
         Route::get('reset-password/{id_confirmation}', 'Auth\\ResetPasswordController@index')->name('reset.password.index');
-        Route::post('reset-password', 'Auth\\ResetPasswordController@store')->name('reset.password.store');
+        Route::post('reset-password/{id_confirmation}', 'Auth\\ResetPasswordController@store')->name('reset.password.store');
 
 
     });
@@ -79,14 +83,7 @@ Route::prefix('en')->group(function (){
 
 });
 
-Route::get('email', function (){
 
-    \Illuminate\Support\Facades\Mail::raw('Bonjour', function ($message){
-        $message->subject('Email de test')->to('test@example.org');
-    });
-
-    return 'Ok! Le mail a ete envoye';
-});
 
 
 

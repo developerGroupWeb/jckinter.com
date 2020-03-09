@@ -15,6 +15,14 @@ class ContactController extends Controller
    }
 
     function store(ContactFormRequest $formRequest){
-       Mail::to('test@test.com')->send(new ContactEmail($formRequest));
+
+       $this->send_contact_email($formRequest);
+       return redirect()->route('home.index')->with('success', 'Your message has been send');
+    }
+
+    protected function send_contact_email($formRequest)
+    {
+        Mail::to('jckinter@contact.com')
+            ->send(new ContactEmail($formRequest));
     }
 }

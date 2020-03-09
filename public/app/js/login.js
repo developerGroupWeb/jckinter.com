@@ -59,12 +59,53 @@ $(function(){
         }
     });
 
-    $(document).on('submit', '#form-login', function () {
+    const requestAjax = (method, data) => {
+
+        const redirect = form_login.attr('data-browse');
+        const token    = $('meta[name="csrf-token"]').attr('content');
+        const url      = form_login.attr('action');
+
+        fetch(
+            url,
+            {
+                headers: {
+                    "Content-Type":"application/json",
+                    "Accept":"application/json, text-plain, */*",
+                    "X-Requested-With":"XMLHttpRequest",
+                    "X-CSRF-TOKEN": token
+                },
+                method: method,
+                body: JSON.stringify(data),
+            }
+        ).then(data => data.json())
+
+            .then(data => {
+
+                if(data.success === true){
+                    window.location = redirect+'?'+data.user.toLocaleLowerCase();
+                }else if(data.success === false){
+
+                    if(data.message.password){
+                        form_login.find('.error-password').html(data.message.password).show();
+                    }else if(data.message.email){
+                        form_login.find('.error-email').html(data.message.email).show();
+                    }else{
+                        form_login.find('.error-email').html(data.message.confirm).show();
+                    }
+
+                }
+
+            }).catch(error => {
+               alert(error)
+        });
+
+    };
+
+    $(document).on('submit', '#form-login', function (e) {
+        e.preventDefault();
 
             let email    = form_login.find('#email').val(),
-                password = form_login.find('#password').val(),
-                route    = form_login.attr('action'),
-                redirect = '';
+                password = form_login.find('#password').val();
 
         if(error_email === false || error_pass === false){
 
@@ -78,10 +119,8 @@ $(function(){
             return false;
         }else{
 
-            //alert(email+' '+ pass);
             let checkbox = form_login.find('input:checked').val();
             let remember = ((checkbox)? 1 : 0);
-            let token = $('meta[name="csrf-token"]').attr('content');
 
             $('#content-ajax-loader').append('<div class="loader" id="loader"></div>');
             $('#btn-login').addClass('d-none');
@@ -91,33 +130,17 @@ $(function(){
                 $('#loader').remove();
                 $('#btn-login').removeClass('d-none');
 
-                //fetch(
-                //route,
-                    //{
-                    //headers: {
-                //"Content-Type":"application/json",
-                //"Accept":"application/json, text-plain, */*",
-                //"X-Requested-With":"XMLHttpRequest",
-                //"X-CSRF-TOKEN": token
-                    //},
-                    // method: "POST",
-                //body: JSON.stringify({
-                //email: email,
-                //password: password,
-                // remember: remember
-                    //}),
-                //}
-                //).then(data => {
-
-                //alert(data.error.success);
-                //}).catch(error => {
-                // alert(error)
-                // });*/
+                const data = {
+                  email:email,
+                  password:password,
+                  remember:remember
+                };
+                requestAjax('POST', data);
 
             }, 2000);
 
            // return  false;
-            return  true
+            return  false
         }
 
     });

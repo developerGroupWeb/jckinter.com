@@ -28,13 +28,19 @@
               </div>
           @endif
 
+          @if(session()->has('danger'))
+              <div class="row alert alert-danger" role="alert">
+                  {{ session('danger') }}
+              </div>
+          @endif
+
           @if(session()->has('success'))
               <div class="row alert alert-info" role="alert">
                  {!! session('success') !!}
               </div>
           @endif
 
-        <form method="post" action="{{ route('login.store') }}" class="col-12 w-100" id="form-login" >
+        <form method="post" action="{{ route('login.store') }}" class="col-12 w-100" id="form-login" data-browse="{{ route('dashboard.index') }}" >
 
             @csrf
 

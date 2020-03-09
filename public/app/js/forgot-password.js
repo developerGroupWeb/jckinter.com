@@ -26,10 +26,44 @@ $(function () {
 
     const requestAjax = (method) => {
 
-        const url      = form_forgot_password.attr('action');
-        const redirect = form_forgot_password.find('.route-login').attr('href');
 
-        $.ajaxSetup({
+        const redirect = form_forgot_password.find('.route-login').attr('href');
+        const token    = $('meta[name="csrf-token"]').attr('content');
+        const url      = form_forgot_password.attr('action');
+        let email = form_forgot_password.find('#email').val();
+
+        const data = {
+            email:email,
+        };
+
+        fetch(
+            url,
+            {
+                headers: {
+                    "Content-Type":"application/json",
+                    "Accept":"application/json, text-plain, */*",
+                    "X-Requested-With":"XMLHttpRequest",
+                    "X-CSRF-TOKEN": token
+                },
+                method: method,
+                body: JSON.stringify(data),
+            }
+        ).then(data => data.json())
+
+        .then(data => {
+
+            if(data.success === true){
+                window.location = redirect;
+            }else if(data.success === false){
+                form_forgot_password.find('.error-email').html(data.message).show();
+            }
+
+        }).catch(error => {
+            alert(error)
+        });
+
+
+        /*$.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
@@ -53,7 +87,7 @@ $(function () {
             error:function (xhr, testStatus, errorThrown) {
                 alert('Error : ' + errorThrown);
             }
-        });
+        });*/
     };
 
     const validateEmail = (id) => {
@@ -79,25 +113,7 @@ $(function () {
 
     $(document).on({
 
-        keyup: function () {
-
-            if(validateEmail('#email')) {
-
-                $('#content-ajax-loader').append('<div class="loader" id="loader"></div>');
-                $('#btn-login').addClass('d-none');
-
-                setTimeout(function () {
-
-                    $('#loader').remove();
-                    $('#btn-login').removeClass('d-none');
-
-                    requestAjax("POST");
-
-                }, 2000);
-            }
-        },
-        blur: function () {
-
+         blur: function () {
 
             if(validateEmail('#email')) {
 
