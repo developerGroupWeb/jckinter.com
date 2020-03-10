@@ -4,24 +4,9 @@
     <list default="true" id="043bef7a-9283-4162-9b2d-1b393dd53449" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/UserReceiverController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/UserReceiverController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/checkout/CheckoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/checkout/CheckoutController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/en/UserConnected.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/en/UserConnected.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/OrderCurrency.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/OrderCurrency.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/CurrencyConverterService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/CurrencyConverterService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_27_131240_create_order_currencies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_27_131240_create_order_currencies_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_27_135939_add_status_on_order_currencies_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_27_154707_add_payment_intent_id_on_order_currencies_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_27_154727_add_payment_created_at_on_order_currencies_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_01_053839_add_exchange_on_order_currencies_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_04_092831_create_user_receivers_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/en/dashboard/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/dashboard/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/home/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/home/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -229,7 +214,7 @@
       <workItem from="1583702003654" duration="4439000" />
       <workItem from="1583746086486" duration="32191000" />
       <workItem from="1583817762360" duration="9500000" />
-      <workItem from="1583846332733" duration="13622000" />
+      <workItem from="1583846332733" duration="16698000" />
     </task>
     <servers />
   </component>

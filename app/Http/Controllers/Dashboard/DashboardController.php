@@ -38,7 +38,8 @@ class DashboardController extends Controller
             }
         }
 
-        $order = $user->order_currencies()->whereStatus(false)->first();
+        $order        = $user->order_currencies()->whereStatus(false)->first();
+        $order_active = $user->order_currencies()->whereStatus(true)->get();
 
 
         if($order){
@@ -54,12 +55,14 @@ class DashboardController extends Controller
 
             return view(request()->segment(1).'.dashboard.dashboard',[
                 'order' => $order,
+                'order_active' => $order_active,
                 'client_secret' => $client_secret,
             ]);
         }
 
         return view(request()->segment(1).'.dashboard.dashboard',[
             'order' => $order,
+            'order_active' => $order_active,
         ]);
     }
 

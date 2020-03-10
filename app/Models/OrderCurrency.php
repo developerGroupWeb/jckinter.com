@@ -36,7 +36,8 @@ class OrderCurrency extends Model
 
     protected $dates = [
         'created_at',
-        'updated_at'
+        'updated_at',
+        'payment_created_at'
     ];
 
     static function getTrackOrder()

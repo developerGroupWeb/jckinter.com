@@ -250,7 +250,7 @@
 
                 <h5>Sending history</h5>
 
-                @if($order)
+                @foreach($order_active as $order)
 
                 <div class="p-4 bg-white rounded border" style="height: 550px; overflow: auto;">
                     <table class="table table-striped">
@@ -267,16 +267,17 @@
                         <tbody>
                             <tr>
                                 <th scope="row">{{ $order->track_order }}</th>
-                                <td>{{ $order->payment_created_at->format('m/d/Y') }}</td>
+                                <td>{{ $order->payment_created_at->format ('m/d/Y') }}</td>
                                 <td>{{$order->amount_send.' '.$order->devise_send}}</td>
                                 <td>{{ strtoupper($order->name).' '.$order->surname }}</td>
-                                <td><span class="text-success">successful</span><span class="text-danger">Failed</span></td>
+                                <td>{!! $order->processing ? '<span class="text-success">Done</span>' : '<span class="text-danger">Pending</span>' !!} </td>
                                 <td><button class="btn-primary px-2 rounded">Resend</button></td>
                             </tr>
 
                         </tbody>
                     </table>
                 </div>
+                @endforeach
             </div>
 
 

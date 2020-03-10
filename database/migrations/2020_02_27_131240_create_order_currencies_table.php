@@ -42,6 +42,7 @@ class CreateOrderCurrenciesTable extends Migration
             $table->string('question')->nullable();
             $table->string('answer')->nullable();
             $table->string('photo')->nullable();
+            $table->boolean('processing')->default(false);
             $table->timestamps();
         });
     }
