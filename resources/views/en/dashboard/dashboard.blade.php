@@ -20,9 +20,9 @@
                     <li class="nav-item">
                         <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Send details</a>
                     </li>
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
                         <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Help/Contact</a>
-                    </li>
+                    </li>-->
                 </ul>
 
                 <a href="{{ route('logout') }}" class="btn-dark rounded py-2 px-3 ml-auto"><span class="bh"></span> <span>Log out</span></a>
@@ -108,12 +108,12 @@
                                         <div class="col-lg-12">
                                             <div class="row">
                                                 <div class="mx-auto">
-                                                    <button class="btn-primary rounded py-2 px-3" data-toggle="collapse" data-target="#faq-2" id="first-btn-continue" aria-expanded="false">Continue</button>
+                                                    <button class="btn-primary rounded px-2" data-toggle="collapse" data-target="#faq-2" id="first-btn-continue" aria-expanded="false">Continue</button>
 
                                                     <form  method="post" action="{{ route('currencyconverter.destroy', ['currency_id' => $order->id]) }}" style="display: inline-block" onsubmit="return confirm('DO YOU REALLY WANT TO DELETE ? ')">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button class="btn-danger rounded py-2 px-3 ml-5">DELETE</button>
+                                                        <button class="btn-danger rounded px-2 ml-5">DELETE</button>
                                                     </form>
 
                                                 </div>
@@ -147,7 +147,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="mx-3 border rounded" style="height: 300px;" id="r-photo"><img src="{{ 'http://127.0.0.1/jckinter.com/storage/app/public/photo_receivers/'.(isset($photo_receiver->name) ? $photo_receiver->name : '')}}" alt="" class="img-fluid"></div>
+                                                    <div class="mx-3 border rounded" id="r-photo"><img src="{{ 'http://127.0.0.1/jckinter.com/storage/app/public/photo_receivers/'.(isset($photo_receiver->name) ? $photo_receiver->name : '')}}" alt="" class="img-fluid"></div>
                                                 </div>
 
 
@@ -206,7 +206,7 @@
                                         </div>
 
 
-                                    <button class="btn btn-primary" id="second-btn-continue">Continue</button>
+                                    <button class="btn-primary px-3" id="second-btn-continue">Continue</button>
                                     </form>
                                 </div>
                             </div>
@@ -243,25 +243,51 @@
 
 
             <div class="tab-pane fade col-12" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                <h5>Send details</h5>
+                <h5>Sending history</h5>
                 <div class="p-4 bg-white rounded border" style="height: 550px; overflow: auto;">
-                <div class="accordion" id="accordion">
-                        <div class="accordion-item" id="accordion-item-tempo"><!-------->
-                            <h5 class="collapsed text-danger" data-toggle="collapse" data-target="#faq-1" aria-expanded="true">
-                                Tranfert in process
-                            </h5>
-                            <div id="faq-1" class="collapse mt-4" data-parent="#accordion">
-                                <div class="acr-body">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque non nesciunt delectus labore repellat? Asperiores error voluptatibus libero quidem dolorum ipsum qui molestias quam. Porro numquam perferendis provident veniam iure?
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Receiver</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">000000</th>
+                                <td>10/03/2020</td>
+                                <td>200$</td>
+                                <td>Receiver name</td>
+                                <td><span class="text-success">successful</span><span class="text-danger">Failed</span></td>
+                                <td><button class="btn-primary px-2 rounded">Resend</button></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">000045</th>
+                                <td>10/01/2020</td>
+                                <td>500$</td>
+                                <td>Receiver name</td>
+                                <td><span class="text-success">successful</span><span class="text-danger"></span></td>
+                                <td><button class="btn-primary px-2 rounded">Resend</button></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">123456</th>
+                                <td>06/06/2020</td>
+                                <td>50$</td>
+                                <td>Receiver name</td>
+                                <td><span class="text-success"></span><span class="text-danger">Failed</span></td>
+                                <td><button class="btn-primary px-2 rounded">Resend</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
 
-            <div class="tab-pane fade col-12" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <!--<div class="tab-pane fade col-12" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                 <h5>Need help? Contact us!</h5>
                 <div class="p-4 bg-white rounded border" style="height: 550px; overflow: auto;">
                     <form method="post" action="{{ route('help.contact') }}" id="user-contact-form" class="">
@@ -283,12 +309,13 @@
 
                     </form>
                 </div>
-            </div>
+            </div>-->
         </div>
 
     </div>
 </div>
 
+<script src="https://js.stripe.com/v3/"></script>
 <script>
 
     var stripe = Stripe('pk_test_s36fs1t0WNrrilrEn8crHSQw00xMg9I8mk');

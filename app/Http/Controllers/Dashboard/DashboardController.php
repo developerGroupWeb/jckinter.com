@@ -9,13 +9,18 @@ use App\Models\User;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Session;
 use Illuminate\View\View;
+use Stripe\Exception\ApiErrorException;
+use Stripe\PaymentIntent;
+use Stripe\Stripe;
 
 class DashboardController extends Controller
 {
     /**
      * @return Factory|View
+     * @throws ApiErrorException
      */
     function index(){
 
@@ -33,10 +38,21 @@ class DashboardController extends Controller
         $order           = $user->order_currencies()->whereStatus(false)->first();
 
 
+
+        Stripe::setApiKey('sk_test_l8dRncid0zKE6ZLVkBYzHq8800xiQKkVLr');
+
+        $intent = PaymentIntent::create([
+            'amount' => $order->total * 100,
+            'currency' => strtolower($order->devise_send),
+        ]);
+
+        $client_secret = Arr::get($intent, 'client_secret');
+
         return view(request()->segment(1).'.dashboard.dashboard',[
             'order' => $order,
             'user_receiver' => $user_receiver,
-            'photo_receiver' => $photo_receiver
+            'photo_receiver' => $photo_receiver,
+            'client_secret' => $client_secret,
         ]);
     }
 

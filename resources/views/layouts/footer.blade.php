@@ -489,8 +489,6 @@
                             <li><a href="#">Facebook</a></li>
                             <li><a href="#">Twitter</a></li>
                             <li><a href="#">Linkedin</a></li>
-                            <li><a href="#">Youtube</a></li>
-                            <li><a href="#">Forum</a></li>
                         </ul>
                     </div>
                 </div>
@@ -524,12 +522,12 @@
                     <div class="widget foo-address">
                         <h5>Stay In Touch</h5>
                         <address>
-                            <a href="malto:ervice@email.com">ervice@email.com</a>
-                            <a href="tel:+12345678921">+123 4567 8921</a>
+                            <a href="malto:ervice@email.com">jckmarketinter@gmail.com</a>
+                            <a href="tel:+12345678921">+1 (319) 654 6076</a>
                         </address>
                         <address>
-                            Rokaz, Chok Bazar
-                            123 Newyork City
+                            147 Mango Drive,
+                            Hiawatha IA 52233
                             United State
                         </address>
                     </div>
@@ -551,7 +549,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="copyright">Copyright &copy; <a href="http://themeies.com">themeies</a> - 2019</div>
+                    <div class="copyright">Copyright &copy; <a href="">JCK Inter</a> - 2019</div>
                 </div>
             </div>
         </div>

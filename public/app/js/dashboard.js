@@ -186,7 +186,7 @@ $(function () {
 
         let phone  = form_receive_details.find(this).val();
         let filter = /^[0-9 +]+$/;
-        let number =  /^(\+)[0-9]{11,12}/;
+        let number =  /^((\+229)|(\+228))[0-9]{8,8}/;
 
         if(phone === ''){
             borderColorMessage(this);
