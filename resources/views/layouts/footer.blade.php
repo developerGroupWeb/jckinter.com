@@ -485,7 +485,7 @@
                     <div class="widget foo-nav">
                         <h5>Follow Us</h5>
                         <ul>
-                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Instagram</a></li>
                             <li><a href="#">Facebook</a></li>
                             <li><a href="#">Twitter</a></li>
                             <li><a href="#">Linkedin</a></li>
@@ -496,10 +496,7 @@
                     <div class="widget foo-nav">
                         <h5>Partners</h5>
                         <ul>
-                            <li><a href="#">Refer  A Frient</a></li>
-                            <li><a href="#">Affiliate Programs</a></li>
                             <li><a href="#">Payment API</a></li>
-                            <li><a href="#">Partner Directory</a></li>
                             <li><a href="#">Become A Partner</a></li>
                             <li><a href="#">Find Locations</a></li>
                         </ul>
@@ -509,7 +506,6 @@
                     <div class="widget foo-nav">
                         <h5>Services</h5>
                         <ul>
-                            <li><a href="#">Transfer Money</a></li>
                             <li><a href="#">Saving Account</a></li>
                             <li><a href="#">Online Shopping</a></li>
                             <li><a href="#">Pay Bills</a></li>

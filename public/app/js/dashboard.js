@@ -186,7 +186,7 @@ $(function () {
 
         let phone  = form_receive_details.find(this).val();
         let filter = /^[0-9 +]+$/;
-        let number =  /^((\+229)|(\+228))[0-9]{8,8}/;
+        let number =  /(^\+[0-9]{3}|^00[0-9]{3})([0-9]{8}$)/;
 
         if(phone === ''){
             borderColorMessage(this);
@@ -198,7 +198,7 @@ $(function () {
                 if(!phone.match(number)){
 
                     borderColorMessage(this);
-                    alertMessage(this, '.error-phone', 'Prefix must be +229 or +228');
+                    alertMessage(this, '.error-phone', 'Wrong number (prefix must be +229(00229) or +228)');
                     error_phone = false;
                 }else{
                     removeBorderColorMessage(this);
@@ -388,7 +388,7 @@ $(function () {
     });
 
 
-    $(document).on('click', '#transfer-in-process, #second-btn-continue, #last-btn-continue', function (e) {
+    $(document).on('click', '#transfer-in-process, #second-btn-continue', function (e) {
         e.preventDefault();
 
         if(this.id === 'transfer-in-process'){

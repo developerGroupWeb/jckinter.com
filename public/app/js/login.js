@@ -82,7 +82,7 @@ $(function(){
             .then(data => {
 
                 if(data.success === true){
-                    window.location = redirect+'?'+data.user.toLocaleLowerCase();
+                    window.location = redirect+'?'+(data.user).toLocaleLowerCase();
                 }else if(data.success === false){
 
                     if(data.message.password){

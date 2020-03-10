@@ -147,7 +147,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="mx-3 border rounded" id="r-photo"><img src="{{ 'http://127.0.0.1/jckinter.com/storage/app/public/photo_receivers/'.(isset($photo_receiver->name) ? $photo_receiver->name : '')}}" alt="" class="img-fluid"></div>
+                                                    <div class="mx-3 border rounded" id="r-photo"><img src="{{ 'http://127.0.0.1/jckinter.com/storage/app/public/photo_receivers/'.(isset($order->photo) ? $order->photo : '')}}" alt="" class="img-fluid"></div>
                                                 </div>
 
 
@@ -156,29 +156,29 @@
                                                         <div class="form-row">
                                                             <div class="form-group col-md-6">
                                                             <label for="r-name">Name</label>
-                                                            <input type="text" name="r-name" class="form-control" id="r-name" value="{{ (isset($user_receiver->name)? $user_receiver->name : '') }}">
+                                                            <input type="text" name="r-name" class="form-control" id="r-name" value="{{ (isset($order->name)? $order->name : '') }}">
                                                                 <span class="invalid-feedback error-name"></span>
                                                             </div>
                                                             <div class="form-group col-md-6">
                                                             <label for="r-surname">Surname</label>
-                                                            <input type="text" name="r-surname" class="form-control" id="r-surname" value="{{(isset($user_receiver->surname) ? $user_receiver->surname : '')}}">
+                                                            <input type="text" name="r-surname" class="form-control" id="r-surname" value="{{(isset($order->surname) ? $order->surname : '')}}">
                                                                 <span class="invalid-feedback error-surname"></span>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="r-address">Address</label>
-                                                            <input type="text" name="r-address" class="form-control" id="r-address" value="{{ (isset($user_receiver->address) ? $user_receiver->address : '') }}">
+                                                            <input type="text" name="r-address" class="form-control" id="r-address" value="{{ (isset($order->address) ? $order->address : '') }}">
                                                             <span class="invalid-feedback error-address"></span>
                                                         </div>
                                                         <div class="form-row">
                                                             <div class="form-group col-md-6">
                                                                 <label for="r-phone">Phone number</label>
-                                                                <input type="text" name="r-phone" class="form-control" id="r-phone" value="{{ (isset($user_receiver->phone) ? $user_receiver->phone : '') }}">
+                                                                <input type="text" name="r-phone" class="form-control" id="r-phone" value="{{ (isset($order->phone) ? $order->phone : '') }}">
                                                                 <span class="invalid-feedback error-phone"></span>
                                                             </div>
                                                             <div class="form-group col-md-6">
                                                             <label for="r-year">Year of birth</label>
-                                                            <input type="text" name="r-year" class="form-control" id="r-year" value="{{ (isset($user_receiver->year) ? $user_receiver->year : '') }}">
+                                                            <input type="text" name="r-year" class="form-control" id="r-year" value="{{ (isset($order->year) ? $order->year : '') }}">
                                                                 <span class="invalid-feedback error-year"></span>
                                                             </div>
                                                         </div>
@@ -187,17 +187,17 @@
                                                                 <label for="question">Secret question</label>
                                                                 <select id="question" name="question" class="form-control">
                                                                     <option value="">Choose a question</option>
-                                                                    <option value="1" {{ ((isset($user_receiver->question) && 1 == $user_receiver->question) ? "selected='selected'" : '') }}>1</option>
-                                                                    <option value="2" {{ ((isset($user_receiver->question) && 2 == $user_receiver->question) ? "selected='selected'" : '') }}>2</option>
-                                                                    <option value="3" {{ ((isset($user_receiver->question) &&  $user_receiver->question == 3) ? "selected='selected'" : '') }}>3</option>
-                                                                    <option value="4" {{ ((isset($user_receiver->question) && 4 == $user_receiver->question) ? "selected='selected'" : '') }}>4</option>
-                                                                    <option value="5" {{ ((isset($user_receiver->question) && 5 == $user_receiver->question) ? "selected='selected'" : '') }}>5</option>
+                                                                    <option value="1" {{ ((isset($order->question) && 1 == $order->question) ? "selected='selected'" : '') }}>1</option>
+                                                                    <option value="2" {{ ((isset($order->question) && 2 == $order->question) ? "selected='selected'" : '') }}>2</option>
+                                                                    <option value="3" {{ ((isset($order->question) &&  $order->question == 3) ? "selected='selected'" : '') }}>3</option>
+                                                                    <option value="4" {{ ((isset($order->question) && 4 == $order->question) ? "selected='selected'" : '') }}>4</option>
+                                                                    <option value="5" {{ ((isset($order->question) && 5 == $order->question) ? "selected='selected'" : '') }}>5</option>
                                                                 </select>
                                                                 <span class="invalid-feedback error-question"></span>
                                                             </div>
                                                             <div class="form-group col-md-6">
                                                             <label for="q-answer">Your answer</label>
-                                                            <input type="text" name="q-answer" class="form-control" id="q-answer" value="{{ (isset($user_receiver->answer) ? $user_receiver->answer : '') }}">
+                                                            <input type="text" name="q-answer" class="form-control" id="q-answer" value="{{ (isset($order->answer) ? $order->answer : '') }}">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -222,8 +222,12 @@
                             @if($order)
                             <div id="faq-3" class="collapse" data-parent="#accordion">
                                 <div class="acr-body">
-                                    <form method="post" action="" id="payment-form" class="my-5">
+                                    <form method="post" action="{{ route('checkout.update') }}" id="payment-form" class="my-5">
+
                                         @csrf
+
+                                        @method('PUT')
+
                                     <div id="card-element">
                                         <!-- Elements will create input elements here -->
                                     </div>
@@ -231,7 +235,7 @@
                                     <!-- We'll put the error messages in this element -->
                                     <div id="card-errors" role="alert"></div>
 
-                                    <button class="btn btn-primary mt-4" id="last-btn-continue"></button>
+                                    <button class="btn btn-primary mt-4" id="submit">Process to payment {{$order->total.' '.$order->devise_send}}</button>
                                     </form>
                                 </div>
                             </div>
@@ -241,9 +245,13 @@
                 </div>
             </div>
 
-
             <div class="tab-pane fade col-12" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+
                 <h5>Sending history</h5>
+
+                @if($order)
+
                 <div class="p-4 bg-white rounded border" style="height: 550px; overflow: auto;">
                     <table class="table table-striped">
                         <thead>
@@ -258,29 +266,14 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">000000</th>
-                                <td>10/03/2020</td>
-                                <td>200$</td>
-                                <td>Receiver name</td>
+                                <th scope="row">{{ $order->track_order }}</th>
+                                <td>{{ $order->payment_created_at->format('m/d/Y') }}</td>
+                                <td>{{$order->amount_send.' '.$order->devise_send}}</td>
+                                <td>{{ strtoupper($order->name).' '.$order->surname }}</td>
                                 <td><span class="text-success">successful</span><span class="text-danger">Failed</span></td>
                                 <td><button class="btn-primary px-2 rounded">Resend</button></td>
                             </tr>
-                            <tr>
-                                <th scope="row">000045</th>
-                                <td>10/01/2020</td>
-                                <td>500$</td>
-                                <td>Receiver name</td>
-                                <td><span class="text-success">successful</span><span class="text-danger"></span></td>
-                                <td><button class="btn-primary px-2 rounded">Resend</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">123456</th>
-                                <td>06/06/2020</td>
-                                <td>50$</td>
-                                <td>Receiver name</td>
-                                <td><span class="text-success"></span><span class="text-danger">Failed</span></td>
-                                <td><button class="btn-primary px-2 rounded">Resend</button></td>
-                            </tr>
+
                         </tbody>
                     </table>
                 </div>
@@ -338,33 +331,36 @@
 
     };
 
+    var form = document.getElementById('payment-form');
+    var submitButton = document.getElementById('submit');
+    const displayError = document.getElementById('card-errors');
+
     var card = elements.create("card", { style: style });
     card.mount("#card-element");
 
     card.addEventListener('change', ({error}) => {
-        const displayError = document.getElementById('card-errors');
+
         if (error) {
 
-            displayError.classList.add('alert', 'alert-warning');
             displayError.textContent = error.message;
+            submitButton.setAttribute('disabled', 'disabled');
 
         } else {
 
-            displayError.classList.remove('alert', 'alert-warning');
             displayError.textContent = '';
+            submitButton.removeAttribute('disabled');
         }
     });
 
 
-    var form = document.getElementById('payment-form');
-    var submitButton = document.getElementById('submit');
+
 
     form.addEventListener('submit', function(ev) {
         ev.preventDefault();
 
-        submitButton.removeAttribute('disabled');
+        //submitButton.removeAttribute('disabled');
 
-        stripe.confirmCardPayment("{{ $client_secret }}", {
+        stripe.confirmCardPayment("{{ $client_secret ?? '' }}", {
             payment_method: {
                 card: card,
             }
@@ -373,7 +369,8 @@
 
                 submitButton.setAttribute('disabled', 'disabled');
                 // Show error to your customer (e.g., insufficient funds)
-                console.log(result.error.message);
+                displayError.textContent = (result.error.message);
+
             } else {
 
                 submitButton.setAttribute('disabled', 'disabled');
@@ -395,7 +392,7 @@
                                 "X-Requested-With":"XMLHttpRequest",
                                 "X-CSRF-TOKEN": token
                             },
-                            method: "POST",
+                            method: "PUT",
                             body: JSON.stringify({
                                 paymentIntent: paymentIntent
                             }),
@@ -403,10 +400,11 @@
                     ).then(data => data.json())
                         .then(data => {
 
+                            //console.log(data);
                             window.location.href = redirect;
 
                     }).catch(error => {
-                        alert(error)
+                        console.log(error)
                     })
                 }
             }

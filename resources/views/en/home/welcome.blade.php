@@ -32,6 +32,15 @@
                         </div>
                     @endif
 
+                    @if(session()->has('replay'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>Sorry!</strong> {{session('replay')}}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
+
                     <form action="{{ route('currencyconverter.store') }}" method="post" id="currency-form-v2">
 
                         @csrf

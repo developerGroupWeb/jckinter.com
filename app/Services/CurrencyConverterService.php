@@ -4,6 +4,7 @@
 namespace App\Services;
 
 
+use App\Models\OrderCurrency;
 use Illuminate\Http\Request;
 
 class CurrencyConverterService
@@ -48,6 +49,7 @@ class CurrencyConverterService
         $total           = $amount_send + $fees;
 
         return [
+                  'track_order' => OrderCurrency::getTrackOrder(),
                   'amount_send'    => $amount_send,
                   'amount_receive' => $amount_receive,
                   'exchange'       => $exchange,

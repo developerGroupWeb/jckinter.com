@@ -42,7 +42,8 @@ Route::prefix('en')->group(function (){
 
 
         /* Checkout routes */
-        Route::resource('checkout', 'checkout\\CheckoutController');
+        Route::get('checkout', 'checkout\\CheckoutController@index')->name('checkout.index');
+        Route::put('checkout', 'checkout\\CheckoutController@update')->name('checkout.update');
 
 
         /* Dashboard*/

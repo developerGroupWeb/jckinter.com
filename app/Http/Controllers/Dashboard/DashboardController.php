@@ -29,30 +29,37 @@ class DashboardController extends Controller
         $user  = User::findOrFail($user_id);
 
         if(Session::has('fake_order') && isset(Session::get('fake_order')['amount_send'])){
+
             $fake_order  = Session::get('fake_order');
-            $user->order_currencies()->create($fake_order);
+
+            if($fake_order['exchange']){
+                $user->order_currencies()->create($fake_order);
+                session()->forget('fake_order');
+            }
         }
 
-        $user_receiver   = $user->user_receivers()->latest()->first();
-        $photo_receiver  = $user->photo_receivers()->latest()->first();
-        $order           = $user->order_currencies()->whereStatus(false)->first();
+        $order = $user->order_currencies()->whereStatus(false)->first();
 
 
+        if($order){
 
-        Stripe::setApiKey('sk_test_l8dRncid0zKE6ZLVkBYzHq8800xiQKkVLr');
+            Stripe::setApiKey('sk_test_l8dRncid0zKE6ZLVkBYzHq8800xiQKkVLr');
 
-        $intent = PaymentIntent::create([
-            'amount' => $order->total * 100,
-            'currency' => strtolower($order->devise_send),
-        ]);
+            $intent = PaymentIntent::create([
+                'amount' => $order->total * 100,
+                'currency' => strtolower($order->devise_send),
+            ]);
 
-        $client_secret = Arr::get($intent, 'client_secret');
+            $client_secret = Arr::get($intent, 'client_secret');
+
+            return view(request()->segment(1).'.dashboard.dashboard',[
+                'order' => $order,
+                'client_secret' => $client_secret,
+            ]);
+        }
 
         return view(request()->segment(1).'.dashboard.dashboard',[
             'order' => $order,
-            'user_receiver' => $user_receiver,
-            'photo_receiver' => $photo_receiver,
-            'client_secret' => $client_secret,
         ]);
     }
 
