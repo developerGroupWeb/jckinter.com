@@ -2,26 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="043bef7a-9283-4162-9b2d-1b393dd53449" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/app/js/send-email.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Contact/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contact/ContactController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/ContactEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/ContactEmail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/ResetPasswordEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/ResetPasswordEmail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/StoreLoginService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/StoreLoginService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/HelpContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/HelpContactController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/app/js/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/forgot-password.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/forgot-password.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/emails/auth/reset-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/auth/reset-password.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/emails/register/confirm-account.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/register/confirm-account.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/auth/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/en/dashboard/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/dashboard/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/home/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/home/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -227,7 +212,8 @@
       <workItem from="1583630814720" duration="21027000" />
       <workItem from="1583675801534" duration="6950000" />
       <workItem from="1583702003654" duration="4439000" />
-      <workItem from="1583746086486" duration="31720000" />
+      <workItem from="1583746086486" duration="32191000" />
+      <workItem from="1583817762360" duration="9500000" />
     </task>
     <servers />
   </component>

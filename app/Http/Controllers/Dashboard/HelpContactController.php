@@ -25,9 +25,18 @@ class HelpContactController extends Controller
 
         $user = User::findOrFail(Session::get('currency_user')['id']);
 
+        if($formRequest->ajax()){
+
+
+            ($this->send_help_contact_email($formRequest, $user));
+
+            return response()->json(['success' => true, 'message' => 'Your message has been send'], 200);
+        }
+
         ($this->send_help_contact_email($formRequest, $user));
 
         return back()->with('success', 'Your message has been send');
+
     }
 
     protected function send_help_contact_email($formRequest, $user)

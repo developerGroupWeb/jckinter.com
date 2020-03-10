@@ -401,6 +401,68 @@ $(function () {
 
 
 
+    const sendEmail = (method, data) => {
+
+        const token = $('meta[name="csrf-token"]').attr('content');
+        const url   = form_help_contact.attr('action');
+
+        fetch(
+            url,
+            {
+                headers: {
+                    "Content-Type":"application/json",
+                    "Accept":"application/json, text-plain, */*",
+                    "X-Requested-With":"XMLHttpRequest",
+                    "X-CSRF-TOKEN": token
+                },
+                method: method,
+                body: JSON.stringify(data),
+            }
+        ).then(data => data.json())
+
+            .then(data => {
+
+                if(data.success === true){
+                    $('#tooltip').append(
+                    '<div class="alert alert-success alert-dismissible fade show" role="alert">'+
+                        data.message +
+                        '<button type="button" class="close" data-dismiss="alert" aria-label="Close">'+
+                            '<span aria-hidden="true">&times;</span>'+
+                        '</button>'+
+                    '</div>'
+                    );
+
+                    setTimeout(function () {
+                        $('#tooltip').remove();
+                    }, 1500);
+
+                    location.reload();
+
+                }else{
+
+                    $('#tooltip').append(
+                        '<div class="alert alert-danger alert-dismissible fade show" role="alert">'+
+                         'Your message has not been send'+
+                        '<button type="button" class="close" data-dismiss="alert" aria-label="Close">'+
+                        '<span aria-hidden="true">&times;</span>'+
+                        '</button>'+
+                        '</div>'
+                    );
+
+                    setTimeout(function () {
+                        $('#tooltip').remove();
+                    }, 1500);
+
+                    location.reload();
+                }
+
+            }).catch(error => {
+            alert(error)
+        });
+
+    };
+
+
     $(document).on('blur', '#subject', function () {
 
         let subject           = form_help_contact.find(this).val();
@@ -444,7 +506,7 @@ $(function () {
 
 
     $(document).on('submit', '#user-contact-form', function (e) {
-
+        e.preventDefault();
 
         let subject = form_help_contact.find('#subject').val();
         let message = form_help_contact.find('#message').val();
@@ -463,7 +525,14 @@ $(function () {
 
             return false;
         }else{
-            return  true;
+
+            const data = {
+                subject:subject,
+                message:message
+            };
+            form_help_contact.find('#subject').add('#message').val('');
+            sendEmail('POST', data);
+            return  false;
         }
 
     });
