@@ -1781,10 +1781,10 @@ section {
  * Footer
  */
 .footer {
-  background-size: auto;
-  background-position: center top;
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
-  background-image: url("../images/footer-bg.png");
+  background-image: url("");
   background-color: #123d88;
   position: relative;
 }
