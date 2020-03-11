@@ -28,6 +28,10 @@ Route::prefix('en')->group(function (){
     Route::get('contact', 'Contact\\ContactController@index')->name('contact.index');
     Route::post('contact', 'Contact\\ContactController@store')->name('contact.store');
 
+    /* About us  routes*/
+
+    Route::get('about-us', 'AboutUs\\AboutUsController@index')->name('about.us.index');
+
 
     Route::middleware(['user.connected'])->group(function (){
 

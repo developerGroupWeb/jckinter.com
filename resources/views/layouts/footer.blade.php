@@ -37,7 +37,7 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-3 col-sm-6">
                     <div class="widget foo-address">
                         <h5>Stay In Touch</h5>
@@ -59,7 +59,7 @@
         <div class="container">
             <div class="row">
                 <div class="mx-auto">
-                    <div class="copyright">Copyright &copy; <a href="">JCK Inter</a> - 2019</div>
+                    <div class="copyright">Copyright &copy; <a href="">JCK Inter</a> - {{ date('Y') }}</div>
                 </div>
             </div>
         </div>

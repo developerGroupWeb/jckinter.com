@@ -222,6 +222,7 @@
                             @if($order)
                             <div id="faq-3" class="collapse" data-parent="#accordion">
                                 <div class="acr-body">
+
                                     <form method="post" action="{{ route('checkout.update') }}" id="payment-form" class="my-5">
 
                                         @csrf
@@ -233,9 +234,9 @@
                                     </div>
 
                                     <!-- We'll put the error messages in this element -->
-                                    <div id="card-errors" role="alert"></div>
+                                    <div id="card-errors" class="text-danger font-italic" role="alert"></div>
 
-                                    <button class="btn btn-primary mt-4" id="submit">Process to payment {{$order->total.' '.$order->devise_send}}</button>
+                                    <button class="btn btn-primary mt-4" id="submit">Pay {{$order->total.' '.$order->devise_send}}</button>
                                     </form>
                                 </div>
                             </div>
@@ -311,14 +312,15 @@
 
 <script src="https://js.stripe.com/v3/"></script>
 <script>
+    var key  = "'{{ $key }}'";
 
-    var stripe = Stripe('pk_test_s36fs1t0WNrrilrEn8crHSQw00xMg9I8mk');
+    var stripe = Stripe(key);
     var elements = stripe.elements();
 
     var style = {
         base: {
             color: "#32325d",
-            fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+            fontFamily: '"Raleway", Helvetica, sans-serif',
             fontSmoothing: "antialiased",
             fontSize: "16px",
             "::placeholder": {

@@ -2,11 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="043bef7a-9283-4162-9b2d-1b393dd53449" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/app/css/stripe.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/js/contact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/jackd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/jackd.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Contact/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contact/ContactController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/OrderCurrency.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/OrderCurrency.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_27_131240_create_order_currencies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_27_131240_create_order_currencies_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/aboutus/aboutus.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/aboutus/about-us.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/emails/contact/contact-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/contact/contact-form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/en/contact/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/contact/contact.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/en/dashboard/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/dashboard/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navUser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navUser.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +34,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -149,11 +160,11 @@
       <recent name="C:\wamp\www\jckinter.com\app\Http\Middleware\en" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\jckinter.com\public\app\css" />
+      <recent name="C:\wamp\www\jckinter.com\resources\views\en" />
       <recent name="C:\wamp\www\jckinter.com\database\migrations" />
       <recent name="C:\wamp\www\jckinter.com\database" />
       <recent name="C:\wamp\www\jckinter.com\public\app\images" />
-      <recent name="C:\wamp\www\jckinter.com\public\app\js" />
-      <recent name="C:\wamp\www\jckinter.com\resources\views\en\home\contact" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -215,6 +226,8 @@
       <workItem from="1583746086486" duration="32191000" />
       <workItem from="1583817762360" duration="9500000" />
       <workItem from="1583846332733" duration="16698000" />
+      <workItem from="1583907985707" duration="8160000" />
+      <workItem from="1583919005091" duration="7488000" />
     </task>
     <servers />
   </component>

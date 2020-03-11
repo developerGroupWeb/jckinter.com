@@ -11,7 +11,7 @@
                 <!--<li><a href="{{ route('currencyconverter.index') }}">Send Money</a></li>-->
 
                 <li class="">
-                    <a href="#">About us</a>
+                    <a href="{{ route('about.us.index') }}">About us</a>
                 </li>
 
                 <li><a href="{{route('contact.index')}}">Contact</a></li>

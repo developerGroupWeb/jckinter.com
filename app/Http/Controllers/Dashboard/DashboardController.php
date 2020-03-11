@@ -57,6 +57,7 @@ class DashboardController extends Controller
                 'order' => $order,
                 'order_active' => $order_active,
                 'client_secret' => $client_secret,
+                'key'  => 'sk_test_l8dRncid0zKE6ZLVkBYzHq8800xiQKkVLr'
             ]);
         }
 

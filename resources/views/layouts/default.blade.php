@@ -27,6 +27,7 @@
 
     {{-- Styles --}}
     <link rel="stylesheet" href="{{ asset('app/css/ajax-loader.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('app/css/stripe.css') }}"/>
 
 
 

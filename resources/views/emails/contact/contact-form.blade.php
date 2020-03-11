@@ -1,16 +1,13 @@
 @component('mail::message')
-# Bonjour
+# Hello,
 
-Vous avez redu un message de {{ $data->name }}
+You received a message from  {{ $data->name.' '.$data->surname }}
 
-Message
-
+<h3>Content</h3>
 {{ $data->message }}
 
-@component('mail::button', ['url' => route('home.index')])
-Home
-@endcomponent
+
 
 Thanks,<br>
-{{ config('app.name') }}
+{{ $data->name }}
 @endcomponent

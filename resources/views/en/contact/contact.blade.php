@@ -13,11 +13,14 @@
               <a href="https://wa.me/13196546076" class="video-btn"><i class="fab fa-whatsapp"></i></a>
               <span class="simple-txt">Chat with us in whatsapp</span>
             </div>
-          </div>        
+          </div>
         </div>
       </div>
     </section>
     <!-- Banner section end -->
+
+    <div id="tooltip" style=" margin: -22px 331px; position: absolute"></div>
+
 
     <!-- Contact section start -->
     <section class="contact">
@@ -38,21 +41,22 @@
                   <div class="col-sm-6 mb-4 mb-sm-0">
                     <label>Your name</label>
                     <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" value="{{ old('name') }}" placeholder="Name">
-                    <span class="invalid-feedback">{{ $errors->first('name') }}</span>
+                    <span class="invalid-feedback error-name">{{ $errors->first('name') }}</span>
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control" placeholder="Last name">
+                    <input type="text" name="last_name" class="form-control @error('last_name') is-invalid @enderror" id="last-name" placeholder="Last name">
+                      <span class="invalid-feedback error-last-name">{{ $errors->first('last_name') }}</span>
                   </div>
                 </div>
                 <div class="form-group">
                   <label>Email address</label>
                   <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email"  value="{{ old('email') }}" placeholder="Email">
-                    <span class="invalid-feedback">{{ $errors->first('email') }}</span>
+                    <span class="invalid-feedback error-email">{{ $errors->first('email') }}</span>
                 </div>
                 <div class="form-group">
                   <label>Write message</label>
-                  <textarea class="form-control @error('message') is-invalid @enderror" name="message" id="message" placeholder="Type here ..." required>{{ old('message') }}</textarea>
-                    <span class="invalid-feedback">{{ $errors->first('message') }}</span>
+                  <textarea class="form-control @error('message') is-invalid @enderror" name="message" id="message" placeholder="Type here ...">{{ old('message') }}</textarea>
+                    <span class="invalid-feedback error-message">{{ $errors->first('message') }}</span>
                 </div>
                 <button type="submit" class="btn btn-filled btn-round"><span class="bh"></span> <span>Send</span></button>
               </form>
@@ -181,7 +185,7 @@
         </div>
     </section>-->
 
-
+<script src="{{ asset('app/js/contact.js') }}"></script>
 
     @include('layouts.footer')
 
