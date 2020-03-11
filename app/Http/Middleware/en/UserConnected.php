@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware\en;
 
+use App\Models\OrderCurrency;
 use App\Models\User;
 use Closure;
 use Illuminate\Http\Request;
@@ -26,8 +27,9 @@ class UserConnected
 
             session()->put('fake_order', [
 
+                'track_order'    => OrderCurrency::getTrackOrder(),
                 'amount_send'    => $request->amount_send,
-                'amount_receive' => $request->amount_receive,
+                'amount_receive' => $request->amount_send * $request->exchange,
                 'exchange'       => $request->exchange,
                 'devise_send'    => $request->devise_send,
                 'devise_receive' => 'XOF',

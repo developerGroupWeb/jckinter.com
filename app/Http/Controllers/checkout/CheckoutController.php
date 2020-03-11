@@ -19,42 +19,13 @@ class CheckoutController extends Controller
      * Display a listing of the resource.
      *
      * @return void
-     * @throws ApiErrorException
      */
     public function index()
     {
-        $user_id = Session::get('currency_user')['id'];
-        $order   = OrderCurrency::whereUser_id($user_id)->whereStatus(false)->first();
-
-        //dd($order);
-        if(!$order){
-            return redirect()->route('currencyconverter.index');
-        }
-
-        Stripe::setApiKey('sk_test_l8dRncid0zKE6ZLVkBYzHq8800xiQKkVLr');
-
-        $intent = PaymentIntent::create([
-            'amount' => $order->total * 100,
-            'currency' => strtolower($order->devise_send),
-        ]);
-
-        $client_secret = Arr::get($intent, 'client_secret');
-
-        return view(request()->segment(1).'.checkout.index', [
-            'order' => $order,
-            'client_secret' => $client_secret,
-        ]);
+        return redirect()->route('dashboard.index', strtolower(Session::get('currency_user')['full_name']));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return void
-     */
-    public function create()
-    {
-        //
-    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -63,7 +34,7 @@ class CheckoutController extends Controller
      * @return void
      * @throws \Exception
      */
-    public function store(Request $request)
+    public function update(Request $request)
     {
         $data = $request->json()->all();
 
@@ -72,18 +43,11 @@ class CheckoutController extends Controller
             $user_id    = Session::get('currency_user')['id'];
             $fake_order =  Session::get('fake_order');
 
+
             $user   = User::findOrFail($user_id);
 
-            $user->order_currencies()->update([
+            $update = $user->order_currencies()->update([
 
-                'amount_send'    => $fake_order['amount_send'],
-                'amount_receive' => $fake_order['amount_receive'],
-                'exchange'       => $fake_order['exchange'],
-                'devise_send'    => $fake_order['devise_send'],
-                'devise_receive' => 'XOF',
-                'country'        => $fake_order['country'],
-                'fees'           => $fake_order['fees'],
-                'total'          => $fake_order['total'],
                 'payment_intent_id' => $data['paymentIntent']['id'],
                 'payment_created_at' => (new \DateTime())
                    ->setTimestamp($data['paymentIntent']['created'])
@@ -92,56 +56,14 @@ class CheckoutController extends Controller
                'status' => true
             ]);
 
+
             Session::flash('thanks', 'Your order has been successfully processed');
 
-            return response()->json(['success' => 'Payment intent succeeded']);
+            return response()->json(['success' => true, 'message' => 'Payment intent succeeded']);
         }else{
-            return response()->json(['error' => 'Payment intent not succeeded']);
+            return response()->json(['success' => false, 'message' => 'Payment intent not succeeded']);
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return void
-     */
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     * @return void
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param Request $request
-     * @param int $id
-     * @return void
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     * @return void
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

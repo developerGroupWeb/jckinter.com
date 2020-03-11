@@ -22,13 +22,34 @@ class OrderCurrency extends Model
         'amount_send',
         'total',
         'country',
-        'fees'
+        'fees',
+        'name',
+        'surname',
+        'address',
+        'phone',
+        'year',
+        'question',
+        'answer',
+        'photo',
+        'track_order'
     ];
 
     protected $dates = [
         'created_at',
-        'updated_at'
+        'updated_at',
+        'payment_created_at'
     ];
+
+    static function getTrackOrder()
+    {
+        $code = mt_rand(1000000,9999999);
+
+        if(self::whereTrack_order($code)->count()!= 0)
+        {
+            return self::getTrackOrder();
+        }
+        return $code;
+    }
 
     /**
      * @return BelongsTo

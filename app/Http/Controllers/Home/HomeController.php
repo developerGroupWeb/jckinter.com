@@ -7,6 +7,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
 use Illuminate\View\View;
 use App\Services\CurrencyConverterService;
 
