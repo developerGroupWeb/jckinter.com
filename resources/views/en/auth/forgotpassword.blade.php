@@ -8,7 +8,7 @@
     <div class="row">
       <div class="mx-auto mt-5 mb-4">
         <img src="" alt="">
-        <h2 class="text-center font-weight-bold"><a class="text-primary" href="#">JCK Transfert</a></h2>
+        <h2 class="text-center font-weight-bold"><a class="text-primary" href="{{ route('home.index') }}">JCK Transfert</a></h2>
       </div>
     </div>
       @if(session()->has('error'))

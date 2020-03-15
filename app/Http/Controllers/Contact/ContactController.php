@@ -29,7 +29,7 @@ class ContactController extends Controller
 
     protected function send_contact_email($formRequest)
     {
-        Mail::to('help@jckinter.com')
+        Mail::to('support@jckinter.com')
             ->send(new ContactEmail($formRequest));
     }
 }
