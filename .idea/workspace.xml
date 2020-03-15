@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="043bef7a-9283-4162-9b2d-1b393dd53449" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Contact/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Contact/ContactController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/auth/forgotpassword.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/auth/forgotpassword.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/auth/reset-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/auth/reset-password.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/select_navs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/select_navs.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="043bef7a-9283-4162-9b2d-1b393dd53449" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +212,7 @@
       <workItem from="1583907985707" duration="8160000" />
       <workItem from="1583919005091" duration="7488000" />
       <workItem from="1584187982737" duration="3063000" />
-      <workItem from="1584269781554" duration="1332000" />
+      <workItem from="1584269781554" duration="1356000" />
     </task>
     <servers />
   </component>
