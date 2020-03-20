@@ -1,6 +1,6 @@
 <style>
 .login-bg-custom{
-    background-image: url("{{ asset('app/images/bg-3302575.jpg') }}");
+    background-image: url("{{ asset('app/images/ani5/online-payment.png') }}");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
