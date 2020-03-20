@@ -1,4 +1,4 @@
-@extends('layouts.default', ['title' => 'Forgot password'])
+@extends('layouts.default', ['title' => 'reset password'])
 
 @section('content')
 
