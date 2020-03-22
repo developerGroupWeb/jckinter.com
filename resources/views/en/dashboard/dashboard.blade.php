@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="dashboard-bg-custom" style="height: 100vh;">
-    <div class="container shadow-lg bg-light" style="border: 30px solid #E5E5E5; border-radius: 25px; height: 100vh;">
+    <div class="container shadow-lg bg-light " style="border: 30px solid #E5E5E5; border-radius: 25px; height: 100vh;">
         <nav class="navbar navbar-expand-lg navbar-light bg-white row">
             <a class="navbar-brand" href="">Welcome, {{ session()->get('currency_user')['full_name'] }}</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
