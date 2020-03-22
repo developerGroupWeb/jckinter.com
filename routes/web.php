@@ -13,15 +13,11 @@
 
 
 
-Route::pattern('lang', 'en|fr');
+Route::pattern('language', 'en|fr');
 
-Route::get('jck-admin', function() {
-    return view('en.admin.jck-admin');
-});
+Route::redirect('/', '/en');
 
-Route::prefix('en')->group(function (){
-
-    App::setLocale(request()->segment(1));
+Route::group(['prefix' => '{language}'],function (){
 
 
     /* Home routes */
@@ -86,6 +82,20 @@ Route::prefix('en')->group(function (){
         Route::get('reset-password/{id_confirmation}', 'Auth\\ResetPasswordController@index')->name('reset.password.index');
         Route::post('reset-password/{id_confirmation}', 'Auth\\ResetPasswordController@store')->name('reset.password.store');
 
+
+    });
+
+
+
+    Route::group(['prefix' => 'jckinter-admin'], function (){
+
+        Route::get('/', 'Admin\\AdminController@index')->name('admin.index');
+        Route::get('users', 'Admin\\UserAdminController@index')->name('admin.users.index');
+        Route::get('create-user', 'Admin\\CreateUserAdminController@index')->name('admin.user.create.index');
+        Route::get('create-role-user', 'Admin\\CreateRoleUserAdminController@index')->name('admin.user.create.role.index');
+        Route::get('edit-user', 'Admin\\EditUserAdminController@index')->name('admin.user.edit.index');
+        Route::get('profile-user', 'Admin\\ProfileUserAdminController@index')->name('admin.profile.user.index');
+        Route::get('role-user', 'Admin\\RoleUserAdminController@index')->name('admin.role.user.index');
 
     });
 

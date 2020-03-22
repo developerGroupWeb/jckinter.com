@@ -21,29 +21,29 @@
                 <!-- Nav items -->
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="{{route('admin.index', ['language' => app()->getLocale()])}}">
                             <i class="ni ni-collection text-yellow"></i>
                             <span class="nav-link-text">Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="profile.html">
+                        <a class="nav-link" href="{{route('admin.profile.user.index', ['language' => app()->getLocale()])}}">
                             <i class="ni ni-collection text-yellow"></i>
                             <span class="nav-link-text">Profile</span>
                         </a>
-                        <a class="nav-link" href="role.html">
+                        <a class="nav-link" href="{{route('admin.role.user.index', ['language' => app()->getLocale()])}}">
                             <i class="ni ni-collection text-yellow"></i>
                             <span class="nav-link-text">Role Management</span>
                         </a>
-                        <a class="nav-link" href="users.html">
+                        <a class="nav-link" href="{{route('admin.users.index', ['language' => app()->getLocale()])}}">
                             <i class="ni ni-collection text-yellow"></i>
                             <span class="nav-link-text">User Management</span>
                         </a>
-                        <a class="nav-link" href="create-user.html">
+                        <a class="nav-link" href="{{route('admin.user.create.index', ['language' => app()->getLocale()])}}">
                             <i class="ni ni-collection text-yellow"></i>
                             <span class="nav-link-text">Create User</span>
                         </a>
-                        <a class="nav-link" href="create-role.html">
+                        <a class="nav-link" href="{{route('admin.user.create.role.index', ['language' => app()->getLocale()])}}">
                             <i class="ni ni-collection text-yellow"></i>
                             <span class="nav-link-text">Create Role</span>
                         </a>
@@ -52,7 +52,7 @@
                             <span class="nav-link-text">Orders</span>
                         </a>
 
-                        
+
                     </li>
                 </ul>
             </div>

@@ -1,9 +1,14 @@
 
-@if((!isset(session()->get('currency_user')['email']) || !isset(session()->get('currency_user')['password'])) && (request()->path() === 'en/login' || request()->path() === 'en/register' || request()->path() === 'en/forgot-password' || $title === 'reset password'))
 
+
+
+@if((!isset(session()->get('currency_user')['email']) || !isset(session()->get('currency_user')['password'])) && (request()->path() === app()->getLocale().'/login' || request()->path() === app()->getLocale().'/register' || request()->path() === app()->getLocale().'/forgot-password' || $title === 'reset password'))
+
+@elseif(in_array(request()->path(), [app()->getLocale().'/jckinter-admin', app()->getLocale().'/jckinter-admin/create-role-user', app()->getLocale().'/jckinter-admin/create-user', app()->getLocale().'/jckinter-admin/edit-user', app()->getLocale().'/jckinter-admin/profile-user', app()->getLocale().'/jckinter-admin/role-user', app()->getLocale().'/jckinter-admin/users']))
+    @include('layouts.admin-sidebar');
 @elseif((!isset(session()->get('currency_user')['email']) || !isset(session()->get('currency_user')['password'])))
     @include('layouts.nav');
-@elseif(request()->path() === 'en/dashboard')
+@elseif(request()->path() === app()->getLocale().'/dashboard')
 
 @else
     @include('layouts.navUser');

@@ -1,4 +1,4 @@
-@extends('layouts.default', ['title' => 'Login'])
+@extends('layouts.default', ['title' => 'profile user'])
 
 @section('content')
 
@@ -28,7 +28,7 @@
                         <i class="ni ni-zoom-split-in"></i>
                     </a>
                 </li>
-                
+
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="ni ni-bell-55"></i> <span>Notifications</span>
@@ -97,7 +97,7 @@
                                     </div>
                                 </div>
                             </a>
-                            
+
                         </div>
                         <!-- View all -->
                         <a href="#" class="dropdown-item text-center text-primary font-weight-bold py-3">View all</a>
@@ -385,7 +385,7 @@
             </ul>
         </div>
     </div>
-</nav>    
+</nav>
                 <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="background-image: url(../argon/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
     <!-- Mask -->
     <span class="mask bg-gradient-default opacity-8"></span>
@@ -398,7 +398,7 @@
                             </div>
         </div>
     </div>
-</div> 
+</div>
     <div class="container-fluid mt--6">
         <div class="row">
             <div class="col-xl-4 order-xl-2">
@@ -613,7 +613,7 @@
                             <input type="hidden" name="_token" value="jWuL0JHlytWb7KEd4iCZXfiH5FS1Rd3TQfLqjY7k">                            <input type="hidden" name="_method" value="put">
                             <h6 class="heading-small text-muted mb-4">User information</h6>
 
-                                                        
+
                             <div class="pl-lg-4">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-name">Name</label>
@@ -643,7 +643,7 @@
                             <input type="hidden" name="_token" value="jWuL0JHlytWb7KEd4iCZXfiH5FS1Rd3TQfLqjY7k">                            <input type="hidden" name="_method" value="put">
                             <h6 class="heading-small text-muted mb-4">Password</h6>
 
-                                                        
+
                             <div class="pl-lg-4">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-current-password">Current Password</label>

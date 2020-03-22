@@ -1,4 +1,4 @@
-@extends('layouts.default', ['title' => 'Login'])
+@extends('layouts.default', ['title' => 'role'])
 
 @section('content')
 
@@ -28,7 +28,7 @@
                         <i class="ni ni-zoom-split-in"></i>
                     </a>
                 </li>
-                
+
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="ni ni-bell-55"></i> <span>Notifications</span>
@@ -97,7 +97,7 @@
                                     </div>
                                 </div>
                             </a>
-                            
+
                         </div>
                         <!-- View all -->
                         <a href="#" class="dropdown-item text-center text-primary font-weight-bold py-3">View all</a>
@@ -385,7 +385,7 @@
             </ul>
         </div>
     </div>
-</nav>    
+</nav>
 
 
 <div class="header bg-primary pb-6">
@@ -402,7 +402,7 @@
                         </ol>
                     </nav>
                 </div>
-            </div> 
+            </div>
         </div>
     </div>
 </div>
@@ -424,7 +424,7 @@
                                 </div>
                                                     </div>
                     </div>
-                    
+
                     <div class="col-12 mt-2">
                     </div>
 
@@ -482,6 +482,6 @@
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
 </div>
 @stop
