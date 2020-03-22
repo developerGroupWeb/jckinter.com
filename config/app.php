@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', route('home.index')),
+    'url' => env('APP_URL', 'https://secure.jckinter.com'),
 
     'asset_url' => env('ASSET_URL', null),
 

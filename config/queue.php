@@ -43,7 +43,7 @@ return [
 
         'beanstalkd' => [
             'driver' => 'beanstalkd',
-            'host' => 'localhost',
+            'host' => 'https://secure.jckinter.com',
             'queue' => 'default',
             'retry_after' => 90,
             'block_for' => 0,

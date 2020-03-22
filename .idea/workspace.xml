@@ -3,9 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="043bef7a-9283-4162-9b2d-1b393dd53449" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/cache.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/cache.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/queue.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/queue.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -138,21 +142,21 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../dating/jckinter.com" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp\www\jckinter.com\public\app\images" />
-      <recent name="C:\wamp\www\jckinter.com\app\Http\Middleware\en" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\jckinter.com\cache" />
       <recent name="C:\wamp\www\jckinter.com\database\migrations" />
       <recent name="C:\wamp\www\jckinter.com\database" />
       <recent name="C:\wamp\www\jckinter.com\public\app\css" />
       <recent name="C:\wamp\www\jckinter.com\resources\views\en" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp\www\jckinter.com\public\app\images" />
+      <recent name="C:\wamp\www\jckinter.com\app\Http\Middleware\en" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -218,7 +222,21 @@
       <workItem from="1583919005091" duration="7488000" />
       <workItem from="1584187982737" duration="3063000" />
       <workItem from="1584269781554" duration="1356000" />
-      <workItem from="1584285959414" duration="1999000" />
+      <workItem from="1584285959414" duration="3672000" />
+      <workItem from="1584291885739" duration="113000" />
+      <workItem from="1584449113549" duration="991000" />
+      <workItem from="1584453405553" duration="645000" />
+      <workItem from="1584516076120" duration="2868000" />
+      <workItem from="1584538470872" duration="2525000" />
+      <workItem from="1584546415656" duration="568000" />
+      <workItem from="1584602190809" duration="893000" />
+      <workItem from="1584603275582" duration="480000" />
+      <workItem from="1584721718744" duration="21000" />
+      <workItem from="1584721864246" duration="17000" />
+      <workItem from="1584737166288" duration="661000" />
+      <workItem from="1584751376604" duration="18000" />
+      <workItem from="1584808029578" duration="501000" />
+      <workItem from="1584877606076" duration="1758000" />
     </task>
     <servers />
   </component>
