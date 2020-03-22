@@ -2,7 +2,6 @@
 
     
     <script src="{{ asset('app/js/jquery-3.3.1.min.js') }}"></script>
-    <script src="{{ asset('app/js/bootstrap.min.js') }}"></script>
 
     <script src="{{ asset('app/js/jquery-ui.min.js') }}"></script>
     <script src="{{ asset('app/js/owl.carousel.min.js') }}"></script>
