@@ -1,10 +1,10 @@
 <!-- Header start -->
-<header class="header04">
+<header class="header">
     <div class="container d-flex align-items-center">
         <a class="logo" href="{{route('home.index')}}">
             <img src="{{ asset('app/images/logo.png') }}" alt="">
         </a>
-        <nav class="primary-menu m-auto">
+        <nav class="primary-menu text-md-right">
             <a id="mobile-menu-toggler" href="#"><i class="fas fa-bars"></i></a>
             <ul>
                 <li class="current-menu-item"><a href="{{route('home.index')}}">Home</a></li>
@@ -22,11 +22,12 @@
 
                     </ul>
                 </li>
+
+                <li><a href="{{route('register.index')}}" class="login btn btn-outline btn-round"><span class="bh"></span> <span>Register</span></a></li>
+                <li><a href="{{route('login.index')}}" class="login btn btn-outline btn-round"><span class="bh"></span> <span>Log in</span></a></li>
                 <!-- <li></li> -->
             </ul>
-        </nav>
-        <a href="{{route('register.index')}}" class="login btn btn-outline btn-round p-3"><span class="bh"></span> <span>Register</span></a>
-        <a href="{{route('login.index')}}" class="login btn btn-default btn-round ml-3 p-3"><span class="bh"></span> <span>Log in</span></a>
+        </nav>    
     </div>
 </header>
 <!-- Header end -->

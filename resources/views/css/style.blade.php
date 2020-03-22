@@ -188,7 +188,7 @@ section {
 }
 
 .btn-default {
-  background-color: #256be6;
+  background-color: #d10936;
   border-radius: 50px;
   color: #fff;
   -webkit-transition: all .5s;
@@ -226,7 +226,7 @@ section {
 
 .btn span.bh {
   background: #fff;
-  border: 10px solid #ffffff8f;
+  border: 10px solid #f13963;
   border-radius: 50%;
   display: block;
   height: 0;
@@ -276,7 +276,7 @@ section {
 }
 
 .tagline {
-  color: #256be6;
+  color: #ec5564;
   display: block;
   font-size: 14px;
   font-weight: 500;
@@ -851,12 +851,12 @@ section {
   -webkit-transition: all .5s;
   -o-transition: all .5s;
   transition: all .5s;
-  background-color: #123d88;
+  background-color: #ec5564;
 }
 
 .header.fixed-header, .fixed-header.header02, .fixed-header.header03, .fixed-header.header04 {
   position: fixed;
-  background: #123d88;
+  background: #ec5564;
 }
 
 .header .container, .header02 .container, .header03 .container, .header04 .container {
@@ -875,7 +875,7 @@ section {
 
 @media screen and (max-width: 991px) {
   .header .primary-menu ul, .header02 .primary-menu ul, .header03 .primary-menu ul, .header04 .primary-menu ul {
-    background-color: #256be6;
+    background-color: #d71e48;
     display: none;
     text-align: left;
     width: 100%;
@@ -971,7 +971,7 @@ section {
   width: 7px;
   height: 1px;
   border-radius: 50%;
-  background: #123d88;
+  background: #f0315c;
   display: block;
   position: absolute;
   left: 10px;
@@ -1329,8 +1329,8 @@ section {
   position: absolute;
   top: 0;
   left: 0;
-  background: #004bc8;
-  opacity: .7;
+  background: #dc354596;
+  
 }
 
 .banner.v2 {
@@ -1785,7 +1785,7 @@ section {
   background-position: center center;
   background-repeat: no-repeat;
   background-image: url("");
-  background-color: #123d88;
+  background-color: #212529;
   position: relative;
 }
 
@@ -2225,7 +2225,7 @@ section {
 }
 
 .currency-form-v2 .form-field .btn {
-  background-color: #007bff;
+  background-color: #f13963;
   margin: 0;
   min-width: auto;
   padding: 15px 15px;
@@ -2920,8 +2920,8 @@ section {
 }
 
 .faq-tab .nav a.active {
-  background-color: #256be6;
-  border-color: #256be6;
+  background-color: #d10936;
+  border-color: #d10936;
   color: #fff;
 }
 
@@ -3196,7 +3196,7 @@ section {
 }
 
 .cmn-tab-nav li a.active {
-  background-color: #256be6;
+  background-color: #f0315c;
   color: #fff;
 }
 
@@ -3561,7 +3561,7 @@ section {
 }
 
 .contact-info-wrap {
-  background-color: #256be6;
+  background-color: #f0315c;
   font-size: 15px;
   padding: 100px 40px;
 }

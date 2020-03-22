@@ -15,6 +15,10 @@
 
 Route::pattern('lang', 'en|fr');
 
+Route::get('jck-admin', function() {
+    return view('en.admin.jck-admin');
+});
+
 Route::prefix('en')->group(function (){
 
     App::setLocale(request()->segment(1));
