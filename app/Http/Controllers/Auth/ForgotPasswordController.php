@@ -57,7 +57,7 @@ class ForgotPasswordController extends Controller
 
         $this->send_email_form_reset_password($request);
 
-        return redirect()->route('login.index');
+        return redirect()->route('login.index', app()->getLocale());
 
     }
 

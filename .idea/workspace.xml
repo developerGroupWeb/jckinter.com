@@ -3,18 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="043bef7a-9283-4162-9b2d-1b393dd53449" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/create-role.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/create-role.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/create-user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/create-user.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/edit-user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/edit-user.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/jck-admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/jck-admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/role.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/role.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/users.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin-sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin-sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/select_navs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/select_navs.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -241,7 +231,17 @@
       <workItem from="1584737166288" duration="661000" />
       <workItem from="1584751376604" duration="18000" />
       <workItem from="1584808029578" duration="501000" />
-      <workItem from="1584877606076" duration="6508000" />
+      <workItem from="1584877606076" duration="6644000" />
+      <workItem from="1584891370063" duration="231000" />
+      <workItem from="1584962787846" duration="38000" />
+      <workItem from="1584965620092" duration="2491000" />
+      <workItem from="1584972871660" duration="39000" />
+      <workItem from="1584979615301" duration="45000" />
+      <workItem from="1584982135485" duration="2122000" />
+      <workItem from="1584985136857" duration="60000" />
+      <workItem from="1584985744699" duration="803000" />
+      <workItem from="1585038448321" duration="7475000" />
+      <workItem from="1585068656866" duration="2780000" />
     </task>
     <servers />
   </component>
