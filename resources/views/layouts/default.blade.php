@@ -1,6 +1,6 @@
 @include('pile.scripts')
-@include('pile.scripts_links')
 @include('pile.styles')
+
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">

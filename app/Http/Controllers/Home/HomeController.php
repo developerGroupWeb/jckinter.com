@@ -21,7 +21,7 @@ class HomeController extends Controller
 
         $default_currency = CurrencyConverterService::get_default_currency($request);
 
-        return view(request()->segment(1).'.home.welcome',[
+        return view(app()->getLocale().'.home.welcome',[
             'default_currency' => $default_currency
         ]);
     }

@@ -35,24 +35,26 @@
                             <i class="ni ni-collection text-yellow"></i>
                             <span class="nav-link-text">Role Management</span>
                         </a>
-                        <a class="nav-link" href="{{route('admin.users.index', ['language' => app()->getLocale()])}}">
-                            <i class="ni ni-collection text-yellow"></i>
-                            <span class="nav-link-text">User Management</span>
-                        </a>
-                        <a class="nav-link" href="{{route('admin.user.create.index', ['language' => app()->getLocale()])}}">
-                            <i class="ni ni-collection text-yellow"></i>
-                            <span class="nav-link-text">Create User</span>
-                        </a>
                         <a class="nav-link" href="{{route('admin.user.create.role.index', ['language' => app()->getLocale()])}}">
                             <i class="ni ni-collection text-yellow"></i>
                             <span class="nav-link-text">Create Role</span>
                         </a>
+                        <a class="nav-link" href="{{route('admin.users.index', ['language' => app()->getLocale()])}}">
+                            <i class="ni ni-collection text-yellow"></i>
+                            <span class="nav-link-text">Managers Management</span>
+                        </a>
+                        <a class="nav-link" href="{{route('admin.user.create.index', ['language' => app()->getLocale()])}}">
+                            <i class="ni ni-collection text-yellow"></i>
+                            <span class="nav-link-text">Create Manager</span>
+                        </a>
                         <a class="nav-link" href="">
                             <i class="ni ni-collection text-yellow"></i>
-                            <span class="nav-link-text">Orders</span>
+                            <span class="nav-link-text">Orders List</span>
                         </a>
-
-
+                        <a class="nav-link" href="">
+                            <i class="ni ni-collection text-yellow"></i>
+                            <span class="nav-link-text">Messages</span>
+                        </a>
                     </li>
                 </ul>
             </div>
