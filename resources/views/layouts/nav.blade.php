@@ -28,6 +28,15 @@
                             </ul>
                     </li>
 
+                @elseif(isset($id) && !empty($id))
+                    <li class="has-menu-child mr-md-3">
+                        <a href="{{route(Route::currentRouteName(), ['language' => app()->getLocale(), 'user' => $id])}}"> {{ (app()->getLocale() === 'fr') ? 'French' : 'English' }}</a>
+
+                        <ul>
+                            <li><a href="{{ route(Route::currentRouteName(), ['language' => 'fr',  'user' => $id]) }}">French</a></li>
+                            <li><a href="{{ route(Route::currentRouteName(), ['language' => 'en','user' => $id]) }}">English</a></li>
+                        </ul>
+                    </li>
                 @else
                     <li class="has-menu-child mr-md-3">
                         <a href="{{route(Route::currentRouteName(), ['language' => app()->getLocale()])}}">{{ (app()->getLocale() === 'fr') ?'French' : 'English' }}</a>

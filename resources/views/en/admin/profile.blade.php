@@ -13,13 +13,13 @@
         <!-- Mask -->
         <span class="mask bg-gradient-default opacity-8"></span>
         <!-- Header container -->
-        
+
     </div>
 
     <div class="container-fluid mt--6">
         <div class="row">
             <div class="col-xl-8 order-xl-1 offset-xl-2">
-                
+
                 <div class="card">
                     <div class="card-header">
                         <div class="row align-items-center">
@@ -30,7 +30,7 @@
                     </div>
                     <div class="card-body">
                         <form method="post" action="" autocomplete="off" enctype="multipart/form-data">
-                            <input type="hidden" name="_token" value="jWuL0JHlytWb7KEd4iCZXfiH5FS1Rd3TQfLqjY7k">                        <input type="hidden" name="_method" value="put">
+
                             <h6 class="heading-small text-muted mb-4">User information</h6>
 
 
@@ -57,9 +57,9 @@
                         </form>
 
                         <hr class="my-4" />
-                        
+
                         <form method="post" action="" autocomplete="off">
-                            <input type="hidden" name="_token" value="jWuL0JHlytWb7KEd4iCZXfiH5FS1Rd3TQfLqjY7k">                          <input type="hidden" name="_method" value="put">
+
                             <h6 class="heading-small text-muted mb-4">Password</h6>
 
 

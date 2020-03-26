@@ -24,7 +24,7 @@ class CreateRoleFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Zéèêëíìîïñóòôöõúùûüýÿæ -]+$/'],
+            'name' => ['required', 'string', 'unique:role_admins','max:255', 'regex:/^[a-zA-Zéèêëíìîïñóòôöõúùûüýÿæ -]+$/'],
             'description' => ['required', 'string']
         ];
     }

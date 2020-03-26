@@ -25,8 +25,8 @@
                     </li>-->
                 </ul>
 
-                <a href="{{ route('logout') }}" class="btn-dark rounded py-2 px-3 ml-auto"><span class="bh"></span> <span>Log out</span></a>
-                <a href="{{ route('home.index') }}" class="btn-primary rounded py-2 px-3 ml-4"><span class="bh"></span> <span><i class="fas fa-home"></i> Go to home</span></a>
+                <a href="{{ route('logout', ['language' => app()->getLocale()]) }}" class="btn-dark rounded py-2 px-3 ml-auto"><span class="bh"></span> <span>Log out</span></a>
+                <a href="{{ route('home.index', ['language' => app()->getLocale()]) }}" class="btn-primary rounded py-2 px-3 ml-4"><span class="bh"></span> <span><i class="fas fa-home"></i> Go to home</span></a>
             </div>
         </nav>
 
@@ -110,7 +110,7 @@
                                                 <div class="mx-auto">
                                                     <button class="btn-primary rounded px-2" data-toggle="collapse" data-target="#faq-2" id="first-btn-continue" aria-expanded="false">Continue</button>
 
-                                                    <form  method="post" action="{{ route('currencyconverter.destroy', ['currency_id' => $order->id]) }}" style="display: inline-block" onsubmit="return confirm('DO YOU REALLY WANT TO DELETE ? ')">
+                                                    <form  method="post" action="{{ route('currencyconverter.destroy', ['language' => app()->getLocale(),'currency_id' => $order->id]) }}" style="display: inline-block" onsubmit="return confirm('DO YOU REALLY WANT TO DELETE ? ')">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button class="btn-danger rounded px-2 ml-5">DELETE</button>

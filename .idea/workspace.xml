@@ -3,25 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="043bef7a-9283-4162-9b2d-1b393dd53449" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Helpers/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CreateRoleUserAdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CreateRoleUserAdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleUserAdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleUserAdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_27_131240_create_order_currencies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/2020_02_27_131240_create_order_currencies_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_27_132236_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/2020_02_27_132236_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_27_232958_add_terms_on_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/2020_02_27_232958_add_terms_on_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_04_094555_create_photo_receivers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/2020_03_04_094555_create_photo_receivers_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_08_060427_add_id_confirmation_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/2020_03_08_060427_add_id_confirmation_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_08_154859_add_confirm_account_on_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/2020_03_08_154859_add_confirm_account_on_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/create-role.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/create-role.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/edit-role-user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/edit-role-user.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/orders-list.blage.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/orders-list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/role.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/role.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/contact/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/contact/contact.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CreateUserAdminController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserAdminController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CreateRoleFormRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CreateRoleFormRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/create-user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/create-user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/edit-user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/edit-user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/users.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/en/dashboard/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/dashboard/dashboard.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin-sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin-sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin-topbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin-topbar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/select_navs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/select_navs.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin/photo/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/public/.gitignore" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -164,11 +158,11 @@
       <recent name="C:\wamp\www\jckinter.com\app\Http\Middleware\en" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jackd\Documents\jckinter.com\public\admin\photo" />
+      <recent name="C:\Users\jackd\Documents\jckinter.com\app\Http\Controllers\Admin" />
       <recent name="C:\Users\jackd\Documents\jckinter.com\database" />
       <recent name="C:\wamp\www\jckinter.com\cache" />
       <recent name="C:\wamp\www\jckinter.com\database\migrations" />
-      <recent name="C:\wamp\www\jckinter.com\database" />
-      <recent name="C:\wamp\www\jckinter.com\public\app\css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -261,7 +255,7 @@
       <workItem from="1585068656866" duration="2780000" />
       <workItem from="1585147995100" duration="1434000" />
       <workItem from="1585150231348" duration="673000" />
-      <workItem from="1585199014210" duration="10532000" />
+      <workItem from="1585199014210" duration="28389000" />
     </task>
     <servers />
   </component>

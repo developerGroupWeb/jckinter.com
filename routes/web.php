@@ -90,8 +90,8 @@ Route::group(['prefix' => '{language}'],function (){
     Route::group(['prefix' => 'jckinter-admin'], function (){
 
         Route::get('/', 'Admin\\AdminController@index')->name('admin.index');
-        Route::get('users', 'Admin\\UserAdminController@index')->name('admin.users.index');
-        Route::get('create-user', 'Admin\\CreateUserAdminController@index')->name('admin.user.create.index');
+
+        Route::resource('users', 'Admin\\UserAdminController');
 
         Route::get('create-role-user', 'Admin\\CreateRoleUserAdminController@index')->name('admin.user.create.role.index');
         Route::post('create-role-user', 'Admin\\CreateRoleUserAdminController@store')->name('admin.user.create.role.store');
