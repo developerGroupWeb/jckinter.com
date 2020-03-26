@@ -31,7 +31,7 @@
                             <i class="ni ni-collection text-yellow"></i>
                             <span class="nav-link-text">Profile</span>
                         </a>
-                        <a class="nav-link" href="{{route('admin.role.user.index', ['language' => app()->getLocale()])}}">
+                        <a class="nav-link" href="{{route('admin.role.index', ['language' => app()->getLocale()])}}">
                             <i class="ni ni-collection text-yellow"></i>
                             <span class="nav-link-text">Role Management</span>
                         </a>
@@ -47,11 +47,11 @@
                             <i class="ni ni-collection text-yellow"></i>
                             <span class="nav-link-text">Create Manager</span>
                         </a>
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="{{route('admin.order.index', ['language' => app()->getLocale()])}}">
                             <i class="ni ni-collection text-yellow"></i>
                             <span class="nav-link-text">Orders List</span>
                         </a>
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="{{route('admin.message.index', ['language' => app()->getLocale()])}}">
                             <i class="ni ni-collection text-yellow"></i>
                             <span class="nav-link-text">Messages</span>
                         </a>

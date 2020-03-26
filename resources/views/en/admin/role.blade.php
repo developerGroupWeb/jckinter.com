@@ -12,7 +12,7 @@
     <div class="header bg-primary pb-6">
         <div class="container-fluid">
             <div class="header-body py-5">
-            
+
             </div>
         </div>
     </div>
@@ -50,42 +50,25 @@
                             </thead>
 
                             <tbody>
+                            @foreach($roles as $role)
                                 <tr>
-                                    <td>Admin</td>
-                                    <td>This is the administration role</td>
-                                    <td>25/09/2019 09:35</td>
-                                    <td class="text-right"></td>
-                                </tr>
-                                <tr>
-                                    <td>Manager</td>
-                                    <td>This is the manager role</td>
-                                    <td>25/09/2019 09:35</td>
+                                    <td>{{ucfirst($role->name)}}</td>
+                                    <td>{{$role->description}}</td>
+                                    <td>{{$role->created_at->format('d/m/Y H:i')}}</td>
                                     <td class="text-right">
                                         <div class="dropdown">
                                             <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="fas fa-ellipsis-v"></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                <a class="dropdown-item" href="">Edit</a>
+                                                <a class="dropdown-item" href="{{route('admin.role.edit.index', ['language' => app()->getLocale(), 'id' => $role->id])}}">Edit</a>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>Member</td>
-                                    <td>This is the member role</td>
-                                    <td>25/09/2019 09:35</td>
-                                    <td class="text-right">
-                                        <div class="dropdown">
-                                            <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fas fa-ellipsis-v"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                <a class="dropdown-item" href="">Edit</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                            @endforeach
+
+
                             </tbody>
                         </table>
                     </div>

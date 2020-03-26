@@ -92,10 +92,24 @@ Route::group(['prefix' => '{language}'],function (){
         Route::get('/', 'Admin\\AdminController@index')->name('admin.index');
         Route::get('users', 'Admin\\UserAdminController@index')->name('admin.users.index');
         Route::get('create-user', 'Admin\\CreateUserAdminController@index')->name('admin.user.create.index');
+
         Route::get('create-role-user', 'Admin\\CreateRoleUserAdminController@index')->name('admin.user.create.role.index');
+        Route::post('create-role-user', 'Admin\\CreateRoleUserAdminController@store')->name('admin.user.create.role.store');
+
         Route::get('edit-user', 'Admin\\EditUserAdminController@index')->name('admin.user.edit.index');
+        Route::put('edit-user', 'Admin\\EditUserAdminController@edit')->name('admin.user.edit');
+
+        Route::get('edit-role-user/{id}', 'Admin\\EditRoleAdminController@index')->name('admin.role.edit.index');
+        Route::put('edit-role-user/{id}', 'Admin\\EditRoleAdminController@edit')->name('admin.user.edit');
+
         Route::get('profile-user', 'Admin\\ProfileUserAdminController@index')->name('admin.profile.user.index');
-        Route::get('role-user', 'Admin\\RoleUserAdminController@index')->name('admin.role.user.index');
+
+        Route::get('role-user', 'Admin\\RoleUserAdminController@index')->name('admin.role.index');
+
+
+        Route::get('order-list', 'Admin\\OrdersAdminController@index')->name('admin.order.index');
+        Route::get('message', 'Admin\\MessageAdminController@index')->name('admin.message.index');
+        Route::get('translation-detail', 'Admin\\TranslationDetailAdminController@index')->name('admin.translation.detail.index');
 
     });
 

@@ -32,7 +32,7 @@
                 <h2 class="sec-title">Get In Touch</h2>
                 <p class="sec-subtitle">Send us a message now.</p>
               </div>
-              <form method='post' action="{{route('contact.store')}}" id="form-contact" class="contact-form clearfix">
+              <form method='post' action="{{route('contact.store', app()->getLocale())}}" id="form-contact" class="contact-form clearfix">
 
               @csrf
 
@@ -153,7 +153,7 @@
     !-- Contact Map end -->
 
 
-    
+
 <script src="{{ asset('app/js/contact.js') }}"></script>
 
     @include('layouts.footer')

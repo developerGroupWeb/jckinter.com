@@ -12,7 +12,7 @@
     <div class="header bg-primary pb-6">
         <div class="container-fluid">
             <div class="header-body py-5">
-            
+
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
                 <div class="card">
                     <!-- All Transactions  -->
                     <div class="profile-content">
-                       
+
                         <!-- Admin Heading Title  -->
                         <div class="transaction-title bg-offwhite">
                                 <div class="items">
@@ -62,7 +62,7 @@
                                     </a>
                                 </div>
                                 <div class="items">
-                                    <a href="transactions-details.html">
+                                    <a href="{{route('admin.translation.detail.index', app()->getLocale())}}">
                                         <div class="row">
                                             <div class="col pay-date">
                                                 <span class="date">15</span>
@@ -314,7 +314,7 @@
                                                 </div>
                                             </a>
                                         </div>
-                                      
+
                                 </div>
                             </div>
                             <!-- Transaction List End -->
@@ -413,7 +413,7 @@
 
 
 
-                    
+
                     <div class="card-header">
                         <div class="row align-items-center">
                             <div class="col-8">
