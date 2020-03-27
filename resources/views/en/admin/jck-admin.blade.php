@@ -93,6 +93,9 @@
                             <h3 class="mb-0">Order list</h3>
                         </div>
                         <div class="table-responsive">
+
+
+
                             <table class="table align-items-center table-flush">
                                 <thead class="thead-light">
                                     <tr>
@@ -105,24 +108,26 @@
                                     </tr>
                                 </thead>
                                 <tbody class="list">
-                                    <tr>
+                                @if(count($orders) > 0)
+
+                                @foreach($orders as $order)
+                                    <tr id="{{$order->track_order}}">
                                         <th scope="row">
                                             <div class="align-items-center font-weight-bold">
-                                                ID <span class="name mb-0 text-sm">xxxxxx</span>
+                                                ID <span class="name mb-0 text-sm">{{$order->track_order}}</span>
                                             </div>
                                         </th>
                                         <td class="budget">
-                                            $200 USD
+                                            {{$order->amount_send.' '.$order->devise_send}}
                                         </td>
                                         <td>
-                                            <span class="badge badge-dot mr-4">
-                                                <i class="bg-warning"></i>
-                                                <span class="status">pending</span>
+                                            <span class="badge badge-dot mr-4" id="status-order">
+                                                {!! check_status($order->track_order) !!}
                                             </span>
                                         </td>
                                         <td>
                                             <div class="align-items-center">
-                                                <span class="name mb-0 text-sm">Name customer</span>
+                                                <span class="name mb-0 text-sm">{{ strtoupper($order->name).' '.$order->surname }}</span>
                                             </div>
                                         </td>
                                         <td>
@@ -140,146 +145,17 @@
                                                 <a class="btn btn-sm btn-icon-only text-dark" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <i class="fas fa-ellipsis-v "></i>
                                                 </a>
-                                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                    <a class="dropdown-item" href="#">prepared</a>
-                                                    <a class="dropdown-item" href="#">On the way</a>
-                                                    <a class="dropdown-item" href="#">Completed</a>
+                                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow" data-action="{{route('status.order.update', ['language' => app()->getLocale()])}}">
+                                                    <a class="dropdown-item" href="#" id="prepared-{{$order->track_order}}">prepared</a>
+                                                    <a class="dropdown-item" href="#" id="on the way-{{$order->track_order}}">On the way</a>
+                                                    <a class="dropdown-item" href="#" id="completed-{{$order->track_order}}">Completed</a>
                                                 </div>
                                             </div>
                                         </td>
                                     </tr>
+                                @endforeach
+                                @endif
 
-                                    <tr>
-                                        <th scope="row">
-                                            <div class="align-items-center font-weight-bold">
-                                                ID <span class="name mb-0 text-sm">xxxxxx</span>
-                                            </div>
-                                        </th>
-                                        <td class="budget">
-                                            $500 USD
-                                        </td>
-                                        <td>
-                                            <span class="badge badge-dot mr-4">
-                                                <i class="bg-warning"></i>
-                                                <span class="status">Prepared</span>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <div class="align-items-center">
-                                                <span class="name mb-0 text-sm">Name customer</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <span class="completion mr-2">30%</span>
-                                                <div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-right">
-                                            <div class="dropdown">
-                                                <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="fas fa-ellipsis-v"></i>
-                                                </a>
-                                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                    <a class="dropdown-item" href="#">prepared</a>
-                                                    <a class="dropdown-item" href="#">On the way</a>
-                                                    <a class="dropdown-item" href="#">Completed</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <th scope="row">
-                                            <div class="align-items-center font-weight-bold">
-                                                ID <span class="name mb-0 text-sm">xxxxxx</span>
-                                            </div>
-                                        </th>
-                                        <td class="budget">
-                                            $200 USD
-                                        </td>
-                                        <td>
-                                            <span class="badge badge-dot mr-4">
-                                                <i class="bg-primary"></i>
-                                                <span class="status">On the way</span>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <div class="align-items-center">
-                                                <span class="name mb-0 text-sm">Name customer</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <span class="completion mr-2">60%</span>
-                                                <div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-right">
-                                            <div class="dropdown">
-                                                <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="fas fa-ellipsis-v"></i>
-                                                </a>
-                                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                    <a class="dropdown-item" href="#">prepared</a>
-                                                    <a class="dropdown-item" href="#">On the way</a>
-                                                    <a class="dropdown-item" href="#">Completed</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <th scope="row">
-                                            <div class="align-items-center font-weight-bold">
-                                                ID <span class="name mb-0 text-sm">xxxxxx</span>
-                                            </div>
-                                        </th>
-                                        <td class="budget">
-                                            $200 USD
-                                        </td>
-                                        <td>
-                                            <span class="badge badge-dot mr-4">
-                                                <i class="bg-success"></i>
-                                                <span class="status">Completed</span>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <div class="align-items-center">
-                                                <span class="name mb-0 text-sm">Name customer</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <span class="completion mr-2">100%</span>
-                                                <div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-right">
-                                            <div class="dropdown">
-                                                <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="fas fa-ellipsis-v"></i>
-                                                </a>
-                                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                    <a class="dropdown-item" href="#">prepared</a>
-                                                    <a class="dropdown-item" href="#">On the way</a>
-                                                    <a class="dropdown-item" href="#">Completed</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -289,4 +165,6 @@
         </div>
     </div>
 </div>
+
+    <script src="{{asset('app/js/jck-admin.js')}}"></script>
 @stop

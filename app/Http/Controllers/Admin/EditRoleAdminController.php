@@ -24,7 +24,7 @@ class EditRoleAdminController extends Controller
             'description' =>$request->description
         ]);
         if($update){
-            return redirect()->route('admin.role.edit.index',['language' => app()->getLocale(), 'id' => $id])->with('success', 'Your role has been updated');
+            return redirect()->route('admin.role.index',['language' => app()->getLocale()])->with('success', 'Your role has been updated');
         }
     }
 }

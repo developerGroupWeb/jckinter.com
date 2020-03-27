@@ -93,6 +93,8 @@ Route::group(['prefix' => '{language}'],function (){
 
         Route::resource('users', 'Admin\\UserAdminController');
 
+        Route::put('status-order', 'Admin\\StatusOrderController@update')->name('status.order.update');
+
         Route::get('create-role-user', 'Admin\\CreateRoleUserAdminController@index')->name('admin.user.create.role.index');
         Route::post('create-role-user', 'Admin\\CreateRoleUserAdminController@store')->name('admin.user.create.role.store');
 

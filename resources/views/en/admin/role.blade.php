@@ -18,20 +18,26 @@
     </div>
 
     <div class="container-fluid mt--6">
+
+        {!! flash_message('success', 'alert-success') !!}
+
         <div class="row">
             <div class="col">
                 <div class="card">
                     <div class="card-header">
                         <div class="row align-items-center">
+
                             <div class="col-8">
                                 <h3 class="mb-0">Roles</h3>
                                 <p class="text-sm mb-0">
                                     This is the roles management.
                                 </p>
                             </div>
+
                             <div class="col-4 text-right">
                                 <a href="{{route('admin.user.create.role.index', ['language' => app()->getLocale()])}}" class="btn btn-sm btn-primary">Add role</a>
                             </div>
+
                         </div>
                     </div>
 
