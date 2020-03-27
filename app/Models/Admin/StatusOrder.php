@@ -21,6 +21,6 @@ class StatusOrder extends Model
     ];
 
     static function get_status($track_order){
-        return self::whereTrack_order($track_order)->first()->status;
+        return self::whereTrack_order($track_order)->first()->status ?? false;
     }
 }

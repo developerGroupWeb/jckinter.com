@@ -18,7 +18,9 @@
     </div>
 
     <div class="container-fluid mt--6">
+
         {!! flash_message('success', 'alert-success') !!}
+
         <div class="row">
             <div class="col">
                 <div class="card">

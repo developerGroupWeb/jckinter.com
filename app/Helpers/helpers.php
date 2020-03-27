@@ -40,10 +40,13 @@ if(!function_exists('check_status')){
 
         $bg_colors = [
             "prepared" => "bg-warning",
+            "pending" => "bg-warning",
             "completed" => "bg-success",
             "on the way" => "bg-primary"
         ];
-
-        return "<i class=\"$bg_colors[$status]\"></i>$status<span class=\"status\"></span>";
+       if(!$status){
+           $status = "pending";
+       }
+        return "<i class='$bg_colors[$status]'></i>$status<span class=\"status\"></span>";
     }
 }

@@ -108,6 +108,8 @@
                                     </tr>
                                 </thead>
                                 <tbody class="list">
+                                @if(count($orders) > 0)
+
                                 @foreach($orders as $order)
                                     <tr id="{{$order->track_order}}">
                                         <th scope="row">
@@ -152,6 +154,7 @@
                                         </td>
                                     </tr>
                                 @endforeach
+                                @endif
 
                                 </tbody>
                             </table>
