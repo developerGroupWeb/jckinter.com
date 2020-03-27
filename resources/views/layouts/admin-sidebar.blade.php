@@ -1,8 +1,8 @@
 <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light bg-white" id="sidenav-main">
     <div class="scrollbar-inner scroll-scrollx_visible">
         <div class="sidenav-header d-flex align-items-center">
-            <a class="navbar-brand" href="">
-                <img src="" class="navbar-brand-img" alt="logo">
+            <a class="navbar-brand">
+                <img src="{{ asset('app/images/logo-banner44.png') }}" class="navbar-brand-img" alt="logo">
             </a>
             <div class="ml-auto">
                 <!-- Sidenav toggler -->
@@ -33,7 +33,7 @@
                         </a>
                         <a class="nav-link" href="{{route('admin.role.index', ['language' => app()->getLocale()])}}">
                             <i class="ni ni-collection text-yellow"></i>
-                            <span class="nav-link-text">Role Management</span>
+                            <span class="nav-link-text">Role List</span>
                         </a>
                         <a class="nav-link" href="{{route('admin.user.create.role.index', ['language' => app()->getLocale()])}}">
                             <i class="ni ni-collection text-yellow"></i>
@@ -41,7 +41,7 @@
                         </a>
                         <a class="nav-link" href="{{route('users.index', ['language' => app()->getLocale()])}}">
                             <i class="ni ni-collection text-yellow"></i>
-                            <span class="nav-link-text">Managers Management</span>
+                            <span class="nav-link-text">Managers List</span>
                         </a>
                         <a class="nav-link" href="{{route('users.create', ['language' => app()->getLocale()])}}">
                             <i class="ni ni-collection text-yellow"></i>
@@ -50,10 +50,6 @@
                         <a class="nav-link" href="{{route('admin.order.index', ['language' => app()->getLocale()])}}">
                             <i class="ni ni-collection text-yellow"></i>
                             <span class="nav-link-text">Orders List</span>
-                        </a>
-                        <a class="nav-link" href="{{route('admin.message.index', ['language' => app()->getLocale()])}}">
-                            <i class="ni ni-collection text-yellow"></i>
-                            <span class="nav-link-text">Messages</span>
                         </a>
                     </li>
                 </ul>

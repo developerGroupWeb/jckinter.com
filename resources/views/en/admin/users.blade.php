@@ -18,20 +18,22 @@
     </div>
 
     <div class="container-fluid mt--6">
+
+    {!! flash_message('delete', 'alert-warning') !!}
+    {!! flash_message('update', 'alert-success') !!}
+
         <div class="row">
             <div class="col">
                 <div class="card">
                     <div class="card-header">
                         <div class="row align-items-center">
 
-                            {!! flash_message('delete', 'alert-warning') !!}
-                            {!! flash_message('update', 'alert-success') !!}
-
                             <div class="col-8">
                                 <h3 class="mb-0">Users</h3>
                                 <p class="text-sm mb-0">
-                                        This is the user management.
-                                    </p>
+                                    This is the user management.
+                                </p>
+
                             </div>
 
                                 <div class="col-4 text-right">
