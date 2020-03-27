@@ -2,20 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="043bef7a-9283-4162-9b2d-1b393dd53449" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/app/js/jck-admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CreateUserAdminController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserAdminController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CreateRoleFormRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CreateRoleFormRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/create-user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/create-user.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/edit-user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/edit-user.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/users.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/dashboard/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/dashboard/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin-sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin-sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Helpers/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/helpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/jck-admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/jck-admin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/select_navs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/select_navs.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin/photo/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/app/public/.gitignore" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -255,7 +248,8 @@
       <workItem from="1585068656866" duration="2780000" />
       <workItem from="1585147995100" duration="1434000" />
       <workItem from="1585150231348" duration="673000" />
-      <workItem from="1585199014210" duration="28389000" />
+      <workItem from="1585199014210" duration="29288000" />
+      <workItem from="1585277061240" duration="14370000" />
     </task>
     <servers />
   </component>
