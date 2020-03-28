@@ -108,52 +108,53 @@
                                     </tr>
                                 </thead>
                                 <tbody class="list">
+
                                 @if(count($orders) > 0)
 
-                                @foreach($orders as $order)
-                                    <tr id="{{$order->track_order}}">
-                                        <th scope="row">
-                                            <div class="align-items-center font-weight-bold">
-                                                ID <span class="name mb-0 text-sm">{{$order->track_order}}</span>
-                                            </div>
-                                        </th>
-                                        <td class="budget">
-                                            {{$order->amount_send.' '.$order->devise_send}}
-                                        </td>
-                                        <td>
-                                            <span class="badge badge-dot mr-4" id="status-order">
-                                                {!! check_status($order->track_order) !!}
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <div class="align-items-center">
-                                                <span class="name mb-0 text-sm">{{ strtoupper($order->name).' '.$order->surname }}</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <span class="completion mr-2">0%</span>
-                                                <div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+                                    @foreach($orders as $order)
+                                        <tr id="{{$order->track_order}}">
+                                            <th scope="row">
+                                                <div class="align-items-center font-weight-bold">
+                                                    ID <span class="name mb-0 text-sm">{{$order->track_order}}</span>
+                                                </div>
+                                            </th>
+                                            <td class="budget">
+                                                {{$order->amount_send.' '.$order->devise_send}}
+                                            </td>
+                                            <td>
+                                                <span class="badge badge-dot mr-4" id="status-order">
+                                                    {!! check_status($order->track_order) !!}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <div class="align-items-center">
+                                                    <span class="name mb-0 text-sm">{{ strtoupper($order->name).' '.$order->surname }}</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="completion mr-2">0%</span>
+                                                    <div>
+                                                        <div class="progress">
+                                                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-right">
-                                            <div class="dropdown">
-                                                <a class="btn btn-sm btn-icon-only text-dark" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="fas fa-ellipsis-v "></i>
-                                                </a>
-                                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow" data-action="{{route('status.order.update', ['language' => app()->getLocale()])}}">
-                                                    <a class="dropdown-item" href="#" id="prepared-{{$order->track_order}}">prepared</a>
-                                                    <a class="dropdown-item" href="#" id="on the way-{{$order->track_order}}">On the way</a>
-                                                    <a class="dropdown-item" href="#" id="completed-{{$order->track_order}}">Completed</a>
+                                            </td>
+                                            <td class="text-right">
+                                                <div class="dropdown">
+                                                    <a class="btn btn-sm btn-icon-only text-dark" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="fas fa-ellipsis-v "></i>
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow" data-action="{{route('status.order.update', ['language' => app()->getLocale()])}}">
+                                                        <a class="dropdown-item" href="#" id="prepared-{{$order->track_order}}">prepared</a>
+                                                        <a class="dropdown-item" href="#" id="on the way-{{$order->track_order}}">On the way</a>
+                                                        <a class="dropdown-item" href="#" id="completed-{{$order->track_order}}">Completed</a>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 @endif
 
                                 </tbody>

@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="043bef7a-9283-4162-9b2d-1b393dd53449" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Services/CallApiService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Helpers/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Admin/StatusOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/StatusOrder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/en/admin/jck-admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/jck-admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/role.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/role.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -139,21 +142,22 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Services" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp\www\jckinter.com\public\app\images" />
-      <recent name="C:\wamp\www\jckinter.com\app\Http\Middleware\en" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\jackd\Documents\jckinter.com\public\admin\photo" />
       <recent name="C:\Users\jackd\Documents\jckinter.com\app\Http\Controllers\Admin" />
       <recent name="C:\Users\jackd\Documents\jckinter.com\database" />
       <recent name="C:\wamp\www\jckinter.com\cache" />
       <recent name="C:\wamp\www\jckinter.com\database\migrations" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jackd\Documents\jckinter.com\app\Services" />
+      <recent name="C:\wamp\www\jckinter.com\public\app\images" />
+      <recent name="C:\wamp\www\jckinter.com\app\Http\Middleware\en" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -247,7 +251,10 @@
       <workItem from="1585147995100" duration="1434000" />
       <workItem from="1585150231348" duration="673000" />
       <workItem from="1585199014210" duration="29288000" />
-      <workItem from="1585277061240" duration="16151000" />
+      <workItem from="1585277061240" duration="16447000" />
+      <workItem from="1585316946654" duration="120000" />
+      <workItem from="1585378200570" duration="460000" />
+      <workItem from="1585395640675" duration="916000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\Admin\StatusOrder;
+use App\Models\User;
+use Illuminate\Support\Facades\Crypt;
 
 if(!function_exists('format_amount_send')){
 
@@ -48,5 +50,31 @@ if(!function_exists('check_status')){
            $status = "pending";
        }
         return "<i class='$bg_colors[$status]'></i>$status<span class=\"status\"></span>";
+    }
+}
+
+
+if(!function_exists('time_expire_link')){
+
+    /**
+     * @param $code
+     * @return bool
+     */
+    function time_expire_link($code){
+
+        if(User::whereId_confirmation($code)->count() === 0){
+            return false;
+        }
+
+        $code = Crypt::decryptString($code);
+        $detach = explode('ossehi',$code);
+        $time   = end($detach);
+
+        $expire_time = strtotime('+1 day', $time);
+
+        if((time() > $expire_time)){
+            return false;
+        }
+        return true;
     }
 }

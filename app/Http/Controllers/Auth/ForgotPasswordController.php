@@ -24,7 +24,7 @@ class ForgotPasswordController extends Controller
     function store(Request $request){
 
         $validate = Validator::make($request->all(), [
-            'email' => ['required', 'string', 'email']
+            'email' => ['required', 'string', 'email:rfc,dns,filter']
         ]);
 
         if($request->ajax()){

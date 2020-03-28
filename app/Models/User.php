@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Str;
 
 class User extends Model
@@ -29,8 +30,10 @@ class User extends Model
     static function getUniqueCode()
     {
         $code = Str::random();
+        $time = time();
+        $code = Crypt::encryptString("{$code}ossehi{$time}");
 
-        if(self::whereId_confirmation($code)->count()!= 0)
+        if(self::whereId_reset_password($code)->count()!= 0)
         {
             return self::getUniqueCode();
         }
