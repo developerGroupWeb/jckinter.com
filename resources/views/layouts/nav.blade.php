@@ -59,5 +59,8 @@
 
 
     </div>
+
 </header>
+
+@include('css.style')
 <!-- Header end -->

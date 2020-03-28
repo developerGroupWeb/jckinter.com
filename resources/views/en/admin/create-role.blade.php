@@ -18,6 +18,10 @@
     </div>
 
     <div class="container-fluid mt--6">
+
+    {!! flash_message('success', 'alert-success') !!}
+
+    
         <div class="row">
             <div class="col-xl-12 order-xl-1">
                 <div class="card">
@@ -37,8 +41,6 @@
                             @csrf
 
                             <h6 class="heading-small text-muted mb-4">Role information</h6>
-
-                            {!! flash_message('success', 'alert-success') !!}
 
                             <div class="pl-lg-4">
                                 <div class="form-group">

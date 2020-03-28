@@ -29,4 +29,6 @@
         <a href="{{ route('logout') }}" class="login btn btn-default btn-round ml-3 p-3"><span class="bh"></span> <span>Log out</span></a>
     </div>
 </header>
+
+@include('css.style')
 <!-- Header end -->
