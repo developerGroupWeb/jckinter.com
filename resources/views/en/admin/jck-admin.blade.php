@@ -160,8 +160,15 @@
                                 </tbody>
                             </table>
                         </div>
+
                     </div>
+                    <!-- Pagination -->
+                    <ul class="pagination justify-content-center mt-4 pt-4 pl-0">
+                        {{ $orders->links() }}
+                    </ul>
+                    <!-- Paginations end -->
                 </div>
+
             </div>
         </div>
     </div>

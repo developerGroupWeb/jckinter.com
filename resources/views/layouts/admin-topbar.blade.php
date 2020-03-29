@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Search form -->
-            <h6 class="h2 text-white d-inline-block mb-0"><span>Welcome, </span><span>Admin name</span></h6>
+            <h6 class="h2 text-white d-inline-block mb-0"><span>Welcome, </span><span>{{session()->get('currency_user_admin')['name']}}</span></h6>
             <!-- Navbar links -->
             <ul class="navbar-nav align-items-center ml-md-auto">
                 <li class="nav-item d-xl-none">
@@ -23,7 +23,7 @@
                     <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="media align-items-center">
                             <span class="avatar avatar-sm rounded-circle">
-                                <img alt="Image placeholder" src="http://i.pravatar.cc/200">
+                                <img alt="Image placeholder" src="{{asset(session()->get('currency_user_admin')['photo'])}}">
                             </span>
                             <div class="media-body ml-2 d-none d-lg-block">
                                 <span class="mb-0 text-sm  font-weight-bold">Admin</span>
@@ -43,7 +43,7 @@
                             <span>Orders</span>
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a href="" class="dropdown-item">
+                        <a href="{{route('logout', ['language' => app()->getLocale()])}}" class="dropdown-item">
                             <i class="ni ni-user-run"></i>
                             <span>Logout</span>
                         </a>

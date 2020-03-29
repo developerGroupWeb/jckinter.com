@@ -1,4 +1,4 @@
-@extends('layouts.default', ['title' => 'create user'])
+@extends('layouts.default', ['title' => 'translation detail'])
 
 @section('content')
 
@@ -34,37 +34,37 @@
                                             <h3 class="admin-heading bg-offwhite">
                                                 <p>Transaction details</p>
                                             </h3>
-                                            
+
                                             <div class="row px-3">
                                                 <div class="col-12 col-sm">
                                                     <div class="content-area">
                                                         <b>Receiver Data</b>
-                                                        <p class="name">Receiver name</p>
-                                                        <p class="surname">Receiver name</p>
-                                                        <p class="">Address</p>
-                                                        <p>Phone number</p>
-                                                        <p>Year of birth</p>
-                                                        <p><span>Secret question</span> : <span>Answer</span></p>
+                                                        <p class="name">{{$order->name}}</p>
+                                                        <p class="surname">{{$order->surname}}</p>
+                                                        <p class="">{{$order->address}}</p>
+                                                        <p>{{$order->phone}}</p>
+                                                        <p>{{$order->year}}</p>
+                                                        <p><span>{{$order->question}}</span> : <span>{{$order->answer}}</span></p>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm">
                                                     <div class="content-area text-right">
                                                         <div class="price mt-sm-5">
-                                                            <b>Ammount</b>
-                                                            <p class="order-amount"><span>XOF</span>100.000</p>
-                                                        </div>                                                        
+                                                            <b>Amount</b>
+                                                            <p class="order-amount"><span>XOF</span>{{$order->amount_receive}}</p>
+                                                        </div>
                                                     </div>
 
                                                 </div>
                                             </div>
-                                                        
-                                            
+
+
                                         </div>
                                     </div>
 
                                     <div class="col-lg-3 col-md-6 offset-md-3 offset-lg-0">
                                         <div class="p-3">
-                                            <img class="img-fluid" src="{{ asset('app/images/image femme-xxx.png') }}" alt="photo">
+                                            <img class="img-fluid" src="{{ asset($order->photo) }}" alt="photo">
                                         </div>
                                     </div>
                                 </div>
@@ -76,7 +76,7 @@
                                                 <a href="#" class="invoice-btn btn"><i class="far fa-file-pdf"></i> Save as PDF</a>
                                                 <a href="#" class="invoice-btn btn"><i class="fas fa-print"></i> Print Receipt</a>
                                                 <a href="#" class="invoice-btn btn"><i class="far fa-envelope"></i> Email Receipt</a>
-                                            </div>                                   
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -103,7 +103,7 @@
    position: relative;
    font-weight: 300;
  }
- 
+
  .admin-heading:before {
    position: absolute;
    content: '';
@@ -114,18 +114,18 @@
    left: 0;
    border: 1px solid #edebeb;
  }
- 
+
  .admin-heading p {
    margin: 0;
    padding: 0;
    font-weight: 700;
  }
- 
+
  .admin-heading span {
    font-size: 12px;
    color: #6c6c6f;
  }
- 
+
  .admin-heading a {
    font-size: 14px;
    float: right;
@@ -143,7 +143,7 @@
    display: block;
    font-weight: 700;
  }
- 
+
  .transaction-title .items {
    margin-bottom: 5px;
    padding: 10px;
@@ -165,20 +165,20 @@
    transition: all 300ms ease-in-out;
    border-radius: 5px;
  }
- 
+
  .transaction-area .items a {
    color: #888888;
  }
- 
+
  .transaction-area .items:first-child {
    border-radius: 0 0 5px 5px;
  }
- 
+
  .transaction-area .items:hover {
    background: linear-gradient(89deg, #154abd 0.1%, #1a8ad3 51.5%, #48b1ea 100.2%);
    color: #fff;
  }
- 
+
  .transaction-area .items:hover a {
    color: #fff;
  }

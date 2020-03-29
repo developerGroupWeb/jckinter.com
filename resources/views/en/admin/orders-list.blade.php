@@ -1,4 +1,4 @@
-@extends('layouts.default', ['title' => 'create user'])
+@extends('layouts.default', ['title' => 'orders lists'])
 
 @section('content')
 
@@ -46,46 +46,41 @@
                                 <!-- Admin Heading Title End -->
 
                                 <!-- Transaction List -->
+                                @foreach($orders as $order)
                                 <div class="transaction-area">
                                     <div class="items">
-                                        <a href="{{route('admin.translation.detail.index', app()->getLocale())}}">
+                                        <a href="{{route('admin.translation.detail.index', ['language' => app()->getLocale(), 'track_order' => $order->track_order])}}">
                                             <div class="row">
                                                 <div class="col pay-date">
-                                                    <span class="order-id">xxxxxx</span>
+                                                    <span class="order-id">{{$order->track_order}}</span>
                                                 </div>
                                                 <div class="col">
-                                                    <span class="name">Name client </span>
+                                                    <span class="name">{{$order->name. ' '.$order->surname}}</span>
                                                 </div>
                                                 <div class="col">
                                                     <span class="location">shipping location</span>
                                                 </div>
                                                 <div class="col text-right">
-                                                    <span class="payment-amaount">100.000</span>
+                                                    <span class="payment-amaount">{{ $order->amount_receive }}</span>
                                                     <span class="currency">(XOF)</span>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
                                 </div>
+                                @endforeach
                                 <!-- Transaction List End -->
                             </div>
 
                             <!-- Pagination -->
                             <ul class="pagination justify-content-center mt-4 pt-4 pl-0">
-                                <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item active"><a class="page-link" href="#">2 <span class="sr-only">(current)</span></a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item d-flex align-content-center text-muted mr-2">...</li>
-                                <li class="page-item"><a class="page-link" href="#">10</a></li>
-                                <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-right"></i></a>
-                                </li>
+                                {{ $orders->links() }}
                             </ul>
                             <!-- Paginations end -->
 
                             </div>
                             <!-- All Transactions End -->
-                            
+
                         </div>
                     </div>
                 </div>
@@ -107,7 +102,7 @@
    position: relative;
    font-weight: 300;
  }
- 
+
  .admin-heading:before {
    position: absolute;
    content: '';
@@ -118,18 +113,18 @@
    left: 0;
    border: 1px solid #edebeb;
  }
- 
+
  .admin-heading p {
    margin: 0;
    padding: 0;
    font-weight: 700;
  }
- 
+
  .admin-heading span {
    font-size: 12px;
    color: #6c6c6f;
  }
- 
+
  .admin-heading a {
    font-size: 14px;
    float: right;
@@ -148,7 +143,7 @@
    display: block;
    font-weight: 700;
  }
- 
+
  .transaction-title .items {
    margin-bottom: 5px;
    padding: 10px;
@@ -170,20 +165,20 @@
    transition: all 300ms ease-in-out;
    border-radius: 5px;
  }
- 
+
  .transaction-area .items a {
    color: #888888;
  }
- 
+
  .transaction-area .items:first-child {
    border-radius: 0 0 5px 5px;
  }
- 
+
  .transaction-area .items:hover {
    background: linear-gradient(89deg, #154abd 0.1%, #1a8ad3 51.5%, #48b1ea 100.2%);
    color: #fff;
  }
- 
+
  .transaction-area .items:hover a {
    color: #fff;
  }

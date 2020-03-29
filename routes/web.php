@@ -35,6 +35,8 @@ Route::group(['prefix' => '{language}'],function (){
 
     Route::post('get-currency-data', 'CurrencyConverter\\CurrencyConverterController@get_currency_data')->name('currencyconverter.data');
 
+    Route::get('logout', 'Dashboard\\DashboardController@logout')->name('logout');
+
 
     Route::middleware(['user.connected'])->group(function (){
 
@@ -56,7 +58,7 @@ Route::group(['prefix' => '{language}'],function (){
 
         /* Dashboard*/
         Route::get('dashboard', 'Dashboard\\DashboardController@index')->name('dashboard.index');
-        Route::get('logout', 'Dashboard\\DashboardController@logout')->name('logout');
+
 
         Route::post('photo_receiver', 'Dashboard\\UserReceiverController@photo_receiver')->name('photo.receiver');
         Route::post('user_receiver', 'Dashboard\\UserReceiverController@user_receiver')->name('user.receiver.create');
@@ -76,6 +78,11 @@ Route::group(['prefix' => '{language}'],function (){
         Route::get('login', 'Auth\\LoginController@index')->name('login.index');
         Route::post('login', 'Auth\\LoginController@store')->name('login.store');
 
+
+        /* Authentic routes Admin */
+        Route::get('admin/login', 'Auth\\LoginAdminController@index')->name('login.admin.index');
+        Route::post('admin/login', 'Auth\\LoginAdminController@store')->name('login.admin.store');
+
         Route::get('register', 'Auth\\RegisterController@index')->name('register.index');
         Route::post('register', 'Auth\\RegisterController@store')->name('register.store');
         Route::get('register/confirm/{id_confirmation}', 'Auth\\RegisterController@confirm')->name('register.confirm');
@@ -91,32 +98,35 @@ Route::group(['prefix' => '{language}'],function (){
 
 
 
-    Route::group(['prefix' => 'jckinter-admin'], function (){
+    Route::group(['prefix' => 'jckinter-admin'], function () {
 
-        Route::get('/', 'Admin\\AdminController@index')->name('admin.index');
+        Route::middleware(['user.admin'])->group(function () {
 
-        Route::resource('users', 'Admin\\UserAdminController');
+            Route::get('/', 'Admin\\AdminController@index')->name('admin.index');
 
-        Route::put('status-order', 'Admin\\StatusOrderController@update')->name('status.order.update');
+            Route::resource('users', 'Admin\\UserAdminController');
 
-        Route::get('create-role-user', 'Admin\\CreateRoleUserAdminController@index')->name('admin.user.create.role.index');
-        Route::post('create-role-user', 'Admin\\CreateRoleUserAdminController@store')->name('admin.user.create.role.store');
+            Route::put('status-order', 'Admin\\StatusOrderController@update')->name('status.order.update');
 
-        Route::get('edit-user', 'Admin\\EditUserAdminController@index')->name('admin.user.edit.index');
-        Route::put('edit-user', 'Admin\\EditUserAdminController@edit')->name('admin.user.edit');
+            Route::get('create-role-user', 'Admin\\CreateRoleUserAdminController@index')->name('admin.user.create.role.index');
+            Route::post('create-role-user', 'Admin\\CreateRoleUserAdminController@store')->name('admin.user.create.role.store');
 
-        Route::get('edit-role-user/{id}', 'Admin\\EditRoleAdminController@index')->name('admin.role.edit.index');
-        Route::put('edit-role-user/{id}', 'Admin\\EditRoleAdminController@edit')->name('admin.user.edit');
+            Route::get('edit-user', 'Admin\\EditUserAdminController@index')->name('admin.user.edit.index');
+            Route::put('edit-user', 'Admin\\EditUserAdminController@edit')->name('admin.user.edit');
 
-        Route::get('profile-user', 'Admin\\ProfileUserAdminController@index')->name('admin.profile.user.index');
+            Route::get('edit-role-user/{id}', 'Admin\\EditRoleAdminController@index')->name('admin.role.edit.index');
+            Route::put('edit-role-user/{id}', 'Admin\\EditRoleAdminController@edit')->name('admin.user.edit');
 
-        Route::get('role-user', 'Admin\\RoleUserAdminController@index')->name('admin.role.index');
+            Route::get('profile-user', 'Admin\\ProfileUserAdminController@index')->name('admin.profile.user.index');
+
+            Route::get('role-user', 'Admin\\RoleUserAdminController@index')->name('admin.role.index');
 
 
-        Route::get('order-list', 'Admin\\OrdersAdminController@index')->name('admin.order.index');
-        Route::get('message', 'Admin\\MessageAdminController@index')->name('admin.message.index');
-        Route::get('translation-detail', 'Admin\\TranslationDetailAdminController@index')->name('admin.translation.detail.index');
+            Route::get('order-list', 'Admin\\OrdersAdminController@index')->name('admin.order.index');
+            Route::get('message', 'Admin\\MessageAdminController@index')->name('admin.message.index');
+            Route::get('translation-detail', 'Admin\\TranslationDetailAdminController@index')->name('admin.translation.detail.index');
 
+        });
     });
 
 

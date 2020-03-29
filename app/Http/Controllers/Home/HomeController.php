@@ -19,7 +19,6 @@ class HomeController extends Controller
      */
     function index(Request $request){
 
-        //dd(Session::has('fake_order'));
         $default_currency = CurrencyConverterService::get_default_currency($request);
 
         return view(app()->getLocale().'.home.welcome',[

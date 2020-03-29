@@ -57,7 +57,8 @@ class UserAdminController extends Controller
             'email' => $request->email,
             'role' => $request->role,
             "password" => sha1($request->password),
-            'photo' =>  "admin/photo/".$photo
+            'photo' =>  "admin/photo/".$photo,
+            'is_admin' => (($request->role === 'Admin') ? 1 : 0)
         ]);
 
         if($create){

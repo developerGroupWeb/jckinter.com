@@ -20,6 +20,7 @@ class CreateUserAdminsTable extends Migration
             $table->string('role');
             $table->string('password');
             $table->string('photo');
+            $table->boolean('is_admin')->default(false);
             $table->timestamps();
         });
     }

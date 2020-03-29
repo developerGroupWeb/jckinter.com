@@ -10,7 +10,8 @@ class OrdersAdminController extends Controller
 {
     function index(){
 
-        $orders = OrderCurrency::latest()->get();
+        $orders = OrderCurrency::whereStatus(true)->whereProcessing(0)->latest()->paginate(6);
+        //dd($orders);
 
         return view(app()->getLocale().'.admin.orders-list',[
             'orders' => $orders

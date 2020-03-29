@@ -40,7 +40,7 @@
               </div>
           @endif
 
-        <form method="post" action="{{ route('login.store', ['language' => app()->getLocale()]) }}" class="col-12 w-100" id="form-login" data-browse="{{ route('dashboard.index', ['language' => app()->getLocale()]) }}" >
+        <form method="post" action="" class="col-12 w-100" id="form-login" data-browse="{{ route('dashboard.index', ['language' => app()->getLocale()]) }}" >
 
             @csrf
 

@@ -79,13 +79,20 @@ class DashboardController extends Controller
     function logout(){
 
         $user = session()->get('currency_user');
+        $user_admin = session()->get('currency_user_admin');
 
         if(!empty($user)){
 
             session()->forget('currency_user');
             session()->forget('fake_order');
-
             return redirect()->route('home.index', ['language' => app()->getLocale()]);
         }
+
+        if(!empty($user_admin)){
+
+            session()->forget('currency_user_admin');
+            return redirect()->route('login.admin.index', ['language' => app()->getLocale()]);
+        }
+
     }
 }

@@ -68,6 +68,7 @@ class Kernel extends HttpKernel
         'auth.user' => \App\Http\Middleware\AuthenticUser::class,
         'user.connected' => \App\Http\Middleware\en\UserConnected::class,
         'user.not.connected' => \App\Http\Middleware\en\UserNotConnected::class,
+        'user.admin' => \App\Http\Middleware\en\UserAdmin::class,
     ];
 
     /**

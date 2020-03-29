@@ -64,6 +64,8 @@ $(function(){
         const redirect = form_login.attr('data-browse');
         const token    = $('meta[name="csrf-token"]').attr('content');
         const url      = form_login.attr('action');
+        const urls     = location.href.split('/');
+
 
         fetch(
             url,
@@ -82,7 +84,16 @@ $(function(){
             .then(data => {
 
                 if(data.success === true){
-                    window.location = redirect+'?'+(data.user).toLocaleLowerCase();
+
+                    let language = location.pathname.split('/'),
+                        lang = language[1];
+
+                    if(jQuery.inArray('admin', urls) > 0){
+                        window.location = "http://"+ location.host + "/" + lang + "/jckinter-admin"
+                    }else{
+                        window.location = redirect+'?'+(data.user).toLocaleLowerCase();
+                    }
+
                 }else if(data.success === false){
 
                     if(data.message.password){
