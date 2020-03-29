@@ -22,7 +22,7 @@
                     <li class="has-menu-child mr-md-3">
                         <a href="{{route(Route::currentRouteName(), ['language' => app()->getLocale(), 'id' => $role->id])}}"> {{ (app()->getLocale() === 'fr') ? 'French' : 'English' }}</a>
 
-                            <ul>
+                            <ul class="sub-menu">
                                 <li><a href="{{ route(Route::currentRouteName(), ['language' => 'fr',  'id' => $role->id]) }}">French</a></li>
                                 <li><a href="{{ route(Route::currentRouteName(), ['language' => 'en','id' => $role->id]) }}">English</a></li>
                             </ul>
@@ -32,7 +32,7 @@
                     <li class="has-menu-child mr-md-3">
                         <a href="{{route(Route::currentRouteName(), ['language' => app()->getLocale(), 'user' => $id])}}"> {{ (app()->getLocale() === 'fr') ? 'French' : 'English' }}</a>
 
-                        <ul>
+                        <ul class="sub-menu">
                             <li><a href="{{ route(Route::currentRouteName(), ['language' => 'fr',  'user' => $id]) }}">French</a></li>
                             <li><a href="{{ route(Route::currentRouteName(), ['language' => 'en','user' => $id]) }}">English</a></li>
                         </ul>
@@ -41,7 +41,7 @@
                     <li class="has-menu-child mr-md-3">
                         <a href="{{route(Route::currentRouteName(), ['language' => app()->getLocale()])}}">{{ (app()->getLocale() === 'fr') ?'French' : 'English' }}</a>
 
-                            <ul>
+                            <ul class="sub-menu">
                                 <li><a href="{{ route(Route::currentRouteName(), ['language' => 'fr']) }}">Français</a></li>
                                 <li><a href="{{ route(Route::currentRouteName(), ['language' => 'en']) }}">English</a></li>
                             </ul>

@@ -5,7 +5,7 @@ $(function () {
     let form_register = $('#form-register');
 
     let alertMessage = (id, errorClass, text) => {
-        return $(id).next(errorClass).html(text).show('slow');
+        return $(id).next(errorClass).html(text).show();
     };
 
     let deleteMessage = (errorClass) => {
@@ -13,7 +13,7 @@ $(function () {
     };
 
     let requiredMessage = (errorClass, text) => {
-        return $(errorClass).html(text).show('slow');
+        return $(errorClass).html(text).show();
     };
 
     let borderColorMessage = (id) => {
@@ -111,17 +111,31 @@ $(function () {
 
     $(document).on('submit', '#form-register', function () {
 
+
+
+
             let full_name         = form_register.find('#full-name').val(),
                 email             = form_register.find('#email').val(),
                 pass              = form_register.find('#password').val(),
                 pass_confirm      = form_register.find('#confirm-password').val(),
                 checkbox          = form_register.find('input:checked').val();
+
+            if(full_name !== '' || email !== '' || pass !== '' || pass_confirm !== ''){
+                $('#full-name').find('#email,#password, #confirm-password').blur();
+            }
+            if(checkbox){
+                error_terms = true;
+            }
+
+
             //alert(error_email+' '+error_full_name+' '+error_password+' '+error_confirm_password+' '+error_terms)
 
         if(error_full_name === false || error_password === false || error_email === false || error_terms === false || error_confirm_password === false){
 
             if(full_name === ''){
                 requiredMessage('.error-full-name', 'Field name is required');
+            }else{
+                error_full_name = true;
             }
             if(email === ''){
                 requiredMessage('.error-email', 'Field email or phone is required');

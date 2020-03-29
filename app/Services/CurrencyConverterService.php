@@ -18,7 +18,7 @@ class CurrencyConverterService
 
         $ip  = $request->ip();
 
-        $arr_ip = geoip()->getLocation('69.9.238.22');
+        $arr_ip = geoip()->getLocation('178.137.145.219');
         $currency = $arr_ip['currency'];
 
         $currencies = [

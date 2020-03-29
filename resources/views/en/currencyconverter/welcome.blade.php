@@ -24,7 +24,7 @@
                 </div>
             @endif
 
-            <form action="{{ route('currencyconverter.store') }}" method="post" id="currency-form-v2">
+            <form action="{{ route('currencyconverter.store', ['language' => app()->getLocale()]) }}" method="post" id="currency-form-v2" data-action="{{route('currencyconverter.data',  ['language' => app()->getLocale()])}}">
 
                 @csrf
 
@@ -138,6 +138,7 @@
 
 
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="{{ asset('app/js/currency.js') }}"></script>
 
 @stop

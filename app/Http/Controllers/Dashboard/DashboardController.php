@@ -64,6 +64,7 @@ class DashboardController extends Controller
         return view(request()->segment(1).'.dashboard.dashboard',[
             'order' => $order,
             'order_active' => $order_active,
+            'key'  => 'sk_test_l8dRncid0zKE6ZLVkBYzHq8800xiQKkVLr'
         ]);
     }
 

@@ -40,7 +40,7 @@ class UserConnected
         }
 
         if(!isset($sessions['email']) || !isset($sessions['password'])){
-            return redirect(route('login.index'));
+            return redirect(route('login.index', ['language' => app()->getLocale()]));
         }
 
         return $next($request);

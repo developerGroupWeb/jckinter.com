@@ -4,7 +4,7 @@ $(function () {
     let form_contact = $('#form-contact');
 
     let alertMessage = (id, errorClass, text) => {
-        return $(id).next(errorClass).html(text).show('slow');
+        return $(id).next(errorClass).html(text).show();
     };
 
     let deleteMessage = (errorClass) => {
@@ -12,7 +12,7 @@ $(function () {
     };
 
     let requiredMessage = (errorClass, text) => {
-        return $(errorClass).html(text).show('slow');
+        return $(errorClass).html(text).show();
     };
 
     let borderColorMessage = (id) => {

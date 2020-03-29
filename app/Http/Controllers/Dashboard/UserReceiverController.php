@@ -25,9 +25,11 @@ class UserReceiverController extends Controller
 
             $user = User::findOrFail(Session::get('currency_user')['id']);
 
-            $file = $request->file('image')->store('photo_receivers');
-            $file = explode('/', $file);
-            $file = end($file);
+
+            $photo = $request->file('image');
+            $ext   = $photo->extension();
+            $name  = time().'.'.$ext;
+            $photo = $photo->move('photo_receivers', $name)->getFilename();
 
 
             /*$update = $user->user_receivers()->update([
@@ -35,12 +37,12 @@ class UserReceiverController extends Controller
             ]);*/
             //if($update === 0){
                 $user->order_currencies()->update([
-                    'photo' => $file
+                    'photo' => "photo_receivers/".$photo
                 ]);
             //}
 
 
-            return response()->json(['success' => true, 'file_name' => $file, 'status' => 200]);
+            return response()->json(['success' => true, 'file_name' => "photo_receivers/".$photo, 'status' => 200]);
 
         }
     }

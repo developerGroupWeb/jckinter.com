@@ -6,14 +6,14 @@ $(function(){
     let form_login = $('#form-login');
 
     const alertMessage = (id, errorClass, text) => {
-        return $(id).next(errorClass).html(text).show('slow');
+        return $(id).next(errorClass).html(text).show();
     };
 
     const deleteMessage = (errorClass) => {
         return $(errorClass).hide();
     };
     const requiredMessage = (errorClass, text) => {
-        return $(errorClass).html(text).show('slow');
+        return $(errorClass).html(text).show();
     };
     const borderColorMessage = (id) => {
         return $(id).css('border-color', 'red');

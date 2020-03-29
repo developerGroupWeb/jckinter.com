@@ -9,7 +9,7 @@
     <div class="row">
       <div class="mx-auto mt-5 mb-4">
         <img src="" alt="">
-        <h2 class="text-center font-weight-bold"><a class="text-primary" href="{{ route('home.index') }}">JCK Transfert</a></h2>
+        <h2 class="text-center font-weight-bold"><a class="text-primary" href="{{ route('home.index', ['language' => app()->getLocale()]) }}">JCK Transfert</a></h2>
       </div>
     </div>
 
@@ -40,7 +40,7 @@
               </div>
           @endif
 
-        <form method="post" action="{{ route('login.store') }}" class="col-12 w-100" id="form-login" data-browse="{{ route('dashboard.index') }}" >
+        <form method="post" action="{{ route('login.store', ['language' => app()->getLocale()]) }}" class="col-12 w-100" id="form-login" data-browse="{{ route('dashboard.index', ['language' => app()->getLocale()]) }}" >
 
             @csrf
 
@@ -66,11 +66,11 @@
           </div>
 
           <div class="row">
-            <p class="mx-auto my-3"><a href="{{ route('forgot.password.index') }}" class="">Forget password?</a></p>
+            <p class="mx-auto my-3"><a href="{{ route('forgot.password.index', ['language' => app()->getLocale()]) }}" class="">Forget password?</a></p>
           </div>
 
           <div class="row">
-            <p class="mx-auto my-3">Don’t have an account? <a href="{{ route('register.index') }}" class="ml-2"> Signup Now</a></p>
+            <p class="mx-auto my-3">Don’t have an account? <a href="{{ route('register.index', ['language' => app()->getLocale()]) }}" class="ml-2"> Signup Now</a></p>
           </div>
         </form>
       </div>
@@ -79,7 +79,7 @@
     <div class="row">
       <ul class="nav mx-auto mt-3">
         <li class="nav-item">
-          <a href="{{ route('home.index') }}" class="nav-link text-dark text-center">© JCK tranfert</a>
+          <a href="{{ route('home.index', ['language' => app()->getLocale()]) }}" class="nav-link text-dark text-center">© JCK tranfert</a>
         </li>
         <li class="nav-item">
           <a href="" class="nav-link text-dark text-center">Contact</a>

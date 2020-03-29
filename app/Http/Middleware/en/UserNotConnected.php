@@ -19,7 +19,7 @@ class UserNotConnected
     {
         $sessions  = session()->get('currency_user');
         if(isset($sessions['id'])){
-           return redirect()->route('dashboard.index', [strtolower($sessions['full_name'])]);
+           return redirect()->route('dashboard.index', ['language' => app()->getLocale(), strtolower($sessions['full_name'])]);
         }
         return $next($request);
     }

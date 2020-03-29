@@ -41,7 +41,7 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('currencyconverter.store', app()->getLocale()) }}" method="post" id="currency-form-v2">
+                    <form action="{{ route('currencyconverter.store', app()->getLocale()) }}" method="post" id="currency-form-v2" data-action="{{route('currencyconverter.data',  ['language' => app()->getLocale()])}}">
 
                         @csrf
 

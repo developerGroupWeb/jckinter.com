@@ -4,6 +4,7 @@ $(function () {
     let error_send_amount    = false, error_country = false;
     let form         = $('#currency-form-v2');
     let form_summary = $('#summary-transfer');
+    let  fees;
 
 
     $(document).on('change', '#country', function () {
@@ -27,8 +28,6 @@ $(function () {
             let amount_send = form.find('#amount-send').val();
             let filter        = /^[0-9]+$/;
             let devise_send   = form.find('#devise-send').val();
-            let key           = "0a68a651467c93c81883b611b01a4d02";
-
 
             if(amount_send === ''){
 
@@ -59,78 +58,97 @@ $(function () {
 
     });
 
-    $(document).on('blur', '#amount-send', function () {
 
-        let amount_send = form.find('#amount-send').val();
+
+    $(document).on('blur', '#amount-send', function (e) {
+        e.preventDefault();
+
+        let amount_send   = form.find('#amount-send').val();
         let devise_send   = form.find('#devise-send').val();
-        let key           = "0a68a651467c93c81883b611b01a4d02";
-        $.ajax({
+        const token       = $('meta[name="csrf-token"]').attr('content');
+        const url         = form.attr('data-action');
 
-            url: "http://api.currencylayer.com/live?access_key="+ key +"&source="+ devise_send +"&currencies=XOF&format=1",
-            method: 'GET',
-            dataType: 'json',
-            async: true,
-            cache: false,
-            success : function (data, status) {
 
-                if(data.success === true){
+        const data = {
+            "amount_send": amount_send,
+            "devise_send": devise_send
+        };
 
+        fetch(
+            url,
+            {
+                headers: {
+                    "Content-Type":"application/json",
+                    "Accept":"application/json, text-plain, */*",
+                    "X-Requested-With":"XMLHttpRequest",
+                    "X-CSRF-TOKEN": token
+                },
+                method: "POST",
+                body: JSON.stringify(data),
+            }
+        ).then(data => data.json())
+
+            .then(data => {
+
+                if(data.success){
                     form.find('.error').addClass('d-none');
-                    let exchange = data.quotes.USDXOF;
-
-                    //alert(amount_send+'  '+devise_send+' '+ exchange)
-
-                    form.find('#amount-receive').val(amount_send*exchange);
-                    form_summary.find('#exchange').val(exchange);
-                }else if(data.success === false){
+                    form.find('#amount-receive').val(data.result);
+                    form_summary.find('#exchange').val(data.rate);
+                    fees  = (data.fee.toFixed(2));
+                }else if(!data.success){
                     form.find('#amount-receive').val('');
                 }
 
-            },
-            error: function (resp, status, error) {
+            }).catch(error => {
                 form.find('.error').removeClass('d-none');
                 $('.error').html(error);
-            },
-
         });
 
     });
 
 
-    $(document).on('change', '#devise-send', function () {
+    $(document).on('change', '#devise-send', function (e) {
+        e.preventDefault();
 
-
-        let amount_send = form.find('#amount-send').val();
+        let amount_send   = form.find('#amount-send').val();
         let devise_send   = form.find('#devise-send').val();
-        let key           = "0a68a651467c93c81883b611b01a4d02";
+        const token       = $('meta[name="csrf-token"]').attr('content');
+        const url         = form.attr('data-action');
 
+        const data = {
+            "amount_send": amount_send,
+            "devise_send": devise_send
+        };
 
-        $.ajax({
+        fetch(
+            url,
+            {
+                headers: {
+                    "Content-Type":"application/json",
+                    "Accept":"application/json, text-plain, */*",
+                    "X-Requested-With":"XMLHttpRequest",
+                    "X-CSRF-TOKEN": token
+                },
+                method: "POST",
+                body: JSON.stringify(data),
+            }
+        ).then(data => data.json())
 
-            url: "http://api.currencylayer.com/live?access_key="+ key +"&source="+ devise_send +"&currencies=XOF&format=1",
-            method: 'GET',
-            dataType: 'json',
-            async: true,
-            cache: false,
-            success : function (data, status) {
+            .then(data => {
 
-                if(data.success === true){
-
+                if(data.success){
                     form.find('.error').addClass('d-none');
-                    let exchange = data.quotes.USDXOF;
-                    form.find('#amount-receive').val(amount_send*exchange);
-                    form_summary.find('#exchange').val(exchange);
-                }else if(data.success === false){
+                    form.find('#amount-receive').val(data.result);
+                    form_summary.find('#exchange').val(data.rate);
+                    fees  = (data.fee.toFixed(2));
 
+                }else if(!data.success){
                     form.find('#amount-receive').val('');
                 }
 
-            },
-            error: function (resp, status, error) {
+            }).catch(error => {
                 form.find('.error').removeClass('d-none');
                 $('.error').html(error);
-            },
-
         });
 
     });
@@ -139,11 +157,11 @@ $(function () {
         e.preventDefault();
 
         let amount_send    = parseInt(form.find('#amount-send').val());
-        let amount_receive = Math.round(parseInt(form.find('#amount-receive').val()));
+        let amount_receive = (parseFloat(form.find('#amount-receive').val())).toFixed(2);
         let devise_send    = form.find('#devise-send').val().toLocaleUpperCase();
         let country        = form.find('#country').val().toLocaleUpperCase();
-        const fees         = 5;
-        let amount_total   =  parseInt(form.find('#amount-send').val()) + fees;
+
+        let amount_total   =  (parseInt(form.find('#amount-send').val()) + parseFloat(fees));
 
         if(error_send_amount === false || error_country === false){
 
@@ -157,8 +175,6 @@ $(function () {
         }else{
 
 
-            let route = form.attr('action');
-            let token = $('meta[name="csrf-token"]');
 
             $('#content-ajax-loader').append('<div class="loader" id="loader"></div>');
             form.find('#continue').add('#amount-send, #devise-send, #country').attr('disabled', 'disabled');

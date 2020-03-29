@@ -33,12 +33,16 @@ Route::group(['prefix' => '{language}'],function (){
     Route::get('about-us', 'AboutUs\\AboutUsController@index')->name('about.us.index');
 
 
+    Route::post('get-currency-data', 'CurrencyConverter\\CurrencyConverterController@get_currency_data')->name('currencyconverter.data');
+
+
     Route::middleware(['user.connected'])->group(function (){
 
         /* Currency Converter routes */
         Route::get('currencyconverter', 'CurrencyConverter\\CurrencyConverterController@index')->name('currencyconverter.index');
 
         Route::post('currencyconverter', 'CurrencyConverter\\CurrencyConverterController@store')->name('currencyconverter.store');
+
 
         Route::delete('currencyconverter/{currency_id}', 'CurrencyConverter\\CurrencyConverterController@destroy')->name('currencyconverter.destroy');
 

@@ -359,7 +359,7 @@ $(function () {
 
                                 if(data.status === 200){
 
-                                    $('img').attr('src', 'http://127.0.0.1/jckinter.com/storage/app/public/photo_receivers/'+ data.file_name);
+                                    $('img').attr('src', data.file_name);
                                     error_photo  = true;
                                 }else if(data.error){
 

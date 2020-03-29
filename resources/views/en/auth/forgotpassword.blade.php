@@ -8,7 +8,7 @@
     <div class="row">
       <div class="mx-auto mt-5 mb-4">
         <img src="" alt="">
-        <h2 class="text-center font-weight-bold"><a class="text-primary" href="{{ route('home.index') }}">JCK Transfert</a></h2>
+        <h2 class="text-center font-weight-bold"><a class="text-primary" href="{{ route('home.index', ['language' => app()->getLocale()]) }}">JCK Transfert</a></h2>
       </div>
     </div>
       @if(session()->has('error'))
@@ -40,7 +40,7 @@
           </div>
 
           <div class="row">
-            <p class="mx-auto my-3">Do you have an account? <a href="{{ route('login.index') }}" class="ml-2 route-login"> Login Now</a></p>
+            <p class="mx-auto my-3">Do you have an account? <a href="{{ route('login.index', ['language' => app()->getLocale()]) }}" class="ml-2 route-login"> Login Now</a></p>
           </div>
         </form>
       </div>

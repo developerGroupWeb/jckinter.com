@@ -18,14 +18,15 @@ class RegisterController extends Controller{
      */
     function index(){
 
-        return view(request()->segment(1).'.auth.register');
+        return view(app()->getLocale().'.auth.register');
     }
 
     /**
+     * @param $language
      * @param StoreRegisterFormRequest $formRequest
      * @return RedirectResponse
      */
-    function store(StoreRegisterFormRequest $formRequest){
+    function store($language, StoreRegisterFormRequest $formRequest){
 
         $create = User::create([
             'full_name' => $formRequest->full_name,
@@ -41,22 +42,22 @@ class RegisterController extends Controller{
 
             session()->flash('success', "We send you an email to <strong>{$formRequest->email}</strong> with a link to confirm your account");
 
-            return redirect()->route('login.index');
+            return redirect()->route('login.index', ['language' => app()->getLocale()]);
         }
     }
 
-    function confirm($id_confirmation){
+    function confirm($language, $id_confirmation){
 
-        if(User::whereId_confirmation($id_confirmation)->count() === 1){
+        if(time_expire_link($id_confirmation)){
 
             User::whereId_confirmation($id_confirmation)->update([
                 'id_confirmation' => User::getUniqueCode(),
                 'confirm_account' => 1
             ]);
-            return redirect()->route('login.index')->with('success', 'Your account has been confirmed');
+            return redirect()->route('login.index', ['language' => app()->getLocale()])->with('success', 'Your account has been confirmed');
         }
 
-        return redirect()->route('login.index')->with('danger', 'Your account has already been confirmed or We cannot confirm your account for security reasons');
+        return redirect()->route('login.index', ['language' => app()->getLocale()])->with('danger', 'Your account has already been confirmed or We cannot confirm your account for security reasons');
     }
 
     protected function send_email_confirm_account($formRequest){

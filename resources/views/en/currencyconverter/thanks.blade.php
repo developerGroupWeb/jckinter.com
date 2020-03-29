@@ -1,4 +1,4 @@
-@extends('layouts.default', ['title' => 'Checkout'])
+@extends('layouts.default', ['title' => 'Thanks'])
 
 @section('content')
 
@@ -32,7 +32,7 @@
 
                         <hr/>
 
-                        <button class="btn btn-outline-primary"><a href="{{ route('currencyconverter.index') }}">Continuer vers la boutique</a> </button>
+                        <button class="btn btn-outline-primary"><a href="{{ route('currencyconverter.index', ['language' => app()->getLocale()]) }}">Continuer vers la boutique</a> </button>
                     </div>
 
 

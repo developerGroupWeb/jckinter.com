@@ -135,7 +135,7 @@
                             <div id="faq-2" class="collapse" data-parent="#accordion">
                                 <div class="acr-body">
 
-                                    <form method="post" action="{{ route('user.receiver.update') }}" enctype="multipart/form-data" id="form-receive-details" class="" data-picture="{{route('photo.receiver')}}">
+                                    <form method="post" action="{{ route('user.receiver.update', ['language' => app()->getLocale()]) }}" enctype="multipart/form-data" id="form-receive-details" class="" data-picture="{{route('photo.receiver', ['language' => app()->getLocale()])}}">
                                         @csrf
                                         <div class="card mb-3">
                                             <div class="row no-gutters">
@@ -147,7 +147,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="mx-3 border rounded" id="r-photo"><img src="{{ 'http://127.0.0.1/jckinter.com/storage/app/public/photo_receivers/'.(isset($order->photo) ? $order->photo : '')}}" alt="" class="img-fluid"></div>
+                                                    <div class="mx-3 border rounded" id="r-photo"><img src="{{asset($order->photo)}}" alt="" class="img-fluid"></div>
                                                 </div>
 
 
@@ -223,7 +223,7 @@
                             <div id="faq-3" class="collapse" data-parent="#accordion">
                                 <div class="acr-body">
 
-                                    <form method="post" action="{{ route('checkout.update') }}" id="payment-form" class="my-5">
+                                    <form method="post" action="{{ route('checkout.update', ['language' => app()->getLocale()]) }}" id="payment-form" class="my-5">
 
                                         @csrf
 
@@ -285,7 +285,7 @@
             <!--<div class="tab-pane fade col-12" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                 <h5>Need help? Contact us!</h5>
                 <div class="p-4 bg-white rounded border" style="height: 550px; overflow: auto;">
-                    <form method="post" action="{{ route('help.contact') }}" id="user-contact-form" class="">
+                    <form method="post" action="" id="user-contact-form" class="">
                         @csrf
 
                         <div class="form-group">

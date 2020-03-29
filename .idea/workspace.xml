@@ -2,14 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="043bef7a-9283-4162-9b2d-1b393dd53449" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Services/CallApiService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Helpers/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CurrencyConverter/CurrencyConverterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CurrencyConverter/CurrencyConverterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/UserReceiverController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/UserReceiverController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/en/UserConnected.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/en/UserConnected.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/en/UserNotConnected.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/en/UserNotConnected.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/jck-admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/jck-admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/CurrencyConverterService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/CurrencyConverterService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/app/js/contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/contact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/app/js/currency.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/currency.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/app/js/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/app/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/app/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/emails/auth/reset-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/auth/reset-password.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/emails/register/confirm-account.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/register/confirm-account.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/en/auth/forgotpassword.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/auth/forgotpassword.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/en/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/en/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/en/auth/reset-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/auth/reset-password.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/en/currencyconverter/thanks.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/currencyconverter/thanks.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/en/currencyconverter/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/currencyconverter/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/en/dashboard/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/dashboard/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/en/home/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/home/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navUser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navUser.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/select_navs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/select_navs.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -254,7 +275,8 @@
       <workItem from="1585277061240" duration="16447000" />
       <workItem from="1585316946654" duration="120000" />
       <workItem from="1585378200570" duration="460000" />
-      <workItem from="1585395640675" duration="916000" />
+      <workItem from="1585395640675" duration="25131000" />
+      <workItem from="1585455250099" duration="1695000" />
     </task>
     <servers />
   </component>

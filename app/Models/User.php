@@ -33,7 +33,7 @@ class User extends Model
         $time = time();
         $code = Crypt::encryptString("{$code}ossehi{$time}");
 
-        if(self::whereId_reset_password($code)->count()!= 0)
+        if(self::whereId_confirmation($code)->count()!= 0)
         {
             return self::getUniqueCode();
         }
