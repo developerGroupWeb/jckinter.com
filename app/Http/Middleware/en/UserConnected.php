@@ -29,12 +29,12 @@ class UserConnected
 
                 'track_order'    => OrderCurrency::getTrackOrder(),
                 'amount_send'    => $request->amount_send,
-                'amount_receive' => $request->amount_send * $request->exchange,
+                'amount_receive' => $request->amount_receive,
                 'exchange'       => $request->exchange,
                 'devise_send'    => $request->devise_send,
                 'devise_receive' => 'XOF',
                 'country'        => $request->country,
-                'fees'           => 5,
+                'fees'           =>$request->fees,
                 'total'          => $request->total,
             ]);
         }

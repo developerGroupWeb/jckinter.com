@@ -28,13 +28,18 @@ class DashboardController extends Controller
 
         $user  = User::findOrFail($user_id);
 
-        if(Session::has('fake_order') && isset(Session::get('fake_order')['amount_send'])){
+
+
+        if(Session::has('fake_order') && (Session::get('fake_order')['amount_send']) != null){
 
             $fake_order  = Session::get('fake_order');
+            $order        = $user->order_currencies()->whereStatus(false)->first();
 
-            if($fake_order['exchange']){
-                $user->order_currencies()->create($fake_order);
-                session()->forget('fake_order');
+            if($order == null){
+                if($fake_order['exchange']){
+                    $user->order_currencies()->create($fake_order);
+                    session()->forget('fake_order');
+                }
             }
         }
 
@@ -80,7 +85,7 @@ class DashboardController extends Controller
             session()->forget('currency_user');
             session()->forget('fake_order');
 
-            return redirect()->route('home.index');
+            return redirect()->route('home.index', ['language' => app()->getLocale()]);
         }
     }
 }

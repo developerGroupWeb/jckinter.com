@@ -39,25 +39,16 @@ class CurrencyConverterService
 
     static function get_summary($request){
 
-        $amount_send     = $request->get('amount_send');
-        $exchange        = $request->get('exchange');
-        $devise_send     = $request->get('devise_send');
-        $country         = $request->get('country');
-
-        $amount_receive  = $amount_send * $exchange;
-        $fees           = 5;
-        $total           = $amount_send + $fees;
-
         return [
                   'track_order' => OrderCurrency::getTrackOrder(),
-                  'amount_send'    => $amount_send,
-                  'amount_receive' => $amount_receive,
-                  'exchange'       => $exchange,
-                  'devise_send'    => $devise_send,
+                  'amount_send'    => $request->get('amount_send'),
+                  'amount_receive' => $request->get('amount_receive'),
+                  'exchange'       => $request->get('exchange'),
+                  'devise_send'    => $request->get('devise_send'),
                   'devise_receive' => 'XOF',
-                  'country'        => $country,
-                  'fees'           => $fees,
-                  'total'          => $total,
+                  'country'        => $request->get('country'),
+                  'fees'           => $request->get('fees'),
+                  'total'          => $request->get('total'),
 
         ];
     }

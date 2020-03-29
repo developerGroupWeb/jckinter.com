@@ -7,8 +7,9 @@ $(function () {
     let  fees;
 
 
-    $(document).on('change', '#country', function () {
 
+    $(document).on('change', '#country', function (e) {
+        e.preventDefault();
         let country = $(this).val();
         if(country === ''){
             $(this).attr('style', 'border-color:red');
@@ -23,7 +24,9 @@ $(function () {
         }
     });
 
-    $(document).on('blur', '#amount-send', function () {
+    $(document).on('blur', '#amount-send', function (e) {
+
+            e.preventDefault();
 
             let amount_send = form.find('#amount-send').val();
             let filter        = /^[0-9]+$/;
@@ -66,7 +69,7 @@ $(function () {
         let amount_send   = form.find('#amount-send').val();
         let devise_send   = form.find('#devise-send').val();
         const token       = $('meta[name="csrf-token"]').attr('content');
-        const url         = form.attr('data-action');
+        const url         = $('meta[name="csrf-token"]').attr('data-action');
 
 
         const data = {
@@ -95,6 +98,7 @@ $(function () {
                     form.find('#amount-receive').val(data.result);
                     form_summary.find('#exchange').val(data.rate);
                     fees  = (data.fee.toFixed(2));
+                    form_summary.find('#fees').val(fees);
                 }else if(!data.success){
                     form.find('#amount-receive').val('');
                 }
@@ -113,7 +117,7 @@ $(function () {
         let amount_send   = form.find('#amount-send').val();
         let devise_send   = form.find('#devise-send').val();
         const token       = $('meta[name="csrf-token"]').attr('content');
-        const url         = form.attr('data-action');
+        const url         = $('meta[name="csrf-token"]').attr('data-action');
 
         const data = {
             "amount_send": amount_send,
@@ -141,6 +145,7 @@ $(function () {
                     form.find('#amount-receive').val(data.result);
                     form_summary.find('#exchange').val(data.rate);
                     fees  = (data.fee.toFixed(2));
+                    form_summary.find('#fees').val(fees);
 
                 }else if(!data.success){
                     form.find('#amount-receive').val('');

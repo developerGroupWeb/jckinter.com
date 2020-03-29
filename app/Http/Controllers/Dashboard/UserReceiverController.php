@@ -42,7 +42,7 @@ class UserReceiverController extends Controller
             //}
 
 
-            return response()->json(['success' => true, 'file_name' => "photo_receivers/".$photo, 'status' => 200]);
+            return response()->json(['success' => true, 'file_name' => asset("photo_receivers/".$photo), 'status' => 200]);
 
         }
     }
