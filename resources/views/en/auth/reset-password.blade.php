@@ -64,4 +64,6 @@
     </div>
 
     <script src="{{ asset('app/js/reset-password.js') }}"></script>
+    
+    @include('css.style')
 @stop
