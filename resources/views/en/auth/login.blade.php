@@ -95,5 +95,5 @@
 
 <script src="{{ asset('app/js/login.js') }}"></script>
 
-
+@include('css.style')
 @stop

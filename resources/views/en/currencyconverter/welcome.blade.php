@@ -29,7 +29,7 @@
                 @csrf
 
                 <div class="currency-form-v2" id="currency-transfer">
-                    <h4>Send Money</h4>
+                    <h2>Send Money</h2>
                     <div class="col-lg-4 mb-3">
                         <label for="country">Send to</label>
                         <select  class="custom-select custom-select-lg" id="country">
@@ -81,7 +81,7 @@
 
                     <div class="currency-form-v2 d-none" id="summary-transfer">
 
-                        <h4>Total recapitulatif</h4>
+                        <h2>Total recapitulatif</h2>
 
                         <div class="col-lg-3 mb-3">
                             <p>Country receive</p>
@@ -127,10 +127,6 @@
 
                     <! -------------------------------------->
             </form>
-
-
-
-
         </div>
     </div>
     </div>

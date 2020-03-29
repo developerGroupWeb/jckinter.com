@@ -63,4 +63,5 @@
 </div>
 
     <script src="{{ asset('app/js/forgot-password.js') }}"></script>
+    @include('css.style')
 @stop

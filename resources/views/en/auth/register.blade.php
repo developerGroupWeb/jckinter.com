@@ -77,5 +77,5 @@
 
 <script src="{{ asset('app/js/register.js') }}"></script>
 
-
+@include('css.style')
 @stop

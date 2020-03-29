@@ -56,7 +56,7 @@
 
             <div class="tab-pane fade show active col-12" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                 <h5>Overview</h5>
-                <div class="p-4 bg-white rounded border" style="height: 550px; overflow: auto;">
+                <div class="p-4 bg-white rounded border" style="height: 500px; overflow: auto;">
                     <h5>Transition details</h5>
 
                     <div class="accordion" id="accordion">
@@ -147,7 +147,8 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="mx-3 border rounded" id="r-photo"><img src="{{ $order->photo ? asset($order->photo) : '' }}" alt="" class="img-fluid"></div>
+                                                    <div class="mx-3
+                                                    " id="r-photo"><img src="{{ $order->photo ? asset($order->photo) : '' }}" alt="" class="img-fluid"></div>
                                                 </div>
 
 
@@ -190,8 +191,6 @@
                                                                     <option value="1" {{ ((isset($order->question) && 1 == $order->question) ? "selected='selected'" : '') }}>1</option>
                                                                     <option value="2" {{ ((isset($order->question) && 2 == $order->question) ? "selected='selected'" : '') }}>2</option>
                                                                     <option value="3" {{ ((isset($order->question) &&  $order->question == 3) ? "selected='selected'" : '') }}>3</option>
-                                                                    <option value="4" {{ ((isset($order->question) && 4 == $order->question) ? "selected='selected'" : '') }}>4</option>
-                                                                    <option value="5" {{ ((isset($order->question) && 5 == $order->question) ? "selected='selected'" : '') }}>5</option>
                                                                 </select>
                                                                 <span class="invalid-feedback error-question"></span>
                                                             </div>
@@ -418,5 +417,7 @@
 </script>
 
 <script src="{{ asset('app/js/dashboard.js') }}"></script>
+
+@include('css.style')
 
 @stop
