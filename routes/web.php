@@ -41,7 +41,7 @@ Route::group(['prefix' => '{language}'],function (){
         /* Currency Converter routes */
         Route::get('currencyconverter', 'CurrencyConverter\\CurrencyConverterController@index')->name('currencyconverter.index');
 
-        Route::post('currencyconverter', 'CurrencyConverter\\CurrencyConverterController@store')->name('currencyconverter.store');
+        Route::post('currencyconverter/store', 'CurrencyConverter\\CurrencyConverterController@store')->name('currencyconverter.store');
 
 
         Route::delete('currencyconverter/{currency_id}', 'CurrencyConverter\\CurrencyConverterController@destroy')->name('currencyconverter.destroy');

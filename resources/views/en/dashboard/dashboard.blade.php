@@ -103,7 +103,7 @@
                                         </div>
 
                                         <div class="col-lg-6 bg-light py-2 mb-3 text-center">Exchange rate: 1.00 <span class="font-weight-bold">{{ $order->devise_send }}</span> = <span>{{ round($order->exchange, 3) }}</span> <span class="font-weight-bold">XOF</span></div>
-                                        <div class="col-lg-6 bg-light py-2 mb-3 text-center"><span class="font-weight-bold">{{ $order->fees }} $</span> <span>transfer fees</span></div>
+                                        <div class="col-lg-6 bg-light py-2 mb-3 text-center"><span class="font-weight-bold">{{ $order->fees.' '.$order->devise_send}}</span> <span>transfer fees</span></div>
 
                                         <div class="col-lg-12">
                                             <div class="row">
@@ -147,7 +147,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="mx-3 border rounded" id="r-photo"><img src="{{asset($order->photo)}}" alt="" class="img-fluid"></div>
+                                                    <div class="mx-3 border rounded" id="r-photo"><img src="{{ $order->photo ? asset($order->photo) : '' }}" alt="" class="img-fluid"></div>
                                                 </div>
 
 

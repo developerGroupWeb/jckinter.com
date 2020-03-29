@@ -41,7 +41,7 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('currencyconverter.store', app()->getLocale()) }}" method="post" id="currency-form-v2" data-action="{{route('currencyconverter.data',  ['language' => app()->getLocale()])}}">
+                    <form action="{{ route('currencyconverter.store', app()->getLocale()) }}" method="post" id="currency-form-v2">
 
                         @csrf
 
@@ -88,9 +88,9 @@
                             </div>
 
                             <div class="form-field col-lg-4 offset-lg-4 mt-5">
-                                <button class="btn btn-block btn-filled form-btn" id="continue" disabled>
+                                <span class="btn btn-block btn-filled form-btn" id="continue" disabled>
                                     <span class="bh"></span> <span >Continue <i class="fas fa-arrow-right"></i></span>
-                                </button>
+                                </span>
                             </div>
                         </div>
 
@@ -120,12 +120,14 @@
                                 <input name="amount_receive" type="hidden" value="">
                             </div>
 
+
                             <div class="col-lg-3 mb-3">
                                 <p class="font-weight-bold">Total to pay</p>
                                 <h4 class="amount-total">amount+currency</h4>
                                 <input name="total" type="hidden" value="">
                                 <p>Amount with fees*</p>
                                 <input type="hidden" name="exchange" id="exchange" value="">
+                                <input name="fees" type="hidden" id="fees" value="">
 
                             </div>
 
@@ -135,12 +137,13 @@
                                     <span class="bh"></span> <span><i class="fas fa-arrow-left"></i> Back</span>
                                 </span>
 
-                                    <button type="submit" class="btn btn-group col-6  btn-filled form-btn">
+                                    <button type="submit"  class="btn btn-group col-6  btn-filled form-btn">
                                         <span class="bh"></span> <span >Continue transfer <i class="fas fa-arrow-right"></i></span>
                                     </button>
                                 </div>
                             </div>
                         </div>
+
 
                         <! -------------------------------------->
                     </form>

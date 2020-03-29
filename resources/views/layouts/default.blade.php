@@ -9,7 +9,7 @@
     <meta name="viewport" content="initial-scale=1, shrink-to-fit=no, width=device-width">
 
     {{-- CSRF Token --}}
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}" data-action="{{route('currencyconverter.data',  ['language' => app()->getLocale()])}}">
 
     <title>
         {{$title ?? ''}}

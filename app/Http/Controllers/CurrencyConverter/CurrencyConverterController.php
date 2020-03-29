@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Services\CallApiService;
 use App\Services\CurrencyConverterService;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -33,12 +34,14 @@ class CurrencyConverterController extends Controller
 
 
     /**
+     * @param $language
      * @param StoreCurrencyFormRequest $requestForm
      * @return RedirectResponse
      */
-    function store(StoreCurrencyFormRequest $requestForm){
+    function store($language, StoreCurrencyFormRequest $requestForm){
 
         $summary =  CurrencyConverterService::get_summary($requestForm);
+
 
         $user_id = Session::get('currency_user')['id'];
 
@@ -49,7 +52,7 @@ class CurrencyConverterController extends Controller
         }
 
         $user  = User::findOrFail($user_id);
-
+        //dd($summary);
         $order  = $user->order_currencies()->create($summary);
 
         if($order){
@@ -59,7 +62,12 @@ class CurrencyConverterController extends Controller
 
     }
 
-    function get_currency_data(Request $request){
+    /**
+     * @param $language
+     * @param Request $request
+     * @return JsonResponse
+     */
+    function get_currency_data($language, Request $request){
 
         $data = CallApiService::getData($request->devise_send, "XOF", $request->amount_send);
 
@@ -74,17 +82,19 @@ class CurrencyConverterController extends Controller
     }
 
     /**
+     * @param $language
      * @param $id
      * @return RedirectResponse
      */
-    function destroy($id){
+    function destroy($language, $id){
 
-        OrderCurrency::destroy($id);
+        $delete = OrderCurrency::destroy($id);
 
-        session()->forget('fake_order');
+        if($delete){
 
-        return redirect()->route('home.index', ['language' => app()->getLocale()])->with('delete', 'Your order has been deleted');
-
+            session()->forget('fake_order');
+            return redirect()->route('home.index', ['language' => app()->getLocale()])->with('delete', 'Your order has been deleted');
+        }
     }
 
 

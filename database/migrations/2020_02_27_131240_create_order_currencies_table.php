@@ -21,14 +21,14 @@ class CreateOrderCurrenciesTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
 
-            $table->integer('amount_send');
-            $table->bigInteger('amount_receive');
+            $table->string('amount_send');
+            $table->string('amount_receive');
             $table->string('exchange');
             $table->string('devise_send');
             $table->string('devise_receive');
             $table->string('country');
-            $table->integer('fees');
-            $table->integer('total');
+            $table->string('fees');
+            $table->string('total');
 
             $table->text('payment_intent_id')->nullable();
             $table->datetime('payment_created_at')->nullable();

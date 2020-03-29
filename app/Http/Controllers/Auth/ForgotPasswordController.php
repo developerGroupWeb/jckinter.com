@@ -18,7 +18,7 @@ class ForgotPasswordController extends Controller
      */
     function index(){
 
-        return view(request()->segment(1).'.auth.forgotpassword');
+        return view(app()->getLocale().'.auth.forgotpassword');
     }
 
     function store(Request $request){
@@ -35,6 +35,9 @@ class ForgotPasswordController extends Controller
 
             if(User::whereEmail($request->email)->count() === 0){
                 return response()->json(['success' => false, 'message' => 'This email doesn\'t correspond to a user']);
+            }
+            if(!User::whereEmail($request->email)->first()->confirm_account){
+                return response()->json(['success' => false, 'message' => 'Your account has not been confirmed yet']);
             }
 
             session()->flash('success', "We send you an email to <strong> $request->email</strong> with a link to change your password");
