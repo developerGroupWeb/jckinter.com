@@ -2,25 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="043bef7a-9283-4162-9b2d-1b393dd53449" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Services/LoginAdminService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrdersAdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrdersAdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/StatusOrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/StatusOrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/TranslationDetailAdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TranslationDetailAdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileUserAdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileUserAdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserAdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserAdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_26_122750_create_user_admins_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_26_122750_create_user_admins_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/jck-admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/jck-admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/orders-list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/orders-list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/translation-detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/translation-detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/users.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/LoginAdminService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/LoginAdminService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/profile.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin-topbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin-topbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/select_navs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/select_navs.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -268,7 +255,15 @@
       <workItem from="1585316946654" duration="120000" />
       <workItem from="1585378200570" duration="460000" />
       <workItem from="1585395640675" duration="25131000" />
-      <workItem from="1585455250099" duration="37083000" />
+      <workItem from="1585455250099" duration="37324000" />
+      <workItem from="1585511747800" duration="39000" />
+      <workItem from="1585522914539" duration="1424000" />
+      <workItem from="1585561932080" duration="21000" />
+      <workItem from="1585562337452" duration="979000" />
+      <workItem from="1585572763212" duration="548000" />
+      <workItem from="1585585994290" duration="573000" />
+      <workItem from="1585587273113" duration="603000" />
+      <workItem from="1585637962986" duration="4220000" />
     </task>
     <servers />
   </component>

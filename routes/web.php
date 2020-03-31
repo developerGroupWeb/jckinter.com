@@ -118,6 +118,8 @@ Route::group(['prefix' => '{language}'],function (){
             Route::put('edit-role-user/{id}', 'Admin\\EditRoleAdminController@edit')->name('admin.user.edit');
 
             Route::get('profile-user', 'Admin\\ProfileUserAdminController@index')->name('admin.profile.user.index');
+            Route::put('profile-user/update', 'Admin\\ProfileUserAdminController@update')->name('admin.profile.user.update');
+            Route::put('profile-user/update/password', 'Admin\\ProfileUserAdminController@update_password')->name('admin.profile.user.update.password');
 
             Route::get('role-user', 'Admin\\RoleUserAdminController@index')->name('admin.role.index');
 
