@@ -47,9 +47,10 @@ class DashboardController extends Controller
         $order_active = $user->order_currencies()->whereStatus(true)->get();
 
 
+
         if($order){
 
-            Stripe::setApiKey('sk_test_l8dRncid0zKE6ZLVkBYzHq8800xiQKkVLr');
+            Stripe::setApiKey('sk_test_CyYhDwNBrYKG3adFgImami2U005IuJwQYT');
 
             $intent = PaymentIntent::create([
                 'amount' => $order->total * 100,
@@ -62,14 +63,14 @@ class DashboardController extends Controller
                 'order' => $order,
                 'order_active' => $order_active,
                 'client_secret' => $client_secret,
-                'key'  => 'sk_test_l8dRncid0zKE6ZLVkBYzHq8800xiQKkVLr'
+                'key'  => 'pk_test_9imYEL8mumJEeTOnMQ6TWJ8C00tI1lkhDN'
             ]);
         }
 
         return view(request()->segment(1).'.dashboard.dashboard',[
             'order' => $order,
             'order_active' => $order_active,
-            'key'  => 'sk_test_l8dRncid0zKE6ZLVkBYzHq8800xiQKkVLr'
+            'key'  => 'pk_test_9imYEL8mumJEeTOnMQ6TWJ8C00tI1lkhDN'
         ]);
     }
 

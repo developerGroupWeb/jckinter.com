@@ -218,7 +218,7 @@
                             Payment process
                             </h5>
 
-                            @if($order)
+                            @if(($order))
                             <div id="faq-3" class="collapse" data-parent="#accordion">
                                 <div class="acr-body">
 
@@ -250,7 +250,7 @@
 
                 <h5>Sending history</h5>
 
-                @foreach($order_active as $order)
+
 
                 <div class="p-4 bg-white rounded border" style="height: 550px; overflow: auto;">
                     <table class="table table-striped">
@@ -265,6 +265,7 @@
                             </tr>
                         </thead>
                         <tbody>
+                        @foreach($order_active as $order)
                             <tr>
                                 <th scope="row">{{ $order->track_order }}</th>
                                 <td>{{ $order->payment_created_at->format ('m/d/Y') }}</td>
@@ -273,11 +274,11 @@
                                 <td>{!! $order->processing ? '<span class="text-success">Done</span>' : '<span class="text-danger">Pending</span>' !!} </td>
                                 <td><button class="btn-primary px-2 rounded">Resend</button></td>
                             </tr>
-
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
-                @endforeach
+
             </div>
 
 
@@ -311,9 +312,9 @@
 
 <script src="https://js.stripe.com/v3/"></script>
 <script>
-    var key  = "'{{ $key }}'";
+    //var key  = "'{{ $key }}'";
 
-    var stripe = Stripe(key);
+    var stripe = Stripe('pk_test_9imYEL8mumJEeTOnMQ6TWJ8C00tI1lkhDN');
     var elements = stripe.elements();
 
     var style = {
