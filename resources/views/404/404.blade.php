@@ -8,7 +8,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-11 m-auto">
-            <img src="images/404.png" alt="">
+            <img src="{{asset('app/images/404.png')}}" alt="">
           </div>
         </div>
         <div class="row">
@@ -17,7 +17,7 @@
               <h2 class="sec-title">Oops! Page Not Found</h2>
               <p class="sec-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
-            <a href="home-01.html" class="btn btn-filled btn-round"><span class="bh"></span> <span>Back to Home</span></a>
+            <a href="{{route('home.index', ['language' => app()->getLocale()])}}" class="btn btn-filled btn-round"><span class="bh"></span> <span>Back to Home</span></a>
           </div>
         </div>
       </div>

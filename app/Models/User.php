@@ -29,9 +29,10 @@ class User extends Model
 
     static function getUniqueCode()
     {
-        $code = Str::random();
+        $random = Str::random();
         $time = time();
-        $code = Crypt::encryptString("{$code}ossehi{$time}");
+
+        $code = Crypt::encryptString("{$random}ossehi{$time}");
 
         if(self::whereId_confirmation($code)->count()!= 0)
         {

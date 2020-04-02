@@ -11,7 +11,7 @@ class ResetPasswordController extends Controller
 {
 
     function index($language, $id_confirmation){
-
+        //dd($id_confirmation);
         if(!time_expire_link($id_confirmation)){
             return redirect()->route('login.index', app()->getLocale())->with('danger', 'The link is invalid or has been already expired');
         }

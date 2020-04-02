@@ -18,26 +18,8 @@
 
                 <li><a href="{{route('contact.index', app()->getLocale())}}">Contact</a></li>
 
-                @if(isset($role->id) && !empty($role->id))
-                    <li class="has-menu-child mr-md-3">
-                        <a href="{{route(Route::currentRouteName(), ['language' => app()->getLocale(), 'id' => $role->id])}}"> {{ (app()->getLocale() === 'fr') ? 'French' : 'English' }}</a>
+                @if(Route::currentRouteName())
 
-                            <ul class="sub-menu">
-                                <li><a href="{{ route(Route::currentRouteName(), ['language' => 'fr',  'id' => $role->id]) }}">French</a></li>
-                                <li><a href="{{ route(Route::currentRouteName(), ['language' => 'en','id' => $role->id]) }}">English</a></li>
-                            </ul>
-                    </li>
-
-                @elseif(isset($id) && !empty($id))
-                    <li class="has-menu-child mr-md-3">
-                        <a href="{{route(Route::currentRouteName(), ['language' => app()->getLocale(), 'user' => $id])}}"> {{ (app()->getLocale() === 'fr') ? 'French' : 'English' }}</a>
-
-                        <ul class="sub-menu">
-                            <li><a href="{{ route(Route::currentRouteName(), ['language' => 'fr',  'user' => $id]) }}">French</a></li>
-                            <li><a href="{{ route(Route::currentRouteName(), ['language' => 'en','user' => $id]) }}">English</a></li>
-                        </ul>
-                    </li>
-                @else
                     <li class="has-menu-child mr-md-3">
                         <a href="{{route(Route::currentRouteName(), ['language' => app()->getLocale()])}}">{{ (app()->getLocale() === 'fr') ?'French' : 'English' }}</a>
 
@@ -48,9 +30,6 @@
                     </li>
 
                 @endif
-
-
-
                 <li><a href="{{route('register.index', app()->getLocale())}}" class="login btn btn-default btn-outline btn-round"><span class="bh"></span> <span>Register</span></a></li>
                 <li><a href="{{route('login.index', app()->getLocale())}}" class="login btn btn-outline  btn-round"><span class="bh"></span> <span>Log in</span></a></li>
                 <!-- <li></li> -->

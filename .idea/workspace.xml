@@ -2,10 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="043bef7a-9283-4162-9b2d-1b393dd53449" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/jackd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/jackd.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/checkout/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/checkout/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/en/dashboard/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/dashboard/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Helpers/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/helpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/404/404.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/404/404.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navUser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navUser.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/select_navs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/select_navs.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -144,17 +153,17 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\jackd\Documents\jckinter.com\public\admin\photo" />
-      <recent name="C:\Users\jackd\Documents\jckinter.com\app\Http\Controllers\Admin" />
-      <recent name="C:\Users\jackd\Documents\jckinter.com\database" />
-      <recent name="C:\wamp\www\jckinter.com\cache" />
-      <recent name="C:\wamp\www\jckinter.com\database\migrations" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jackd\Documents\jckinter.com\app\Services" />
       <recent name="C:\wamp\www\jckinter.com\public\app\images" />
       <recent name="C:\wamp\www\jckinter.com\app\Http\Middleware\en" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jackd\Documents\jckinter.com\resources\views" />
+      <recent name="C:\Users\jackd\Documents\jckinter.com\resources\views\en" />
+      <recent name="C:\Users\jackd\Documents\jckinter.com\public\admin\photo" />
+      <recent name="C:\Users\jackd\Documents\jckinter.com\app\Http\Controllers\Admin" />
+      <recent name="C:\Users\jackd\Documents\jckinter.com\database" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -262,6 +271,10 @@
       <workItem from="1585587273113" duration="603000" />
       <workItem from="1585637962986" duration="4568000" />
       <workItem from="1585668096454" duration="4443000" />
+      <workItem from="1585717761049" duration="523000" />
+      <workItem from="1585719872976" duration="162000" />
+      <workItem from="1585731657000" duration="2986000" />
+      <workItem from="1585790581227" duration="8216000" />
     </task>
     <servers />
   </component>
