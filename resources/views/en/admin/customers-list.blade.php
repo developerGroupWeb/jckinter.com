@@ -45,7 +45,7 @@
                                     <th scope="col">Name</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Creation Date</th>
-                                    <th scope="col"></th>
+                                    <th scope="col">Pays</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -53,11 +53,6 @@
                             @foreach($users as $user)
 
                                 <tr>
-                                    <td>
-                                        <span class="avatar avatar-sm rounded-circle">
-                                            <img src="{{asset($user->photo)}}" alt="" style="max-width: 100px; border-radius: 25px">
-                                        </span>
-                                    </td>
                                     <td>{{$user->name}}</td>
                                     <td>
                                         <a href=""><span class="__cf_email__" data-cfemail="6e0d1c0b0f1a011c2e0f1c090100400d0103">{{$user->email}}</span></a>
