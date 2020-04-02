@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="043bef7a-9283-4162-9b2d-1b393dd53449" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/404/404.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/404/404.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MessageAdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerAdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -148,11 +148,11 @@
       <recent name="C:\wamp\www\jckinter.com\app\Http\Middleware\en" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jackd\Documents\jckinter.com\database\migrations" />
+      <recent name="C:\Users\jackd\Documents\jckinter.com\database" />
       <recent name="C:\Users\jackd\Documents\jckinter.com\resources\views" />
       <recent name="C:\Users\jackd\Documents\jckinter.com\resources\views\en" />
       <recent name="C:\Users\jackd\Documents\jckinter.com\public\admin\photo" />
-      <recent name="C:\Users\jackd\Documents\jckinter.com\app\Http\Controllers\Admin" />
-      <recent name="C:\Users\jackd\Documents\jckinter.com\database" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -263,7 +263,7 @@
       <workItem from="1585717761049" duration="523000" />
       <workItem from="1585719872976" duration="162000" />
       <workItem from="1585731657000" duration="2986000" />
-      <workItem from="1585790581227" duration="8799000" />
+      <workItem from="1585790581227" duration="12367000" />
     </task>
     <servers />
   </component>
