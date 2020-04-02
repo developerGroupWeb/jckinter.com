@@ -57,14 +57,42 @@
 
                                                 </div>
                                             </div>
-
-
                                         </div>
                                     </div>
 
                                     <div class="col-lg-3 col-md-6 offset-md-3 offset-lg-0">
                                         <div class="p-3">
                                             <img class="img-fluid" src="{{ asset($order->photo) }}" alt="photo">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="list-content px-md-5">
+                                            <h3 class="admin-heading bg-offwhite">
+                                                <p>Transaction details</p>
+                                            </h3>
+
+                                            <div class="row px-3">
+                                                <div class="col-12 col-sm">
+                                                    <div class="content-area">
+                                                        <b>Sender Data</b>
+                                                        <p class="name">{{$order->name}}</p>
+                                                        <p class="surname">{{$order->surname}}</p>
+                                                        <p class="country">{{$order->address}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm">
+                                                    <div class="content-area text-right">
+                                                        <div class="price mt-sm-5">
+                                                            <b>Amount</b>
+                                                            <p class="order-amount"><span>USD ou autres</span>{{$order->amount_receive}}</p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
