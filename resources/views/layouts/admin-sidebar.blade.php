@@ -51,11 +51,11 @@
                             <i class="ni ni-collection text-yellow"></i>
                             <span class="nav-link-text">Managers List</span>
                         </a>
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="{{route('admin.customer.index', ['language' => app()->getLocale()])}}">
                             <i class="ni ni-collection text-yellow"></i>
                             <span class="nav-link-text">Customers List</span>
                         </a>
-                        
+
                     </li>
                 </ul>
             </div>

@@ -125,7 +125,7 @@ Route::group(['prefix' => '{language}'],function (){
 
 
             Route::get('order-list', 'Admin\\OrdersAdminController@index')->name('admin.order.index');
-            Route::get('message', 'Admin\\MessageAdminController@index')->name('admin.message.index');
+            Route::get('customer-list', 'Admin\\CustomerAdminController@index')->name('admin.customer.index');
             Route::get('translation-detail', 'Admin\\TranslationDetailAdminController@index')->name('admin.translation.detail.index');
 
         });
