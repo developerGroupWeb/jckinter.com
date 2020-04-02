@@ -7,20 +7,20 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class ContactEmail extends Mailable
+class OrderSuccessEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $data;
+    public $user;
 
     /**
      * Create a new message instance.
      *
-     * @param $data
+     * @param $user
      */
-    public function __construct($data)
+    public function __construct($user)
     {
-        $this->data  = $data;
+        $this->user = $user;
     }
 
     /**
@@ -30,8 +30,8 @@ class ContactEmail extends Mailable
      */
     public function build()
     {
-        return $this->from($this->data->email)
-
-                    ->markdown('emails.contact.contact-form');
+        return $this->from('support@jckinter.com')
+                    ->subject('Information about your order')
+                    ->markdown('emails.order.order-success-email');
     }
 }

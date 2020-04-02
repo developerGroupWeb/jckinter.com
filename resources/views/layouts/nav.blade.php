@@ -10,7 +10,7 @@
             <a id="mobile-menu-toggler" href="#"><i class="fas fa-bars"></i></a>
             <ul>
                 <li class="current-menu-item"><a href="{{route('home.index', app()->getLocale())}}">Home</a></li>
-            <!--<li><a href="{{ route('currencyconverter.index', app()->getLocale()) }}">Send Money</a></li>-->
+
 
                 <li class="">
                     <a href="{{ route('about.us.index', app()->getLocale()) }}">About us</a>

@@ -19,18 +19,7 @@ use Illuminate\View\View;
 class CurrencyConverterController extends Controller
 {
 
-    /**
-     * @param Request $request
-     * @return Factory|View
-     */
-    function index(Request $request){
 
-        $default_currency = CurrencyConverterService::get_default_currency($request);
-
-        return view(app()->getLocale().'.currencyconverter.welcome',[
-            'default_currency' => $default_currency
-        ]);
-    }
 
 
     /**

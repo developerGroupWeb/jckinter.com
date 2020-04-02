@@ -32,7 +32,7 @@
 
                         <hr/>
 
-                        <button class="btn btn-outline-primary"><a href="{{ route('currencyconverter.index', ['language' => app()->getLocale()]) }}">Continuer vers la boutique</a> </button>
+                        <button class="btn btn-outline-primary"><a href="{{ route('home.index', ['language' => app()->getLocale()]) }}">Continuer vers la boutique</a> </button>
                     </div>
 
 
