@@ -125,7 +125,10 @@ Route::group(['prefix' => '{language}'],function (){
 
 
             Route::get('order-list', 'Admin\\OrdersAdminController@index')->name('admin.order.index');
+
             Route::get('customer-list', 'Admin\\CustomerAdminController@index')->name('admin.customer.index');
+            Route::delete('customer-list/{id?}', 'Admin\\CustomerAdminController@destroy')->name('users.customer.destroy');
+
             Route::get('translation-detail', 'Admin\\TranslationDetailAdminController@index')->name('admin.translation.detail.index');
 
         });

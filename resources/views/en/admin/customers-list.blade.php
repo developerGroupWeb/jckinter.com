@@ -50,7 +50,7 @@
                             </thead>
                             <tbody>
 
-                            @foreach($errors as $user)
+                            @foreach($users as $user)
 
                                 <tr>
                                     <td>
@@ -71,8 +71,7 @@
                                                 <i class="fas fa-ellipsis-v"></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                <a class="dropdown-item" href="{{route('users.edit', ['language' => app()->getLocale(), 'user' => $user->id])}}">Edit</a>
-                                                <form method="post" action="{{route('users.destroy', ['language' => app()->getLocale(), 'user' => $user->id])}}" onsubmit="return confirm('DO YOU REALLY WANT TO DELETE {{ strtoupper($user->name) }}? ')">
+                                                <form method="post" action="{{route('users.customer.destroy', ['language' => app()->getLocale(), 'id' => $user->id])}}" onsubmit="return confirm('DO YOU REALLY WANT TO DELETE {{ strtoupper($user->name) }}? ')">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button  class="dropdown-item" >
