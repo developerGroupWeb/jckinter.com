@@ -50,7 +50,7 @@
                             </thead>
                             <tbody>
 
-                            @foreach($users as $user)
+                            @foreach($errors as $user)
 
                                 <tr>
                                     <td>
