@@ -74,7 +74,7 @@
                                     <td>{{$user->role}}</td>
                                     <td>{{$user->created_at->format('d/m/Y H:i')}}</td>
 
-                                    <td class="text-right {{ $user->is_admin ? '' : 'd-none' }}">
+                                    <td class="text-right">
                                         <div class="dropdown">
                                             <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="fas fa-ellipsis-v"></i>
@@ -93,35 +93,7 @@
                                     </td>
                                 </tr>
 
-                                <tr>
-                                    <td>
-                                        <span class="avatar avatar-sm rounded-circle">
-                                            <img src="" alt="" style="max-width: 100px; border-radius: 25px">
-                                        </span>
-                                    </td>
-                                    <td>Manager</td>
-                                    <td>
-                                        <a href=""><span class="__cf_email__" data-cfemail="6e0d1c0b0f1a011c2e0f1c090100400d0103">email</span></a>
-                                    </td>
-                                    <td>Manager</td>
-                                    <td>25/09/2019 09:35</td>
-                                    <td class="text-right">
-                                        <div class="dropdown">
-                                            <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fas fa-ellipsis-v"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                <a class="dropdown-item" href="edit-user.html">Edit</a>
-                                                <form action="">
-                                                    <input type="hidden" name="_token" value="jWuL0JHlytWb7KEd4iCZXfiH5FS1Rd3TQfLqjY7k">            <input type="hidden" name="_method" value="delete">
-                                                    <button type="button" class="dropdown-item" onclick="confirm('Are you sure you want to delete this user?') ? this.parentElement.submit() : ''">
-                                                        Delete
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
+
                             @endforeach
                             </tbody>
                         </table>

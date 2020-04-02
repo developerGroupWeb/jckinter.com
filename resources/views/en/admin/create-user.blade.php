@@ -57,7 +57,7 @@
                                     <select name="role" id="input-role" class="form-control" placeholder="Role" >
                                         <option value="">Select</option>
                                         @foreach($roles as $role)
-                                          <option value="{{$role->name}}" {{ old('role') ? 'selected' : '' }}>{{ucfirst($role->name)}}</option>
+                                          <option value="{{strtolower($role->name)}}" {{ old('role') ? 'selected' : '' }}>{{ucfirst($role->name)}}</option>
                                         @endforeach
 
                                     </select>
