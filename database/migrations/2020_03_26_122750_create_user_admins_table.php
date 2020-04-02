@@ -17,10 +17,9 @@ class CreateUserAdminsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email');
-            $table->string('role');
+            $table->enum('role',['admin','manager']);
             $table->string('password');
             $table->string('photo');
-            $table->boolean('is_admin')->default(false);
             $table->timestamps();
         });
     }
