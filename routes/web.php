@@ -46,7 +46,7 @@ Route::group(['prefix' => '{language}'],function (){
         Route::post('currencyconverter/store', 'CurrencyConverter\\CurrencyConverterController@store')->name('currencyconverter.store');
 
 
-        Route::delete('currencyconverter/{currency_id}', 'CurrencyConverter\\CurrencyConverterController@destroy')->name('currencyconverter.destroy');
+        Route::delete('currencyconverter/{currency_id?}', 'CurrencyConverter\\CurrencyConverterController@destroy')->name('currencyconverter.destroy');
 
         Route::get('thanks', 'CurrencyConverter\\CurrencyConverterController@thanks')->name('thanks');
 
@@ -85,13 +85,13 @@ Route::group(['prefix' => '{language}'],function (){
 
         Route::get('register', 'Auth\\RegisterController@index')->name('register.index');
         Route::post('register', 'Auth\\RegisterController@store')->name('register.store');
-        Route::get('register/confirm/{id_confirmation}', 'Auth\\RegisterController@confirm')->name('register.confirm');
+        Route::get('register/confirm/{id_confirmation?}', 'Auth\\RegisterController@confirm')->name('register.confirm');
 
         Route::get('forgot-password', 'Auth\\ForgotPasswordController@index')->name('forgot.password.index');
         Route::post('forgot-password', 'Auth\\ForgotPasswordController@store')->name('forgot.password.store');
 
-        Route::get('reset-password/{id_confirmation}', 'Auth\\ResetPasswordController@index')->name('reset.password.index');
-        Route::post('reset-password/{id_confirmation}', 'Auth\\ResetPasswordController@store')->name('reset.password.store');
+        Route::get('reset-password/{id_confirmation?}', 'Auth\\ResetPasswordController@index')->name('reset.password.index');
+        Route::post('reset-password/{id_confirmation?}', 'Auth\\ResetPasswordController@store')->name('reset.password.store');
 
 
     });
@@ -114,10 +114,12 @@ Route::group(['prefix' => '{language}'],function (){
             Route::get('edit-user', 'Admin\\EditUserAdminController@index')->name('admin.user.edit.index');
             Route::put('edit-user', 'Admin\\EditUserAdminController@edit')->name('admin.user.edit');
 
-            Route::get('edit-role-user/{id}', 'Admin\\EditRoleAdminController@index')->name('admin.role.edit.index');
-            Route::put('edit-role-user/{id}', 'Admin\\EditRoleAdminController@edit')->name('admin.user.edit');
+            Route::get('edit-role-user/{id?}', 'Admin\\EditRoleAdminController@index')->name('admin.role.edit.index');
+            Route::put('edit-role-user/{id?}', 'Admin\\EditRoleAdminController@edit')->name('admin.user.edit');
 
             Route::get('profile-user', 'Admin\\ProfileUserAdminController@index')->name('admin.profile.user.index');
+            Route::put('profile-user/update', 'Admin\\ProfileUserAdminController@update')->name('admin.profile.user.update');
+            Route::put('profile-user/update/password', 'Admin\\ProfileUserAdminController@update_password')->name('admin.profile.user.update.password');
 
             Route::get('role-user', 'Admin\\RoleUserAdminController@index')->name('admin.role.index');
 

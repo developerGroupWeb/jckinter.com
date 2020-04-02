@@ -200,8 +200,6 @@
 
     <script>
 
-
-
         var stripe = Stripe('pk_test_s36fs1t0WNrrilrEn8crHSQw00xMg9I8mk');
         var elements = stripe.elements();
 
@@ -286,10 +284,11 @@
                             }
                         ).then(data => {
 
-                            window.location.href = redirect;
+                            console.log(data);
+                            //window.location.href = redirect;
 
                         }).catch(error => {
-                            alert('ok')
+                            console.log(error)
                         })
                     }
                 }

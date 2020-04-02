@@ -62,7 +62,9 @@ if(!function_exists('time_expire_link')){
      */
     function time_expire_link($code){
 
-        if(User::whereId_confirmation($code)->count() === 0){
+        $count = User::whereId_confirmation($code)->count();
+
+        if($count === 0){
             return false;
         }
 

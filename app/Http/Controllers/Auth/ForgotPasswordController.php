@@ -42,6 +42,14 @@ class ForgotPasswordController extends Controller
 
             session()->flash('success', "We send you an email to <strong> $request->email</strong> with a link to change your password");
 
+            $update_id_confirmation = User::whereEmail($request->email)->update([
+                'id_confirmation' => User::getUniqueCode()
+            ]);
+
+            if($update_id_confirmation){
+                $this->send_email_form_reset_password($request);
+            }
+
             $this->send_email_form_reset_password($request);
 
             return response()->json(['success' => true, 'status' => 200]);
@@ -58,7 +66,13 @@ class ForgotPasswordController extends Controller
 
         session()->flash('success', "We send you an email to <strong>{$request->email}</strong> with a link to change your password");
 
-        $this->send_email_form_reset_password($request);
+        $update_id_confirmation = User::whereEmail($request->email)->update([
+            'id_confirmation' => User::getUniqueCode()
+        ]);
+
+        if($update_id_confirmation){
+            $this->send_email_form_reset_password($request);
+        }
 
         return redirect()->route('login.index', app()->getLocale());
 

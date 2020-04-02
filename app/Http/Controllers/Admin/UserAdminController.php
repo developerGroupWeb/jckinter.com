@@ -65,7 +65,6 @@ class UserAdminController extends Controller
             return redirect()->route('users.index', ['language' => app()->getLocale()])->with('success', 'A new user has been created');
         }
 
-
     }
 
     /**

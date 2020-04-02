@@ -26,7 +26,7 @@
                                 <img alt="Image placeholder" src="{{asset(session()->get('currency_user_admin')['photo'])}}">
                             </span>
                             <div class="media-body ml-2 d-none d-lg-block">
-                                <span class="mb-0 text-sm  font-weight-bold">Admin</span>
+                                <span class="mb-0 text-sm  font-weight-bold">{{session()->get('currency_user_admin')['role']}}</span>
                             </div>
                         </div>
                     </a>

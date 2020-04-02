@@ -19,7 +19,7 @@
     <div class="container-fluid mt--6">
         <div class="row">
             <div class="col-xl-8 order-xl-1 offset-xl-2">
-
+                {!! flash_message('error_old_password', 'alert-danger') !!}
                 <div class="card">
                     <div class="card-header">
                         <div class="row align-items-center">
@@ -29,7 +29,10 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="" autocomplete="off" enctype="multipart/form-data">
+                        <form method="post" action="{{route('admin.profile.user.update', ['language' => app()->getLocale()])}}" autocomplete="off" enctype="multipart/form-data">
+
+                            @csrf
+                            @method('PUT')
 
                             <h6 class="heading-small text-muted mb-4">User information</h6>
 
@@ -37,17 +40,20 @@
                             <div class="pl-lg-4">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-name">Name</label>
-                                    <input type="text" name="name" id="input-name" class="form-control" placeholder="Name" value="Admin" required autofocus>
+                                    <input type="text" name="name" id="input-name" class="form-control" placeholder="Name" value="{{$user->name}}" required autofocus>
+                                    <span style="color: red; font-style: italic; font-size: smaller">{{ $errors->first('name') }}</span>
                                 </div>
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-email">Email</label>
-                                    <input type="email" name="email" id="input-email" class="form-control" placeholder="Email" value="admin@argon.com" required>
+                                    <input type="email" name="email" id="input-email" class="form-control" placeholder="Email" value="{{$user->email}}" required>
+                                    <span style="color: red; font-style: italic; font-size: smaller">{{ $errors->first('email') }}</span>
                                 </div>
 				                <div class="form-group">
                                     <label class="form-control-label" for="input-name">Profile photo</label>
                                     <div class="custom-file">
                                         <input type="file" name="photo" class="custom-file-input" id="input-picture" accept="image/*">
                                         <label class="custom-file-label" for="input-picture">Select profile photo</label>
+                                        <span style="color: red; font-style: italic; font-size: smaller">{{ $errors->first('photo') }}</span>
                                     </div>
                                 </div>
                                 <div class="text-center">
@@ -58,7 +64,9 @@
 
                         <hr class="my-4" />
 
-                        <form method="post" action="" autocomplete="off">
+                        <form method="post" action="{{route('admin.profile.user.update.password', ['language' => app()->getLocale()])}}" autocomplete="off">
+                            @csrf
+                            @method('PUT')
 
                             <h6 class="heading-small text-muted mb-4">Password</h6>
 
@@ -67,10 +75,12 @@
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-current-password">Current Password</label>
                                     <input type="password" name="old_password" id="input-current-password" class="form-control" placeholder="Current Password" value="" required>
+                                    <span style="color: red; font-style: italic; font-size: smaller">{{ $errors->first('old_password') }}</span>
                                 </div>
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-password">New Password</label>
-                                    <input type="password" name="password" id="input-password" class="form-control" placeholder="New Password" value="" required>
+                                    <input type="password" name="password" id="input-password" class="form-control" placeholder="New Password" value="" required><span style="color: red; font-style: italic; font-size: smaller">{{ $errors->first('password') }}</span>
+
                                  </div>
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-password-confirmation">Confirm New Password</label>
