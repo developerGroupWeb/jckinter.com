@@ -31,26 +31,31 @@
                             <i class="ni ni-collection text-yellow"></i>
                             <span class="nav-link-text">Profile</span>
                         </a>
-                        <a class="nav-link" href="{{route('admin.role.index', ['language' => app()->getLocale()])}}">
+                        <a class="nav-link" href="{{route('admin.order.index', ['language' => app()->getLocale()])}}">
+                            <i class="ni ni-collection text-yellow"></i>
+                            <span class="nav-link-text">Orders List</span>
+                        </a>
+                        <!--<a class="nav-link" href="{{route('admin.role.index', ['language' => app()->getLocale()])}}">
                             <i class="ni ni-collection text-yellow"></i>
                             <span class="nav-link-text">Role List</span>
                         </a>
                         <a class="nav-link" href="{{route('admin.user.create.role.index', ['language' => app()->getLocale()])}}">
                             <i class="ni ni-collection text-yellow"></i>
                             <span class="nav-link-text">Create Role</span>
+                        </a>-->
+                        <a class="nav-link" href="{{route('users.create', ['language' => app()->getLocale()])}}">
+                            <i class="ni ni-collection text-yellow"></i>
+                            <span class="nav-link-text">Create Manager</span>
                         </a>
                         <a class="nav-link" href="{{route('users.index', ['language' => app()->getLocale()])}}">
                             <i class="ni ni-collection text-yellow"></i>
                             <span class="nav-link-text">Managers List</span>
                         </a>
-                        <a class="nav-link" href="{{route('users.create', ['language' => app()->getLocale()])}}">
+                        <a class="nav-link" href="">
                             <i class="ni ni-collection text-yellow"></i>
-                            <span class="nav-link-text">Create Manager</span>
+                            <span class="nav-link-text">Customers List</span>
                         </a>
-                        <a class="nav-link" href="{{route('admin.order.index', ['language' => app()->getLocale()])}}">
-                            <i class="ni ni-collection text-yellow"></i>
-                            <span class="nav-link-text">Orders List</span>
-                        </a>
+                        
                     </li>
                 </ul>
             </div>

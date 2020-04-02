@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="{{ asset('app/css/owl.carousel.min.css') }}"/>
     <link rel="stylesheet" href="{{ asset('app/css/jquery.fancybox.min.css') }}"/>
     <link rel="stylesheet" href="{{ asset('app/css/nice-select.css') }}"/>
-
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"/>
     <!-- Icons -->
