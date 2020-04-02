@@ -15,12 +15,12 @@ class UserAdminController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param UserAdmin $userAdmin
      * @return Response
      */
-    public function index()
+    public function index(UserAdmin $userAdmin)
     {
         $users = UserAdmin::latest()->get();
-
         return view(app()->getLocale().'.admin.users',[
             'users' => $users
         ]);
@@ -29,10 +29,17 @@ class UserAdminController extends Controller
     /**
      * Show the form for creating a new resource.
      *
+     * @param UserAdmin $userAdmin
      * @return Response
      */
-    public function create()
+    public function create(UserAdmin $userAdmin)
     {
+        $user = ($userAdmin::whereId(session()->get('currency_user_admin')['id'])->first());
+
+        if($user->role !== 'admin'){
+            return redirect()->route('users.index', ['language' => app()->getLocale()]);
+        }
+
         $roles = RoleAdmin::all();
         return view(app()->getLocale().'.admin.create-user',[
             'roles' => $roles
@@ -42,10 +49,11 @@ class UserAdminController extends Controller
     /**
      * Store a newly created resource in storage.
      *
+     * @param $language
      * @param UserAdminFormRequest $request
      * @return void
      */
-    public function store(UserAdminFormRequest $request)
+    public function store($language, UserAdminFormRequest $request)
     {
         $photo = $request->file('photo');
         $ext   = $photo->extension();
@@ -83,10 +91,17 @@ class UserAdminController extends Controller
      *
      * @param $language
      * @param int $id
+     * @param UserAdmin $userAdmin
      * @return Response
      */
-    public function edit($language, $id)
+    public function edit($language, $id, UserAdmin $userAdmin)
     {
+
+        $user = ($userAdmin::whereId(session()->get('currency_user_admin')['id'])->first());
+        if($user->role !== 'admin'){
+            return redirect()->route('users.index', ['language' => app()->getLocale()]);
+        }
+
         $roles = RoleAdmin::all();
         $user  = UserAdmin::findOrFail($id);
 
@@ -102,10 +117,16 @@ class UserAdminController extends Controller
      * @param $language
      * @param UserAdminFormRequest $request
      * @param int $id
+     * @param UserAdmin $userAdmin
      * @return void
      */
-    public function update($language, UserAdminFormRequest $request, $id)
+    public function update($language, UserAdminFormRequest $request, $id, UserAdmin $userAdmin)
     {
+        $user = ($userAdmin::whereId(session()->get('currency_user_admin')['id'])->first());
+        if($user->role !== 'admin'){
+            return redirect()->route('users.index', ['language' => app()->getLocale()]);
+        }
+
         $photo = $request->file('photo');
         $ext   = $photo->extension();
         $name  = time().'.'.$ext;
@@ -129,10 +150,15 @@ class UserAdminController extends Controller
      *
      * @param $language
      * @param int $id
+     * @param UserAdmin $userAdmin
      * @return void
      */
-    public function destroy($language,$id)
+    public function destroy($language,$id, UserAdmin $userAdmin)
     {
+        $user = ($userAdmin::whereId(session()->get('currency_user_admin')['id'])->first());
+        if($user->role !== 'admin'){
+            return redirect()->route('users.index', ['language' => app()->getLocale()]);
+        }
         $delete = UserAdmin::destroy($id);
 
         if($delete){
