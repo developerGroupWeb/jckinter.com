@@ -36,7 +36,7 @@ class UserReceiverController extends Controller
                 'photo' => $file
             ]);*/
             //if($update === 0){
-                $user->order_currencies()->update([
+                $user->order_currencies()->whereStatus(false)->update([
                     'photo' => "photo_receivers/".$photo
                 ]);
             //}
@@ -53,7 +53,7 @@ class UserReceiverController extends Controller
 
             $user = User::findOrFail(Session::get('currency_user')['id']);
 
-            $update = $user->order_currencies()->update($request->all());
+            $update = $user->order_currencies()->whereStatus(false)->update($request->all());
 
             if($update)
                return response()->json(['success' => true, 'status' => 200]);

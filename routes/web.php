@@ -41,12 +41,11 @@ Route::group(['prefix' => '{language}'],function (){
     Route::middleware(['user.connected'])->group(function (){
 
         /* Currency Converter routes */
-        Route::get('currencyconverter', 'CurrencyConverter\\CurrencyConverterController@index')->name('currencyconverter.index');
 
         Route::post('currencyconverter/store', 'CurrencyConverter\\CurrencyConverterController@store')->name('currencyconverter.store');
 
 
-        Route::delete('currencyconverter/{currency_id?}', 'CurrencyConverter\\CurrencyConverterController@destroy')->name('currencyconverter.destroy');
+        Route::delete('currencyconverter/delete/{currency_id?}', 'CurrencyConverter\\CurrencyConverterController@destroy')->name('currencyconverter.destroy');
 
         Route::get('thanks', 'CurrencyConverter\\CurrencyConverterController@thanks')->name('thanks');
 

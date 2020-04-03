@@ -53,7 +53,7 @@
                             @foreach($users as $user)
 
                                 <tr>
-                                    <td>{{$user->name}}</td>
+                                    <td>{{$user->full_name}}</td>
                                     <td>
                                         <a href=""><span class="__cf_email__" data-cfemail="6e0d1c0b0f1a011c2e0f1c090100400d0103">{{$user->email}}</span></a>
                                     </td>

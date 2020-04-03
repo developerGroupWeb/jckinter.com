@@ -3,9 +3,57 @@
   <component name="ChangeListManager">
     <list default="true" id="043bef7a-9283-4162-9b2d-1b393dd53449" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerAdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerAdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/TranslationDetailAdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TranslationDetailAdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/CurrencyConverterService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/CurrencyConverterService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/photo/1585229465.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/photo/1585229570.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/photo/1585229721.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/photo/1585230405.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/photo/1585230935.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/photo/1585239197.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/photo/1585239266.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/photo/1585299451.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/photo/1585300710.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/photo/1585300769.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/photo/1585300806.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/photo/1585486161.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/photo/1585486484.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/photo/1585486605.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/photo/1585486731.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/photo/1585641265.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/photo/1585814909.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/photo/1585814952.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/photo/1585819218.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/photo/1585822834.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin/photo/1585822914.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/app/js/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/app/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/photo_receivers/1585462642.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/photo_receivers/1585472030.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/photo_receivers/1585472304.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/photo_receivers/1585472535.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/photo_receivers/1585472764.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/photo_receivers/1585478648.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/photo_receivers/1585479882.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/photo_receivers/1585480468.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/photo_receivers/1585488517.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/photo_receivers/1585489220.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/photo_receivers/1585669895.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/photo_receivers/1585672852.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/photo_receivers/1585824802.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/photo_receivers/1585826637.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/photo_receivers/1585842127.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/photo_receivers/1585842304.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/photo_receivers/1585842439.jpeg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/en/admin/customers-list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/customers-list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/orders-list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/orders-list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/en/admin/translation-detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/admin/translation-detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/en/dashboard/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/en/dashboard/dashboard.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -265,7 +313,9 @@
       <workItem from="1585717761049" duration="523000" />
       <workItem from="1585719872976" duration="162000" />
       <workItem from="1585731657000" duration="2986000" />
-      <workItem from="1585790581227" duration="19595000" />
+      <workItem from="1585790581227" duration="30164000" />
+      <workItem from="1585851353710" duration="6873000" />
+      <workItem from="1585884468547" duration="1806000" />
     </task>
     <servers />
   </component>

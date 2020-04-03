@@ -18,7 +18,9 @@ class User extends Model
         'email',
         'password',
         'terms',
-        'id_confirmation'
+        'id_confirmation',
+        'address',
+        'country'
     ];
 
     protected $dates = [

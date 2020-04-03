@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\checkout;
 
 use App\Http\Controllers\Controller;
-use App\Models\OrderCurrency;
+use App\Mail\OrderSuccessEmail;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Support\Arr;
+
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Stripe\Exception\ApiErrorException;
 use Stripe\PaymentIntent;
@@ -46,7 +46,7 @@ class CheckoutController extends Controller
 
             $user   = User::findOrFail($user_id);
 
-            $update = $user->order_currencies()->update([
+            $update = $user->order_currencies()->whereStatus(false)->update([
 
                 'payment_intent_id' => $data['paymentIntent']['id'],
                 'payment_created_at' => (new \DateTime())
@@ -56,6 +56,9 @@ class CheckoutController extends Controller
                'status' => true
             ]);
 
+            if($update){
+                $this->send_order_success_email($user);
+            }
 
             Session::flash('thanks', 'Your order has been successfully processed');
 
@@ -63,6 +66,12 @@ class CheckoutController extends Controller
         }else{
             return response()->json(['success' => false, 'message' => 'Payment intent not succeeded']);
         }
+    }
+
+    protected function send_order_success_email($user)
+    {
+        Mail::to($user->email)
+            ->send(new OrderSuccessEmail($user));
     }
 
 

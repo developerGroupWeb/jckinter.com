@@ -42,6 +42,7 @@
                                                         <p class="name">{{$order->name}}</p>
                                                         <p class="surname">{{$order->surname}}</p>
                                                         <p class="">{{$order->address}}</p>
+                                                        <p class="">{{$order->country}}</p>
                                                         <p>{{$order->phone}}</p>
                                                         <p>{{$order->year}}</p>
                                                         <p><span>{{$order->question}}</span> : <span>{{$order->answer}}</span></p>
@@ -78,16 +79,16 @@
                                                 <div class="col-12 col-sm">
                                                     <div class="content-area">
                                                         <b>Sender Data</b>
-                                                        <p class="name">{{$order->name}}</p>
-                                                        <p class="surname">{{$order->surname}}</p>
-                                                        <p class="country">{{$order->address}}</p>
+                                                        <p class="name">{{$order->user->full_name}}</p>
+                                                        <p class="country">{{$order->user->address}}</p>
+                                                        <p class="country">{{$order->user->country}}</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm">
                                                     <div class="content-area text-right">
                                                         <div class="price mt-sm-5">
                                                             <b>Amount</b>
-                                                            <p class="order-amount"><span>USD ou autres</span>{{$order->amount_receive}}</p>
+                                                            <p class="order-amount"><span>{{$order->devise_send}}</span>{{$order->amount_send}}</p>
                                                         </div>
                                                     </div>
 

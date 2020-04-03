@@ -3,15 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\storeLoginFormRequest;
+use App\Http\Requests\StoreLoginFormRequest;
 use App\Models\User;
-
 use App\Services\StoreLoginService;
 use Illuminate\Contracts\View\Factory;
-
 use Illuminate\Http\RedirectResponse;
-
-
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Session;
 use Illuminate\View\View;

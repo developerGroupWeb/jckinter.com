@@ -268,7 +268,7 @@
                         @foreach($order_active as $order)
                             <tr>
                                 <th scope="row">{{ $order->track_order }}</th>
-                                <td>{{ $order->payment_created_at->format ('m/d/Y') }}</td>
+                                <td>{{ $order->payment_created_at->format ('d/m/Y H:i:s') }}</td>
                                 <td>{{$order->amount_send.' '.$order->devise_send}}</td>
                                 <td>{{ strtoupper($order->name).' '.$order->surname }}</td>
                                 <td>{!! $order->processing ? '<span class="text-success">Done</span>' : '<span class="text-danger">Pending</span>' !!} </td>
@@ -282,29 +282,7 @@
             </div>
 
 
-            <!--<div class="tab-pane fade col-12" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                <h5>Need help? Contact us!</h5>
-                <div class="p-4 bg-white rounded border" style="height: 550px; overflow: auto;">
-                    <form method="post" action="" id="user-contact-form" class="">
-                        @csrf
 
-                        <div class="form-group">
-                            <label for="name">Subject</label>
-                            <input type="text" name="subject" class="form-control @error('subject') is-invalid @enderror" id="subject" value="{{ old('subject') }}">
-                            <span class="invalid-feedback error-subject">{{ $errors->first('subject') }}</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Send us message</label>
-                            <textarea class="form-control @error('subject') is-invalid @enderror" name="message" id="message" rows="5"></textarea>
-                            <span class="invalid-feedback error-message">{{ $errors->first('message') }}</span>
-                        </div>
-
-                        <button class="btn btn-primary mt-4" id="submit">Send</button>
-
-                    </form>
-                </div>
-            </div>-->
         </div>
 
     </div>
