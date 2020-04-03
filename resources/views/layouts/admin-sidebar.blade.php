@@ -38,11 +38,11 @@
                         <!--<a class="nav-link" href="{{route('admin.role.index', ['language' => app()->getLocale()])}}">
                             <i class="ni ni-collection text-yellow"></i>
                             <span class="nav-link-text">Role List</span>
-                        </a>
+                        </a>-->
                         <a class="nav-link" href="{{route('admin.user.create.role.index', ['language' => app()->getLocale()])}}">
                             <i class="ni ni-collection text-yellow"></i>
                             <span class="nav-link-text">Create Role</span>
-                        </a>-->
+                        </a>
                         <a class="nav-link" href="{{route('users.create', ['language' => app()->getLocale()])}}">
                             <i class="ni ni-collection text-yellow"></i>
                             <span class="nav-link-text">Create Manager</span>
