@@ -312,7 +312,7 @@ $(function () {
     $(document).on('change', '#file', function (e) {
         e.preventDefault();
 
-        $('img').attr('src','http://'+ location.host + "/app/images/loading.svg");
+        $('img').attr('src','https://'+ location.host + "/app/images/loading.svg");
 
         setTimeout(function () {
 

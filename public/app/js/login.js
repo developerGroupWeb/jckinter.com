@@ -89,7 +89,7 @@ $(function(){
                         lang = language[1];
 
                     if(jQuery.inArray('admin', urls) > 0){
-                        window.location = "http://"+ location.host + "/" + lang + "/jckinter-admin"
+                        window.location = "https://"+ location.host + "/" + lang + "/jckinter-admin"
                     }else{
                         window.location = redirect+'?'+(data.user).toLocaleLowerCase();
                     }

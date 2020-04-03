@@ -58,7 +58,7 @@
                                                     <span class="name">{{$order->name. ' '.$order->surname}}</span>
                                                 </div>
                                                 <div class="col">
-                                                    <span class="location">shipping location</span>
+                                                    <span class="location">{{$order->country}}</span>
                                                 </div>
                                                 <div class="col text-right">
                                                     <span class="payment-amaount">{{ $order->amount_receive }}</span>

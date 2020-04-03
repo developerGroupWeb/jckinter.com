@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.hostinger.com'),
+    'host' => env('MAIL_HOST', 'smtp.mailtrap.io'),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', 587),
+    'port' => env('MAIL_PORT', 2525),
 
     /*
     |--------------------------------------------------------------------------
@@ -83,7 +83,6 @@ return [
     | connection. You may also set the "password" value below this one.
     |
     */
-
     'username' => env('MAIL_USERNAME'),
 
     'password' => env('MAIL_PASSWORD'),

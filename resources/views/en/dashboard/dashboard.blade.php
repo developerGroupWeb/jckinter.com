@@ -268,7 +268,7 @@
                         @foreach($order_active as $order)
                             <tr>
                                 <th scope="row">{{ $order->track_order }}</th>
-                                <td>{{ $order->payment_created_at->format ('m/d/Y H:i:s') }}</td>
+                                <td>{{ $order->payment_created_at->format ('d/m/Y H:i:s') }}</td>
                                 <td>{{$order->amount_send.' '.$order->devise_send}}</td>
                                 <td>{{ strtoupper($order->name).' '.$order->surname }}</td>
                                 <td>{!! $order->processing ? '<span class="text-success">Done</span>' : '<span class="text-danger">Pending</span>' !!} </td>

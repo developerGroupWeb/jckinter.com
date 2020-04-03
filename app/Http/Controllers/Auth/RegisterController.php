@@ -28,12 +28,20 @@ class RegisterController extends Controller{
      */
     function store($language, StoreRegisterFormRequest $formRequest){
 
+        $geolocation = geoip()->getLocation($formRequest->ip());
+
+        $country = $geolocation->country;
+        $address = $geolocation->postal_code.', '.$geolocation->city;
+
         $create = User::create([
+
             'full_name' => $formRequest->full_name,
             'email'     => $formRequest->email,
             'password'  => sha1($formRequest->password),
             'terms'     => $formRequest->terms,
-            'id_confirmation' => User::getUniqueCode()
+            'id_confirmation' => User::getUniqueCode(),
+            'address' => $address,
+            'country' => $country
         ]);
 
         if($create){
